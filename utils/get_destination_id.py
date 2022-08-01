@@ -6,7 +6,9 @@ import re
 from typing import Tuple, Dict, Union
 
 city_url = 'https://hotels4.p.rapidapi.com/locations/search'
-def find_city(message):
+
+
+def search(message):
     """Задаем поиск города и получаем словарь с возможными вариантами города
         (города иногда называются одинаково)"""
 
@@ -20,9 +22,7 @@ def find_city(message):
     with open('step_1_rome.json', 'r') as file_rome:
         data = json.load(file_rome)
 
-    city_buttons = types.InlineKeyboardMarkup()
+    possible_cities = {}
     for i in data['suggestions'][0]['entities']:
-        city_buttons.add(
-            types.InlineKeyboardButton(text=re.sub(pattern, '', i['caption']), callback_data=i['destinationId']))
-
-    return city_buttons
+        possible_cities[i['destinationId']] = re.sub(pattern, '', i['caption'])
+    return possible_cities
