@@ -27,7 +27,6 @@ def get_dict_hotels(destinationid):
     found_hotels = {}
     for i_hotel in data['data']['body']['searchResults']['results']:
         values = [i_hotel['name'], i_hotel['address']["streetAddress"], i_hotel['ratePlan']['price']['current'],
-                  i_hotel['landmarks']]
+                  i_hotel['landmarks'], i_hotel["optimizedThumbUrls"]["srpDesktop"]]
         found_hotels[i_hotel['id']] = found_hotels.get(i_hotel['id'], values)
-    print(found_hotels)
     return found_hotels
