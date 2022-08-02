@@ -11,66 +11,64 @@
                 }
             },
             "searchResults": {
-                "totalCount": 8971,
+                "totalCount": 8969,
                 "results": [
                     {
-                        "id": 613008448,
-                        "name": "Affittacamere Radi",
+                        "id": 319137,
+                        "name": "Prince Inn",
                         "starRating": 0.0,
                         "urls": {},
                         "address": {
-                            "streetAddress": "VIA DEL CASTRO PRETORIO 18",
+                            "streetAddress": "Via Principe Eugenio 15",
                             "extendedAddress": "",
                             "locality": "Rome",
-                            "postalCode": "00185",
-                            "region": "",
+                            "postalCode": "185",
+                            "region": "RM",
                             "countryName": "Italy",
                             "countryCode": "it",
                             "obfuscate": false
                         },
                         "guestReviews": {
-                            "unformattedRating": 8.0,
-                            "rating": "8.0",
-                            "total": 28,
-                            "scale": 10,
-                            "badge": "very-good",
-                            "badgeText": "Very Good"
+                            "unformattedRating": 5.6,
+                            "rating": "5.6",
+                            "total": 196,
+                            "scale": 10
                         },
                         "landmarks": [
                             {
                                 "label": "Trevi Fountain",
-                                "distance": "1.1 miles"
+                                "distance": "1.3 miles"
                             },
                             {
                                 "label": "Spanish Steps",
-                                "distance": "1.2 miles"
+                                "distance": "1.5 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "$48",
-                                "exactCurrent": 48.31
+                                "current": "$39",
+                                "exactCurrent": 39.18
                             },
                             "features": {
                                 "paymentPreference": false,
                                 "noCCRequired": false
                             }
                         },
-                        "neighbourhood": "Rione XVIII Castro Pretorio",
+                        "neighbourhood": "Rome Termini Station",
                         "deals": {},
                         "messaging": {},
                         "badging": {},
                         "pimmsAttributes": "DoubleStamps|D13|TESCO",
                         "coordinate": {
-                            "lat": 41.9014,
-                            "lon": 12.505
+                            "lat": 41.89419,
+                            "lon": 12.50676
                         },
                         "providerType": "LOCAL",
-                        "supplierHotelId": 19125264,
+                        "supplierHotelId": 2541326,
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/20000000/19130000/19125300/19125264/7027f772_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/3000000/2550000/2541400/2541326/e2421fb7_y.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     },
                     {
@@ -109,9 +107,9 @@
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "$49",
-                                "exactCurrent": 49.24,
-                                "old": "$55"
+                                "current": "$47",
+                                "exactCurrent": 46.64,
+                                "old": "$52"
                             },
                             "features": {
                                 "paymentPreference": false,
@@ -132,122 +130,6 @@
                         "isAlternative": false,
                         "optimizedThumbUrls": {
                             "srpDesktop": "https://exp.cdn-hotels.com/hotels/14000000/13470000/13461900/13461818/925c24f1_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 759525728,
-                        "name": "Alex Romano",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "88 Via Palestro",
-                            "extendedAddress": "",
-                            "locality": "Rome",
-                            "postalCode": "00185",
-                            "region": "",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 4.0,
-                            "rating": "4.0",
-                            "total": 2,
-                            "scale": 10
-                        },
-                        "landmarks": [
-                            {
-                                "label": "Trevi Fountain",
-                                "distance": "1.2 miles"
-                            },
-                            {
-                                "label": "Spanish Steps",
-                                "distance": "1.2 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "$50",
-                                "exactCurrent": 49.65
-                            },
-                            "features": {
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            }
-                        },
-                        "neighbourhood": "Rione XVIII Castro Pretorio",
-                        "deals": {},
-                        "messaging": {},
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 41.90338,
-                            "lon": 12.50652
-                        },
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 23703929,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/24000000/23710000/23704000/23703929/d0f37714_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 319137,
-                        "name": "Prince Inn",
-                        "starRating": 0.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "Via Principe Eugenio 15",
-                            "extendedAddress": "",
-                            "locality": "Rome",
-                            "postalCode": "185",
-                            "region": "RM",
-                            "countryName": "Italy",
-                            "countryCode": "it",
-                            "obfuscate": false
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 5.6,
-                            "rating": "5.6",
-                            "total": 196,
-                            "scale": 10
-                        },
-                        "landmarks": [
-                            {
-                                "label": "Trevi Fountain",
-                                "distance": "1.3 miles"
-                            },
-                            {
-                                "label": "Spanish Steps",
-                                "distance": "1.5 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "$39",
-                                "exactCurrent": 39.02
-                            },
-                            "features": {
-                                "paymentPreference": false,
-                                "noCCRequired": false
-                            }
-                        },
-                        "neighbourhood": "Rome Termini Station",
-                        "deals": {},
-                        "messaging": {},
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
-                        "coordinate": {
-                            "lat": 41.89419,
-                            "lon": 12.50676
-                        },
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 2541326,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/3000000/2550000/2541400/2541326/e2421fb7_y.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     },
                     {
@@ -286,8 +168,8 @@
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "$46",
-                                "exactCurrent": 46.46,
+                                "current": "$47",
+                                "exactCurrent": 46.68,
                                 "old": "$52"
                             },
                             "features": {
@@ -309,6 +191,127 @@
                         "isAlternative": false,
                         "optimizedThumbUrls": {
                             "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/30000/21800/21736/49a4fa8e_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 621257,
+                        "name": "Trinity Luxury Rooms",
+                        "starRating": 0.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Via Augusto Valenzani 5",
+                            "extendedAddress": "",
+                            "locality": "Rome",
+                            "postalCode": "198",
+                            "region": "Lazio",
+                            "countryName": "Italy",
+                            "countryCode": "it",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.0,
+                            "rating": "8.0",
+                            "total": 119,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Trevi Fountain",
+                                "distance": "1.0 mile"
+                            },
+                            {
+                                "label": "Spanish Steps",
+                                "distance": "0.9 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "$48",
+                                "exactCurrent": 48.24,
+                                "old": "$99"
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Sallustiano",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 41.910095,
+                            "lon": 12.498825
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 15967714,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/16000000/15970000/15967800/15967714/9a630a26_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 613008448,
+                        "name": "Affittacamere Radi",
+                        "starRating": 0.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "VIA DEL CASTRO PRETORIO 18",
+                            "extendedAddress": "",
+                            "locality": "Rome",
+                            "postalCode": "00185",
+                            "region": "",
+                            "countryName": "Italy",
+                            "countryCode": "it",
+                            "obfuscate": false
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 8.0,
+                            "rating": "8.0",
+                            "total": 28,
+                            "scale": 10,
+                            "badge": "very-good",
+                            "badgeText": "Very Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "Trevi Fountain",
+                                "distance": "1.1 miles"
+                            },
+                            {
+                                "label": "Spanish Steps",
+                                "distance": "1.2 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "$49",
+                                "exactCurrent": 48.51
+                            },
+                            "features": {
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            }
+                        },
+                        "neighbourhood": "Rione XVIII Castro Pretorio",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 41.9014,
+                            "lon": 12.505
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 19125264,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/20000000/19130000/19125300/19125264/7027f772_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     }
                 ],
@@ -342,12 +345,11 @@
                     {
                         "label": "Distance",
                         "itemMeta": "distance",
-                        "selectedChoiceLabel": "Trevi Fountain",
                         "choices": [
                             {
-                                "label": "Trevi Fountain",
+                                "label": "Distance to city center",
                                 "value": "DISTANCE_FROM_LANDMARK",
-                                "selected": true
+                                "selected": false
                             }
                         ],
                         "enhancedChoices": [
@@ -526,6 +528,7 @@
                     {
                         "label": "Price",
                         "itemMeta": "price",
+                        "selectedChoiceLabel": "Price (low to high)",
                         "choices": [
                             {
                                 "label": "Price (high to low)",
@@ -535,7 +538,7 @@
                             {
                                 "label": "Price (low to high)",
                                 "value": "PRICE",
-                                "selected": false
+                                "selected": true
                             }
                         ],
                         "enhancedChoices": []
@@ -716,8 +719,7 @@
                         },
                         {
                             "label": "Prati",
-                            "value": "1690824",
-                            "disabled": true
+                            "value": "1690824"
                         },
                         {
                             "label": "Repubblica",
@@ -730,8 +732,7 @@
                         },
                         {
                             "label": "Sallustiano",
-                            "value": "1730000",
-                            "disabled": true
+                            "value": "1730000"
                         },
                         {
                             "label": "Campitelli",
@@ -827,8 +828,7 @@
                         },
                         {
                             "label": "Caravan parks",
-                            "value": "21",
-                            "disabled": true
+                            "value": "21"
                         },
                         {
                             "label": "Chalets",
@@ -850,7 +850,8 @@
                         },
                         {
                             "label": "Hostels",
-                            "value": "12"
+                            "value": "12",
+                            "disabled": true
                         },
                         {
                             "label": "Hotels",
@@ -1160,7 +1161,7 @@
                 }
             },
             "miscellaneous": {
-                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=DISTANCE_FROM_LANDMARK&rooms=1&destRegionID=10818945&hotelIds=613008448,571521,759525728,319137,124845&adults=1&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=02e07da0-e98a-4e7d-861b-9c78aa253a16&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=104.58.230.240&action=pageview&publisher=expedia&programId=1",
+                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE&rooms=1&destRegionID=10818945&hotelIds=319137,571521,124845,621257,613008448&adults=1&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=4923f367-eaea-4b7e-9bec-23685bbb6933&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=65.184.185.226&action=pageview&publisher=expedia&programId=1",
                 "showLegalInfoForStrikethroughPrices": true,
                 "legalInfoForStrikethroughPrices": "The struck-out price is based on the property\u2019s standard rate on our app, as determined and supplied by the property."
             },
@@ -1178,11 +1179,11 @@
                     "s.prop33": "D=v33",
                     "s.prop32": "D=v43",
                     "s.prop74": "search result without dates | ms shown | N",
-                    "s.products": "LOCAL;19125264,LOCAL;13461818,LOCAL;23703929",
+                    "s.products": "LOCAL;2541326,LOCAL;13461818,MULTISOURCE;21736",
                     "s.eVar16": "Mob :: aApp",
                     "s.eVar40": "D=v0",
                     "s.eVar41": "USD",
-                    "s.eVar63": "eef8cbf3-3ae9-4843-a75a-ba123cbc9bf3",
+                    "s.eVar63": "a7481c6e-5296-4e0f-91d7-2b222aea06b2",
                     "s.eVar42": "dateless",
                     "s.eVar4": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
                     "s.eVar43": "en_US|HCOM_US|www.hotels.com",
@@ -1192,16 +1193,16 @@
                     "s.server": "www.hotels.com",
                     "s.eVar6": "10818945",
                     "s.prop29": "D=v42",
-                    "s.prop27": "02e07da0-e98a-4e7d-861b-9c78aa253a16",
-                    "s.eVar9": "Distance to other landmark near to far",
+                    "s.prop27": "4923f367-eaea-4b7e-9bec-23685bbb6933",
+                    "s.eVar9": "Price - low to high",
                     "s.prop22": "Price - USD10-50",
                     "s.eVar69": "Mob :: aApp",
                     "s.currencyCode": "USD",
-                    "s.eVar26": "US:LA:CROWLEY:642",
+                    "s.eVar26": "US:NC:JACKSONVILLE:545",
                     "s.eVar29": "Mob :: aApp",
-                    "s.prop9": "31",
+                    "s.prop9": "35",
                     "s.eVar95": "Unknown",
-                    "s.prop7": "31",
+                    "s.prop7": "35",
                     "s.eVar31": "D=v0",
                     "s.eVar10": "Price - USD10-50",
                     "s.eVar32": "D=v0",
@@ -1216,7 +1217,7 @@
                     "s.prop14": "D=v7",
                     "s.prop36": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
                     "s.eVar93": "aws.us-east-1.unknown",
-                    "s.prop2": "Distance to other landmark near to far"
+                    "s.prop2": "Price - low to high"
                 }
             }
         }

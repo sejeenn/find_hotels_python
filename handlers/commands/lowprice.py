@@ -21,11 +21,18 @@ def survey(message: Message) -> None:
 
     # Узнав точный ID города назначения мы можем поискать отели в этом городе, выведем его в чат
     hotels_id = get_dict_hotels('10818945')  # step_2_rome.json
-    for key, value in hotels_id.items():
-        bot.send_message(message.from_user.id, value + ' : ID - ' + str(key))
 
-    bot.send_message(message.from_user.id, 'Выберите нужный вам отель'
-                                           '(в тестовом режиме это  ID - 613008448)')
+    for key, value in hotels_id.items():
+        # вывод фотографии по ссылке
+        # bot.send_photo(message.from_user.id,
+        #                'https://exp.cdn-hotels.com/hotels/3000000/2550000/2541400/2541326/e2421fb7_y.jpg?impolicy'
+        #                '=fcrop&w=250&h=140&q=high')
+        bot.send_message(message.from_user.id, f'Название отеля: {value[0]}\nАдрес отеля: {value[1]}\n' +
+                         f'Стоимость: {value[2]}\n Расстояние до: {value[3][0]}\nРасстояние до: {value[3][1]}\n'
+                         f'ID - ' + str(key))
+
+    # bot.send_message(message.from_user.id, 'Выберите нужный вам отель'
+    #                                        '(в тестовом режиме это  ID - 613008448)')
 
     # Узнаем детальную информацию об конкретном отеле
     detail_info = get_detail_info('613008448')
