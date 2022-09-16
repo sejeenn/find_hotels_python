@@ -1,6 +1,6 @@
 from telebot.handler_backends import State, StatesGroup
 
 
-class UserInfoState(StatesGroup):
+class UserInputState(StatesGroup):
     input_city = State()
-    press_button_city = State()
+    destination_id = State()

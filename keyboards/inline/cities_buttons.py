@@ -1,6 +1,7 @@
 from loader import bot
 from telebot import types
-from states.user_inputs import UserInfoState
+import utils.find_hotel
+from states.user_inputs import UserInputState
 
 
 def cities_buttons(message, possible_cities):
@@ -14,9 +15,8 @@ def cities_buttons(message, possible_cities):
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
     if call.data:
-        temp = call.data
-
-        # bot.set_state(call.from_user.id, UserInfoState.press_button_city, call.chat.id)
-        # with bot.retrieve_data(call.from_user.id, call.chat.id) as data1:
-        #     data1['press_button_city'] = call.data
-        # print(data1['press_button_city'])
+        selected_destination_id = call.data
+        print('Выбран город destinationId:', selected_destination_id)  # сообщение в консоли
+        bot.delete_message(call.message.chat.id, call.message.message_id)
+        message = bot.send_message(call.from_user.id, 'Вы выбрали destinationId: ' + selected_destination_id)
+        bot.register_next_step_handler(message, utils.find_hotel.get_dict_hotels(selected_destination_id))

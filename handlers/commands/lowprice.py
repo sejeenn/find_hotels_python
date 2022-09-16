@@ -1,8 +1,9 @@
 from loader import bot
 from telebot.types import Message
 from telebot import types
+import utils.find_destination_id
+from keyboards.inline.cities_buttons import cities_buttons
 
-from utils.find_destination_id import find_city
 from utils.find_hotel import get_dict_hotels
 from utils.detail_info import get_detail_info
 
@@ -10,47 +11,11 @@ from utils.detail_info import get_detail_info
 @bot.message_handler(commands=['lowprice'])
 def lowprice_handler(message: Message) -> None:
     """1. Город, где будет проводиться поиск."""
-    mesg = bot.send_message(message.from_user.id, "Введите город в котором нужно найти "
-                                                "отель (в тестовом режиме это Рим(Rome).")
-    bot.register_next_step_handler(mesg, find_city)
+    # 1. Запрос города в котором ищем отель
+    # 2. Городов может быть много, поэтому получаем словарь c destinationId и описанием
+    # 3. Из представленных населенных пунктов выбираем нужный город (destinationId) нажимаем кнопку
 
+    # запрос от пользователя города
+    bot.send_message(message.from_user.id, "Введите город в котором нужно найти отель: (Rome).")
+    bot.register_next_step_handler(message, utils.find_destination_id.find_city)
 
-
-
-
-
-
-
-
-
-
-
-
-    # bot.register_next_step_handler(mesg, search)
-    # вывод возможных городов по запросу "rome" (Рим) step_1_rome.json
-    # destination_id = search(message.text)  # step_1_rome.json
-    # for key, value in destination_id.items():
-    #     bot.send_message(message.from_user.id, value + ' : ID - ' + key)
-    # bot.send_message(message.from_user.id, 'Необходимо уточнить город назначения, '
-    #                                        'введи ID наиболее подходящего города '
-    #                                        '(в тестовом режиме это  ID - 10818945)')
-
-    # Узнав точный ID города назначения мы можем поискать отели в этом городе, выведем его в чат
-    # hotels_id = get_dict_hotels('10818945')  # step_2_rome.json
-    # for key, value in hotels_id.items():
-    #     bot.send_photo(message.from_user.id, value[4])
-    #     bot.send_message(message.from_user.id, f'Название отеля: {value[0]}\nАдрес отеля: {value[1]}\n' +
-    #                      f'Стоимость: {value[2]}\nРасстояние до: {value[3][0]["label"]} - {value[3][0]["distance"]}'
-    #                      f'\nРасстояние до: {value[3][1]["label"]} - {value[3][1]["distance"]}\n'
-    #                      f'ID - ' + str(key))
-
-    # bot.send_message(message.from_user.id, 'Выберите нужный вам отель'
-    #                                        '(в тестовом режиме это  ID - 613008448)')
-    # Узнаем детальную информацию об конкретном отеле
-    # detail_info = get_detail_info('613008448')
-    # bot.send_message(message.from_user.id, detail_info)
-
-
-# def find_city(message):
-#     user_data['city'] = message.text
-#     print(user_data['city'])
