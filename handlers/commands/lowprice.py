@@ -4,7 +4,7 @@ from telebot import types
 import utils.find_destination_id
 from keyboards.inline.cities_buttons import cities_buttons
 
-from utils.find_hotel import get_dict_hotels
+from utils.find_hotel_lowprice import get_dict_hotels
 from utils.detail_info import get_detail_info
 
 
@@ -17,5 +17,5 @@ def lowprice_handler(message: Message) -> None:
 
     # запрос от пользователя города
     bot.send_message(message.from_user.id, "Введите город в котором нужно найти отель: (Rome).")
-    bot.register_next_step_handler(message, utils.find_destination_id.find_city)
-
+    destination_id = bot.register_next_step_handler(message, utils.find_destination_id.find_city)
+    print(destination_id)
