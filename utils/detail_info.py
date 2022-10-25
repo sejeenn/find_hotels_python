@@ -19,5 +19,5 @@ def get_detail_info(hotel_id):
         data = json.load(file)
     # hotel_info = {}
     # for i_hotel in data['data']['body']['searchResults']['results']:
-    #     found_hotels[i_hotel['id']] = i_hotel['name']
+
     return 'hotel_info'

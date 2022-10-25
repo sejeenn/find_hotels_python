@@ -11,29 +11,28 @@ def calendar_command_handler(message: types.Message):
     bot.send_message(message.from_user.id, 'Выбери дату:',
                      reply_markup=generate_calendar_days(year=now.year, month=now.month))
 
-
-@bot.callback_query_handler(func=None, calendar_config=calendar_factory.filter())
-def calendar_action_handler(call: types.CallbackQuery):
-    callback_data: dict = calendar_factory.parse(callback_data=call.data)
-    year, month = int(callback_data['year']), int(callback_data['month'])
-
-    bot.edit_message_reply_markup(call.message.chat.id, call.message.id,
-                                  reply_markup=generate_calendar_days(year=year, month=month))
-    print('1', call.data)
-
-
-@bot.callback_query_handler(func=None, calendar_zoom_config=calendar_zoom.filter())
-def calendar_zoom_out_handler(call: types.CallbackQuery):
-    callback_data: dict = calendar_zoom.parse(callback_data=call.data)
-    year = int(callback_data.get('year'))
-
-    bot.edit_message_reply_markup(call.message.chat.id, call.message.id,
-                                  reply_markup=generate_calendar_months(year=year))
-    print('2', call.data)
-
-
-@bot.callback_query_handler(func=lambda call: call.data == EMTPY_FIELD)
-def callback_empty_field_handler(call: types.CallbackQuery):
-    bot.answer_callback_query(call.id)
-    print('3', call.data)
-
+#
+# @bot.callback_query_handler(func=None, calendar_config=calendar_factory.filter())
+# def calendar_action_handler(call: types.CallbackQuery):
+#     callback_data: dict = calendar_factory.parse(callback_data=call.data)
+#     year, month = int(callback_data['year']), int(callback_data['month'])
+#
+#     bot.edit_message_reply_markup(call.message.chat.id, call.message.id,
+#                                   reply_markup=generate_calendar_days(year=year, month=month))
+#     print('1', call.data)
+#
+#
+# @bot.callback_query_handler(func=None, calendar_zoom_config=calendar_zoom.filter())
+# def calendar_zoom_out_handler(call: types.CallbackQuery):
+#     callback_data: dict = calendar_zoom.parse(callback_data=call.data)
+#     year = int(callback_data.get('year'))
+#
+#     bot.edit_message_reply_markup(call.message.chat.id, call.message.id,
+#                                   reply_markup=generate_calendar_months(year=year))
+#     print('2', call.data)
+#
+#
+# @bot.callback_query_handler(func=lambda call: True)
+# def callback_empty_field_handler(call: types.CallbackQuery):
+#     # bot.send_message(call.message.from_user.id, call.data)
+#     print(call.data)

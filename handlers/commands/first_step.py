@@ -29,7 +29,7 @@ def input_city(message: Message) -> None:
     # получаем словарь возможных городов
     possible_cities = find_city(message)
     logger.info(f'Получаем словарь с вариантами городов: {possible_cities}')
-    # если длина словаря больше 1 то отправляем его в генератор кнопок
+    # если длина словаря больше 1, то отправляем его в генератор кнопок
     if len(possible_cities) > 1:
         cities_buttons.buttons_gen(message, possible_cities)
     elif len(possible_cities) == 1:
