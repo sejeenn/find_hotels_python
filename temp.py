@@ -1,7 +1,6 @@
-def foo():
-    yield 1
+class Foo(object):
+    def __eq__(self, other):
+        return True
 
 
-f = foo()
-next(f)
-print(next(f))
+print(Foo() == None)

@@ -1,29 +1,16 @@
 from loader import bot
 from telebot import types
-import utils.find_hotel_lowprice
-from states.user_inputs import UserInputState
 
 
-def cities_buttons(message, possible_cities):
+def buttons_gen(message, possible_cities):
+    """
+        Данный модуль принимает сообщение в котором содержится словарь с
+        возможными вариантами городов и формирует динамический блок кнопок.
+        Которые будут выданы в чат.
+
+    """
     # вывод возможных городов по запросу "rome" (Рим) step_1_rome.json
     keyboards_cities = types.InlineKeyboardMarkup()
     for key, value in possible_cities.items():
         keyboards_cities.add(types.InlineKeyboardButton(text=value, callback_data=str(key)))
     bot.send_message(message.from_user.id, "Пожалуйста, выберите город", reply_markup=keyboards_cities)
-
-    selected_destination_id = ""
-
-    @bot.callback_query_handler(func=lambda call: True)
-    def callback_query(call):
-        if call.data:
-            selected_destination_id = call.data
-            print('Выбран город destinationId:', selected_destination_id)  # сообщение в консоли
-            bot.delete_message(call.message.chat.id, call.message.message_id)
-            bot.send_message(call.from_user.id, 'Вы выбрали destinationId: ' + selected_destination_id)
-    return selected_destination_id
-
-        #
-        # bot.delete_message(call.message.chat.id, call.message.message_id)
-        # message = bot.send_message(call.from_user.id, 'Вы выбрали destinationId: ' + selected_destination_id)
-        # temp = bot.register_next_step_handler(message, utils.find_hotel_lowprice.get_dict_hotels(selected_destination_id))
-        # print(temp)
