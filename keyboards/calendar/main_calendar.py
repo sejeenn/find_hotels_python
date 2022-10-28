@@ -7,9 +7,9 @@ calendar_1_callback = CallbackData("calendar_1", "action", "year", "month", "day
 import datetime
 
 
-def calendar_date(message: Message):
+def calendar_date(message: Message, text):
     now = datetime.datetime.now()  # Получение текущей даты
-    bot.send_message(message.from_user.id, "Выбор даты", reply_markup=calendar.create_calendar(
+    bot.send_message(message.from_user.id, text, reply_markup=calendar.create_calendar(
             name=calendar_1_callback.prefix,
             year=now.year,
             month=now.month,

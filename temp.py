@@ -1,6 +1,4 @@
-class Foo(object):
-    def __eq__(self, other):
-        return True
+checkin = '2022-10-30'
+a = checkin.split('-')
+print(type(int(''.join(a))))
 
-
-print(Foo() == None)

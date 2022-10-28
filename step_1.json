@@ -1,0 +1,210 @@
+{
+    "term": "Sever",
+    "moresuggestions": 10,
+    "autoSuggestInstance": null,
+    "trackingID": "27389bd0613a451993ee9c5a52bda084",
+    "misspellingfallback": false,
+    "suggestions": [
+        {
+            "group": "CITY_GROUP",
+            "entities": [
+                {
+                    "geoId": "6814",
+                    "destinationId": "1421197",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 35.868146,
+                    "longitude": -83.561835,
+                    "searchDetail": null,
+                    "caption": "Sevierville, Tennessee, United States of America",
+                    "name": "Sevierville"
+                },
+                {
+                    "geoId": "156680",
+                    "destinationId": "1502513",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 39.070389,
+                    "longitude": -76.545242,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Sever</span>na Park, Maryland, United States of America",
+                    "name": "Severna Park"
+                },
+                {
+                    "geoId": "156675",
+                    "destinationId": "1458656",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 39.1228,
+                    "longitude": -76.678538,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Sever</span>n, Maryland, United States of America",
+                    "name": "Severn"
+                },
+                {
+                    "geoId": "601691",
+                    "destinationId": "1644982",
+                    "landmarkCityDestinationId": null,
+                    "type": "REGION",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 35.76037,
+                    "longitude": -83.522533,
+                    "searchDetail": null,
+                    "caption": "Gatlinburg - Pigeon Forge, Tennessee, United States of America",
+                    "name": "Gatlinburg - Pigeon Forge"
+                },
+                {
+                    "geoId": "602872",
+                    "destinationId": "1643994",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 32.51432,
+                    "longitude": -93.74781,
+                    "searchDetail": null,
+                    "caption": "Shreveport, Louisiana, United States of America",
+                    "name": "Shreveport"
+                },
+                {
+                    "geoId": "6148999",
+                    "destinationId": "716294",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 41.685421,
+                    "longitude": 15.379516,
+                    "searchDetail": null,
+                    "caption": "San <span class='highlighted'>Sever</span>o, Puglia, Italy",
+                    "name": "San Severo"
+                },
+                {
+                    "geoId": "553248634717687156",
+                    "destinationId": "10977674",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 42.026314,
+                    "longitude": 11.948336,
+                    "searchDetail": null,
+                    "caption": "Santa <span class='highlighted'>Sever</span>a, Santa Marinella, Lazio, Italy",
+                    "name": "Santa Severa"
+                },
+                {
+                    "geoId": "182680",
+                    "destinationId": "1698754",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 52.065359,
+                    "longitude": -2.217411,
+                    "searchDetail": null,
+                    "caption": "Upton upon <span class='highlighted'>Sever</span>n, Worcester, England, United Kingdom",
+                    "name": "Upton upon Severn"
+                },
+                {
+                    "geoId": "6056437",
+                    "destinationId": "932463",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 51.410626,
+                    "longitude": 6.026212,
+                    "searchDetail": null,
+                    "caption": "Sevenum, Limburg, Netherlands",
+                    "name": "Sevenum"
+                }
+            ]
+        },
+        {
+            "group": "HOTEL_GROUP",
+            "entities": [
+                {
+                    "geoId": "1121756",
+                    "destinationId": "186268",
+                    "landmarkCityDestinationId": null,
+                    "type": "HOTEL",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 48.851732,
+                    "longitude": 2.344859,
+                    "searchDetail": null,
+                    "caption": "H\u00f4tel Parc Saint <span class='highlighted'>S\u00e9ver</span>in, Paris, France",
+                    "name": "H\u00f4tel Parc Saint S\u00e9verin"
+                },
+                {
+                    "geoId": "2787241",
+                    "destinationId": "323527",
+                    "landmarkCityDestinationId": null,
+                    "type": "HOTEL",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 55.51338,
+                    "longitude": 9.76356,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Sever</span>in, Middelfart, Syddanmark, Denmark",
+                    "name": "Severin"
+                },
+                {
+                    "geoId": "23109392",
+                    "destinationId": "740500544",
+                    "landmarkCityDestinationId": null,
+                    "type": "HOTEL",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 54.890708,
+                    "longitude": 8.379013,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Sever</span>ins Appartmenth\u00e4user, Sylt, Schleswig-Holstein, Germany",
+                    "name": "Severins Appartmenth\u00e4user"
+                }
+            ]
+        },
+        {
+            "group": "LANDMARK_GROUP",
+            "entities": [
+                {
+                    "geoId": "6083073",
+                    "destinationId": "1660261",
+                    "landmarkCityDestinationId": "1486559",
+                    "type": "LANDMARK",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 36.88523063958069,
+                    "longitude": -76.30635129334796,
+                    "searchDetail": null,
+                    "caption": "Old Dominion University, Norfolk, Virginia, United States of America",
+                    "name": "Old Dominion University"
+                },
+                {
+                    "geoId": "553248621561945671",
+                    "destinationId": "10661853",
+                    "landmarkCityDestinationId": "549499",
+                    "type": "LANDMARK",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 51.46711,
+                    "longitude": 0.060551,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Sever</span>ndroog Castle, London, England, United Kingdom",
+                    "name": "Severndroog Castle"
+                }
+            ]
+        },
+        {
+            "group": "TRANSPORT_GROUP",
+            "entities": [
+                {
+                    "geoId": "6201654",
+                    "destinationId": "1737230",
+                    "landmarkCityDestinationId": null,
+                    "type": "METRO_STATION",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 40.322225,
+                    "longitude": -3.768608,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Sever</span>o Ochoa Hospital Station, Leganes, Community of Madrid, Spain",
+                    "name": "Severo Ochoa Hospital Station"
+                }
+            ]
+        }
+    ],
+    "geocodeFallback": false
+}

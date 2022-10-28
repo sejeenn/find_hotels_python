@@ -1,0 +1,1080 @@
+{
+    "result": "OK",
+    "data": {
+        "body": {
+            "header": "Sevierville, Tennessee, United States of America",
+            "query": {
+                "destination": {
+                    "id": "1421197",
+                    "value": "Sevierville, Tennessee, United States of America",
+                    "resolvedLocation": "CITY:1421197:UNKNOWN:UNKNOWN"
+                }
+            },
+            "searchResults": {
+                "totalCount": 6676,
+                "results": [
+                    {
+                        "id": 520416544,
+                        "name": "Americana Inn, a Travelodge by Wyndham",
+                        "starRating": 2.5,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "2825 Parkway",
+                            "extendedAddress": "",
+                            "locality": "Pigeon Forge",
+                            "postalCode": "37863",
+                            "region": "TN",
+                            "countryName": "United States",
+                            "countryCode": "us",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 5.4,
+                            "rating": "5.4",
+                            "total": 1523,
+                            "scale": 10
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "4.7 miles"
+                            },
+                            {
+                                "label": "Dollywood",
+                                "distance": "1.9 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "$62",
+                                "exactCurrent": 62.4,
+                                "old": "$78",
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total $140 for 2&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Pigeon Forge",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-445"
+                        },
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "MESOTESTUS|D13",
+                        "coordinate": {
+                            "lat": 35.79977,
+                            "lon": -83.56971
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 16231767,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/17000000/16240000/16231800/16231767/e88ca78b_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 357134,
+                        "name": "Riverview Inn & Suites",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "423 Forks Of The River Pkwy",
+                            "extendedAddress": "",
+                            "locality": "Sevierville",
+                            "postalCode": "37862",
+                            "region": "TN",
+                            "countryName": "United States",
+                            "countryCode": "us",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 6.6,
+                            "rating": "6.6",
+                            "total": 1010,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "0.5 miles"
+                            },
+                            {
+                                "label": "Dollywood",
+                                "distance": "5.1 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "$67",
+                                "exactCurrent": 66.6,
+                                "old": "$74",
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total $158 for 2&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Sevierville",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-443"
+                        },
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13",
+                        "coordinate": {
+                            "lat": 35.86291,
+                            "lon": -83.56702
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 2333442,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/3000000/2340000/2333500/2333442/66aec68b_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 549604,
+                        "name": "River Place Inn",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "3223 Parkway",
+                            "extendedAddress": "",
+                            "locality": "Pigeon Forge",
+                            "postalCode": "37863",
+                            "region": "TN",
+                            "countryName": "United States",
+                            "countryCode": "us",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 6.0,
+                            "rating": "6.0",
+                            "total": 623,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "5.2 miles"
+                            },
+                            {
+                                "label": "Dollywood",
+                                "distance": "1.3 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "$70",
+                                "exactCurrent": 70.4,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total $164 for 2&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Pigeon Forge",
+                        "deals": {},
+                        "messaging": {
+                            "scarcity": "4 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO",
+                        "coordinate": {
+                            "lat": 35.79235,
+                            "lon": -83.55932
+                        },
+                        "roomsLeft": 4,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 12433560,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/13000000/12440000/12433600/12433560/ab2865e0_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 133918,
+                        "name": "Days Inn by Wyndham Apple Valley Pigeon Forge/Sevierville",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "1841 Parkway Us 441 I 40",
+                            "extendedAddress": "",
+                            "locality": "Sevierville",
+                            "postalCode": "37862",
+                            "region": "TN",
+                            "countryName": "United States",
+                            "countryCode": "us",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 7.0,
+                            "rating": "7.0",
+                            "total": 1385,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "2.9 miles"
+                            },
+                            {
+                                "label": "Dollywood",
+                                "distance": "3.2 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "$74",
+                                "exactCurrent": 74.45,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total $168 for 2&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": true,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Sevierville",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|TESCO",
+                        "coordinate": {
+                            "lat": 35.828105,
+                            "lon": -83.574261
+                        },
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 1092,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/10000/1100/1092/8485fad3_b.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 340430,
+                        "name": "Days Inn & Suites by Wyndham Pigeon Forge",
+                        "starRating": 2.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "3206 Parkway",
+                            "extendedAddress": "",
+                            "locality": "Pigeon Forge",
+                            "postalCode": "37863-3420",
+                            "region": "TN",
+                            "countryName": "United States",
+                            "countryCode": "us",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 6.6,
+                            "rating": "6.6",
+                            "total": 1133,
+                            "scale": 10,
+                            "badge": "good",
+                            "badgeText": "Good"
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "5.2 miles"
+                            },
+                            {
+                                "label": "Dollywood",
+                                "distance": "1.4 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "$77",
+                                "exactCurrent": 76.5,
+                                "info": "nightly price per room",
+                                "additionalInfo": "This is the average nightly price for your dates.",
+                                "fullyBundledPricePerStay": "total $172 for 2&nbsp;nights"
+                            },
+                            "features": {
+                                "freeCancellation": true,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "Dual"
+                        },
+                        "neighbourhood": "Pigeon Forge",
+                        "deals": {},
+                        "messaging": {
+                            "scarcity": "1 left on our app"
+                        },
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|TESCO",
+                        "coordinate": {
+                            "lat": 35.79233,
+                            "lon": -83.56071
+                        },
+                        "roomsLeft": 1,
+                        "providerType": "LOCAL",
+                        "supplierHotelId": 3409037,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/4000000/3410000/3409100/3409037/debfcdaf_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    }
+                ],
+                "pagination": {
+                    "currentPage": 1,
+                    "pageGroup": "EXPEDIA_IN_POLYGON",
+                    "nextPageStartIndex": 5,
+                    "nextPageNumber": 2,
+                    "nextPageGroup": "EXPEDIA_IN_POLYGON"
+                }
+            },
+            "sortResults": {
+                "options": [
+                    {
+                        "label": "Featured",
+                        "itemMeta": "popular",
+                        "choices": [
+                            {
+                                "label": "Featured",
+                                "value": "BEST_SELLER",
+                                "selected": false
+                            }
+                        ],
+                        "enhancedChoices": []
+                    },
+                    {
+                        "label": "Star rating",
+                        "itemMeta": "star",
+                        "choices": [
+                            {
+                                "label": "Stars (high to low)",
+                                "value": "STAR_RATING_HIGHEST_FIRST",
+                                "selected": false
+                            },
+                            {
+                                "label": "Stars (low to high)",
+                                "value": "STAR_RATING_LOWEST_FIRST",
+                                "selected": false
+                            }
+                        ],
+                        "enhancedChoices": []
+                    },
+                    {
+                        "label": "Distance",
+                        "itemMeta": "distance",
+                        "choices": [
+                            {
+                                "label": "Distance to city center",
+                                "value": "DISTANCE_FROM_LANDMARK",
+                                "selected": false
+                            }
+                        ],
+                        "enhancedChoices": [
+                            {
+                                "label": "Landmarks",
+                                "itemMeta": "landmarks",
+                                "choices": [
+                                    {
+                                        "label": "City center",
+                                        "id": 1421197.0
+                                    },
+                                    {
+                                        "label": "Christmas Place",
+                                        "id": 10528545.0
+                                    },
+                                    {
+                                        "label": "Country Tonite Theatre",
+                                        "id": 1759607.0
+                                    },
+                                    {
+                                        "label": "Dolly Parton's Stampede Dinner Attraction",
+                                        "id": 1714577.0
+                                    },
+                                    {
+                                        "label": "Dollywood",
+                                        "id": 1291.0
+                                    },
+                                    {
+                                        "label": "Dollywood's Splash Country",
+                                        "id": 1800622.0
+                                    },
+                                    {
+                                        "label": "Gatlinburg, TN (GKT-Gatlinburg - Pigeon Forge)",
+                                        "id": 257.0
+                                    },
+                                    {
+                                        "label": "Great Smoky Mountain Wheel",
+                                        "id": 1771620.0
+                                    },
+                                    {
+                                        "label": "Hatfield and McCoy Dinner Show",
+                                        "id": 1757111.0
+                                    },
+                                    {
+                                        "label": "Island at Pigeon Forge",
+                                        "id": 1771621.0
+                                    },
+                                    {
+                                        "label": "LeConte Center at Pigeon Forge",
+                                        "id": 1800681.0
+                                    },
+                                    {
+                                        "label": "Memories Theatre",
+                                        "id": 133.0
+                                    },
+                                    {
+                                        "label": "Old Mill",
+                                        "id": 1800598.0
+                                    },
+                                    {
+                                        "label": "Pigeon Forge Snow",
+                                        "id": 11130276.0
+                                    },
+                                    {
+                                        "label": "Pigeon River Crossing",
+                                        "id": 1800635.0
+                                    },
+                                    {
+                                        "label": "Sevierville Convention Center",
+                                        "id": 1688482.0
+                                    },
+                                    {
+                                        "label": "Tanger Outlets",
+                                        "id": 1688483.0
+                                    },
+                                    {
+                                        "label": "The Comedy Barn Theater",
+                                        "id": 1726043.0
+                                    },
+                                    {
+                                        "label": "Titanic Museum",
+                                        "id": 1690037.0
+                                    },
+                                    {
+                                        "label": "Wilderness at the Smokies",
+                                        "id": 10528570.0
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Airports",
+                                "itemMeta": "airports",
+                                "choices": [
+                                    {
+                                        "label": "Alcoa - Knoxville Airport (TYS)",
+                                        "id": 1479776.0
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "label": "Guest rating",
+                        "itemMeta": "rating",
+                        "choices": [
+                            {
+                                "label": "Guest rating",
+                                "value": "GUEST_RATING",
+                                "selected": false
+                            }
+                        ],
+                        "enhancedChoices": []
+                    },
+                    {
+                        "label": "Price",
+                        "itemMeta": "price",
+                        "selectedChoiceLabel": "Price (low to high)",
+                        "choices": [
+                            {
+                                "label": "Price (high to low)",
+                                "value": "PRICE_HIGHEST_FIRST",
+                                "selected": false
+                            },
+                            {
+                                "label": "Price (low to high)",
+                                "value": "PRICE",
+                                "selected": true
+                            }
+                        ],
+                        "enhancedChoices": []
+                    }
+                ],
+                "distanceOptionLandmarkId": 1421197.0
+            },
+            "filters": {
+                "applied": true,
+                "name": {
+                    "item": {
+                        "value": ""
+                    },
+                    "autosuggest": {
+                        "additionalUrlParams": {
+                            "resolved-location": "CITY:1421197:UNKNOWN:UNKNOWN",
+                            "q-destination": "Sevierville, Tennessee, United States of America",
+                            "destination-id": "1421197"
+                        }
+                    }
+                },
+                "starRating": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "value": 5,
+                            "disabled": true
+                        },
+                        {
+                            "value": 4
+                        },
+                        {
+                            "value": 3
+                        },
+                        {
+                            "value": 2
+                        },
+                        {
+                            "value": 1
+                        }
+                    ]
+                },
+                "guestRating": {
+                    "range": {
+                        "min": {
+                            "defaultValue": 0.0
+                        },
+                        "max": {
+                            "defaultValue": 10.0
+                        }
+                    }
+                },
+                "landmarks": {
+                    "selectedOrder": [],
+                    "items": [
+                        {
+                            "label": "City center",
+                            "value": "1421197"
+                        },
+                        {
+                            "label": "Dollywood",
+                            "value": "1291"
+                        },
+                        {
+                            "label": "Island at Pigeon Forge",
+                            "value": "1771621"
+                        },
+                        {
+                            "label": "Sevierville Convention Center",
+                            "value": "1688482"
+                        },
+                        {
+                            "label": "LeConte Center at Pigeon Forge",
+                            "value": "1800681"
+                        },
+                        {
+                            "label": "Alcoa - Knoxville Airport (TYS)",
+                            "value": "1479776"
+                        },
+                        {
+                            "label": "Wilderness at the Smokies",
+                            "value": "10528570"
+                        },
+                        {
+                            "label": "Tanger Outlets",
+                            "value": "1688483"
+                        },
+                        {
+                            "label": "Dolly Parton's Stampede Dinner Attraction",
+                            "value": "1714577"
+                        },
+                        {
+                            "label": "Great Smoky Mountain Wheel",
+                            "value": "1771620"
+                        },
+                        {
+                            "label": "Titanic Museum",
+                            "value": "1690037"
+                        },
+                        {
+                            "label": "Old Mill",
+                            "value": "1800598"
+                        },
+                        {
+                            "label": "Christmas Place",
+                            "value": "10528545"
+                        },
+                        {
+                            "label": "Memories Theatre",
+                            "value": "133"
+                        },
+                        {
+                            "label": "Hatfield and McCoy Dinner Show",
+                            "value": "1757111"
+                        },
+                        {
+                            "label": "Dollywood's Splash Country",
+                            "value": "1800622"
+                        },
+                        {
+                            "label": "Gatlinburg, TN (GKT-Gatlinburg - Pigeon Forge)",
+                            "value": "257"
+                        },
+                        {
+                            "label": "Country Tonite Theatre",
+                            "value": "1759607"
+                        },
+                        {
+                            "label": "Pigeon River Crossing",
+                            "value": "1800635"
+                        },
+                        {
+                            "label": "Pigeon Forge Snow",
+                            "value": "11130276"
+                        }
+                    ],
+                    "distance": []
+                },
+                "neighbourhood": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Trappers Ridge",
+                            "value": "12539988"
+                        },
+                        {
+                            "label": "Little Creek Falls",
+                            "value": "12539692"
+                        }
+                    ]
+                },
+                "accommodationType": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Agritourism",
+                            "value": "40"
+                        },
+                        {
+                            "label": "Apart-hotels",
+                            "value": "20"
+                        },
+                        {
+                            "label": "Apartments",
+                            "value": "15"
+                        },
+                        {
+                            "label": "B&Bs",
+                            "value": "5"
+                        },
+                        {
+                            "label": "Cabins and lodges",
+                            "value": "9"
+                        },
+                        {
+                            "label": "Caravan parks",
+                            "value": "21"
+                        },
+                        {
+                            "label": "Castles",
+                            "value": "27"
+                        },
+                        {
+                            "label": "Chalets",
+                            "value": "10"
+                        },
+                        {
+                            "label": "Cottages",
+                            "value": "11"
+                        },
+                        {
+                            "label": "Guest houses",
+                            "value": "30"
+                        },
+                        {
+                            "label": "Hotels",
+                            "value": "1"
+                        },
+                        {
+                            "label": "Houseboats",
+                            "value": "16"
+                        },
+                        {
+                            "label": "Motels",
+                            "value": "7"
+                        },
+                        {
+                            "label": "Resorts",
+                            "value": "3"
+                        },
+                        {
+                            "label": "Tree houses",
+                            "value": "19"
+                        },
+                        {
+                            "label": "Vacation homes",
+                            "value": "4"
+                        },
+                        {
+                            "label": "Villas",
+                            "value": "14"
+                        }
+                    ]
+                },
+                "facilities": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "24-hour front desk",
+                            "value": "2063"
+                        },
+                        {
+                            "label": "Airport transfers",
+                            "value": "513"
+                        },
+                        {
+                            "label": "Bar",
+                            "value": "515"
+                        },
+                        {
+                            "label": "Bathtub in room",
+                            "value": "517"
+                        },
+                        {
+                            "label": "Breakfast included",
+                            "value": "2048"
+                        },
+                        {
+                            "label": "Business facilities",
+                            "value": "519"
+                        },
+                        {
+                            "label": "Childcare",
+                            "value": "521"
+                        },
+                        {
+                            "label": "Connecting rooms available",
+                            "value": "523"
+                        },
+                        {
+                            "label": "Cribs available",
+                            "value": "525"
+                        },
+                        {
+                            "label": "Electric vehicle charging point",
+                            "value": "1073743315"
+                        },
+                        {
+                            "label": "Gym",
+                            "value": "2"
+                        },
+                        {
+                            "label": "Internet Access",
+                            "value": "8"
+                        },
+                        {
+                            "label": "Kitchen",
+                            "value": "32"
+                        },
+                        {
+                            "label": "Meeting Facilities",
+                            "value": "1"
+                        },
+                        {
+                            "label": "Non-smoking",
+                            "value": "529"
+                        },
+                        {
+                            "label": "Parking",
+                            "value": "134234112"
+                        },
+                        {
+                            "label": "Pet Friendly",
+                            "value": "64"
+                        },
+                        {
+                            "label": "Pool",
+                            "value": "128"
+                        },
+                        {
+                            "label": "Restaurant",
+                            "value": "256"
+                        },
+                        {
+                            "label": "Ski-in/ski-out",
+                            "value": "535"
+                        },
+                        {
+                            "label": "Smoking areas",
+                            "value": "537"
+                        },
+                        {
+                            "label": "Spa",
+                            "value": "539"
+                        },
+                        {
+                            "label": "WiFi included",
+                            "value": "527"
+                        }
+                    ]
+                },
+                "accessibility": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Accessibility equipment for the deaf",
+                            "value": "2097152"
+                        },
+                        {
+                            "label": "Accessible bathroom",
+                            "value": "131072"
+                        },
+                        {
+                            "label": "Accessible parking",
+                            "value": "524288"
+                        },
+                        {
+                            "label": "Accessible path of travel",
+                            "value": "65536"
+                        },
+                        {
+                            "label": "Braille or raised signage",
+                            "value": "4194304"
+                        },
+                        {
+                            "label": "In-room accessibility",
+                            "value": "1048576"
+                        },
+                        {
+                            "label": "Roll-in shower",
+                            "value": "262144"
+                        },
+                        {
+                            "label": "Wheelchair accessible rooms",
+                            "value": "541"
+                        }
+                    ]
+                },
+                "themesAndTypes": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Adventure",
+                            "value": "18"
+                        },
+                        {
+                            "label": "Business",
+                            "value": "14"
+                        },
+                        {
+                            "label": "Family-friendly",
+                            "value": "25"
+                        },
+                        {
+                            "label": "Golf",
+                            "value": "26"
+                        },
+                        {
+                            "label": "Historic",
+                            "value": "2"
+                        },
+                        {
+                            "label": "Hot Springs",
+                            "value": "22"
+                        },
+                        {
+                            "label": "LGBTQ Welcoming",
+                            "value": "21"
+                        },
+                        {
+                            "label": "Luxury",
+                            "value": "15"
+                        },
+                        {
+                            "label": "Romantic",
+                            "value": "1"
+                        },
+                        {
+                            "label": "Ski",
+                            "value": "28"
+                        },
+                        {
+                            "label": "Spa Hotel",
+                            "value": "27"
+                        },
+                        {
+                            "label": "Winery/Vineyard",
+                            "value": "19"
+                        }
+                    ]
+                },
+                "price": {
+                    "label": "Nightly Price",
+                    "range": {
+                        "min": {
+                            "defaultValue": 0,
+                            "value": 50
+                        },
+                        "max": {
+                            "defaultValue": 500,
+                            "value": 100
+                        },
+                        "increments": 5
+                    },
+                    "multiplier": 1,
+                    "applied": true
+                },
+                "paymentPreference": {
+                    "items": [
+                        {
+                            "label": "Fully refundable",
+                            "value": "fc"
+                        },
+                        {
+                            "label": "Book without card details",
+                            "value": "ncc"
+                        },
+                        {
+                            "label": "Pay with Hotels.com gift card",
+                            "value": "gc"
+                        }
+                    ]
+                },
+                "welcomeRewards": {
+                    "label": "Hotels.com\u00ae Rewards",
+                    "items": [
+                        {
+                            "label": "Collect stamps",
+                            "value": "collect"
+                        },
+                        {
+                            "label": "Redeem reward* nights",
+                            "value": "redeem"
+                        }
+                    ]
+                }
+            },
+            "pointOfSale": {
+                "currency": {
+                    "code": "USD",
+                    "symbol": "$",
+                    "separators": ",.",
+                    "format": "${0}"
+                }
+            },
+            "miscellaneous": {
+                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE&rooms=1&destRegionID=1421197&hotelIds=520416544,357134,549604,133918,340430&adults=1&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=2ae52acf-8c1b-4855-a8d5-cf58b4969682&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-10-29&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=127.0.0.1&action=pageview&publisher=expedia&checkOut=2022-10-31&programId=1",
+                "showLegalInfoForStrikethroughPrices": true,
+                "legalInfoForStrikethroughPrices": "The struck-out price is based on the property\u2019s standard rate on our app, as determined and supplied by the property."
+            },
+            "pageInfo": {
+                "pageType": "dateful"
+            }
+        },
+        "common": {
+            "pointOfSale": {
+                "numberSeparators": ",.",
+                "brandName": "Hotels.com"
+            },
+            "tracking": {
+                "omniture": {
+                    "s.prop33": "D=v33",
+                    "s.prop32": "D=v43",
+                    "s.prop74": "search result with dates | ms shown | N",
+                    "s.products": "LOCAL;16231767,LOCAL;2333442,LOCAL;12433560",
+                    "s.eVar16": "Mob :: aApp",
+                    "s.eVar40": "D=v0",
+                    "s.eVar41": "USD",
+                    "s.eVar63": "9cc0c4ed-29d0-460d-a7de-98c63576e7e2",
+                    "s.eVar42": "1|2|20221029|20221031",
+                    "s.eVar4": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
+                    "s.eVar43": "en_US|HCOM_US|www.hotels.com",
+                    "s.eVar3": "1|0",
+                    "s.eVar22": "1|USD|24:520416544:78.0000:62.4000:0|24:357134:74.0000:66.6000:0|24:549604:70.3950:70.3950:0|24:133918:74.4500:74.4500:0|24:340430:76.5000:76.5000:0",
+                    "s.eVar2": "Sevierville, Tennessee, United States of America",
+                    "s.eVar24": "MCTC=20;TU=NA;PDID=NULL;MVT=",
+                    "s.eVar7": "1",
+                    "s.server": "www.hotels.com",
+                    "s.eVar6": "1421197",
+                    "s.prop29": "D=v42",
+                    "s.eVar5": "1",
+                    "s.prop27": "2ae52acf-8c1b-4855-a8d5-cf58b4969682",
+                    "s.eVar9": "Price - low to high",
+                    "s.prop22": "Price - USD50-100",
+                    "s.prop21": "0",
+                    "s.prop20": "1",
+                    "s.eVar69": "Mob :: aApp",
+                    "s.currencyCode": "USD",
+                    "s.eVar26": "US:OH:GERMANTOWN:542",
+                    "s.eVar29": "Mob :: aApp",
+                    "s.prop9": "6676",
+                    "s.eVar95": "Unknown",
+                    "s.prop7": "1664",
+                    "s.eVar31": "D=v0",
+                    "s.eVar10": "Price - USD50-100",
+                    "s.eVar32": "D=v0",
+                    "s.eVar33": "search result with dates",
+                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.001,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8130:000.001,M8336:000.000,M8347:019.002,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9155:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9434:000.000,M9469:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.000",
+                    "s.eVar13": "389367",
+                    "s.prop19": "1",
+                    "s.events": "event324,event320",
+                    "s.prop18": "D=v6",
+                    "s.prop5": "389367",
+                    "s.prop15": "2",
+                    "s.prop3": "Sevierville, Tennessee, United States of America",
+                    "s.prop14": "D=v7",
+                    "s.prop36": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
+                    "s.eVar93": "aws.us-west-2.unknown",
+                    "s.prop2": "Price - low to high"
+                }
+            }
+        }
+    }
+}
