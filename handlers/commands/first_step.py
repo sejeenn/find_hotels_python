@@ -37,7 +37,6 @@ def input_city(message: Message) -> None:
     else:
         bot.send_message(message.from_user.id, 'Не могу найти искомый город...' + data['command'])
 
-
     @bot.callback_query_handler(func=lambda call: call.data.isdigit())
     def callback_query(call):
         if call.data:

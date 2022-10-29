@@ -5,7 +5,7 @@ import datetime
 from states.user_inputs import UserInputState
 from telebot_calendar import Calendar, CallbackData, RUSSIAN_LANGUAGE
 from keyboards.calendar import main_calendar
-from utils.find_hotels import get_dict_hotels
+from handlers.commands import third_step
 
 calendar = Calendar(language=RUSSIAN_LANGUAGE)
 from telebot.types import ReplyKeyboardRemove, CallbackQuery
@@ -50,10 +50,25 @@ def input_price_max(message: Message) -> None:
     logger.info('Ввод максимальной стоимости номера')
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data['price_max'] = message.text
+    bot.set_state(message.from_user.id, UserInputState.photo_need, message.chat.id)
+    bot.send_message(message.from_user.id, 'Нужно ли вывести фотографии (Yes/No или Да/Нет)?')
 
-    # -----------Пытаемся освоить ввод даты заезда-выезда-----------------------
 
-    main_calendar.calendar_date(message, 'Выберите дату заезда:')
+@bot.message_handler(state=UserInputState.photo_need)
+def need_photo(message: Message) -> None:
+    logger.info('Спрашиваем пользователя о надобности фотографий')
+    answer_yes = ('Yes', 'yes', 'YES', 'ДА', 'Да', 'да')
+    answer_no = ('No', 'no', 'NO', 'НЕТ', 'Нет', 'нет')
+    if message.text in answer_yes:
+        with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
+            data['photo_need'] = message.text
+        bot.set_state(message.from_user.id, UserInputState.photo_count, message.chat.id)
+        bot.send_message(message.from_user.id, 'Сколько фотографий вывести (от 1 до 10) ?')
+    elif message.text in answer_no:
+        main_calendar.calendar_date(message, 'Выберите дату заезда:')
+        with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
+            data['photo_need'] = message.text
+            data['photo_count'] = '0'
 
     @bot.callback_query_handler(func=lambda call: call.data.startswith(calendar_1_callback.prefix))
     def check_in(call):
@@ -72,7 +87,7 @@ def input_price_max(message: Message) -> None:
                     if select_date > checkin:
                         bot.send_message(message.from_user.id, 'Записал дату выезда:')
                         data_end['check_out'] = date.strftime('%Y-%m-%d')
-                        end_input(message, data_end)
+                        third_step.finish_him(message, data_end)
                     else:
                         bot.send_message(message.from_user.id, 'Дата выезда должна быть больше '
                                                                'даты заезда, введи еще раз!')
@@ -92,31 +107,9 @@ def input_price_max(message: Message) -> None:
                              reply_markup=ReplyKeyboardRemove())
 
 
-def end_input(message, data):
-    bot.send_message(message.from_user.id, f"Проверьте правильность ввода данных:"
-                                               f"\nКоманда: {data['command']}"
-                                               f"\nИщем город: {data['input_city']}"
-                                               f"\nDestination_ID: {data['destination_id']}"
-                                               f"\nСортировка: {data['sort_order']}"
-                                               f"\nЧисло отелей на странице: {data['page_size']}"
-                                               f"\nМинимальная стоимость номера: {data['price_min']}"
-                                               f"\nМаксимальная стоимость номера: {data['price_max']}"
-                                               f"\nДата заезда: {data['check_in']}"
-                                               f"\nДата выезда: {data['check_out']}"
-                                               f"\n\nВыполняю поиск по заданным параметрам")
-    #     Из полученных данных создаем query_string и отправляем ее в поиск.
-    querystring = {"destinationId": data['destination_id'],
-                   "pageNumber": "1", "pageSize": data['page_size'],
-                   "checkIn": data['check_in'], "checkOut": data['check_out'], "adults1": "1",
-                   "priceMin": data['price_min'], "priceMax": data['price_max'],
-                   "sortOrder": data['sort_order'], "locale": "en_US", "currency": "USD"}
-
-    found_hotels = get_dict_hotels(querystring)
-    for key, value in found_hotels.items():
-        bot.send_photo(message.from_user.id, value[4])
-        bot.send_message(message.from_user.id, f"Название отеля: {value[0]}"
-                                               f"\nАдрес: {value[1]}"
-                                               f"\nСтоимость проживания: {value[2]}"
-                                               f"\nРасстояние до {value[3][0]['label']} - {value[3][0]['distance']}"
-                                               f"\nРасстояние до {value[3][1]['label']} - {value[3][1]['distance']}")
-
+@bot.message_handler(state=UserInputState.photo_count)
+def photo_count(message: Message) -> None:
+    logger.info('Пользователю нужны фотографии, записываем их количество')
+    with bot.retrieve_data(message.from_user.id, message.chat.id) as photo:
+        photo['photo_count'] = message.text
+    main_calendar.calendar_date(message, 'Выберите дату заезда:')
