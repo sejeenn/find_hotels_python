@@ -2,179 +2,179 @@
     "result": "OK",
     "data": {
         "body": {
-            "header": "New Glasgow, Nova Scotia, Canada",
+            "header": "Dubai, Dubai, United Arab Emirates",
             "query": {
                 "destination": {
-                    "id": "1643772",
-                    "value": "New Glasgow, Nova Scotia, Canada",
-                    "resolvedLocation": "CITY:1643772:UNKNOWN:UNKNOWN"
+                    "id": "11594",
+                    "value": "Dubai, Dubai, United Arab Emirates",
+                    "resolvedLocation": "CITY:11594:UNKNOWN:UNKNOWN"
                 }
             },
             "searchResults": {
-                "totalCount": 43,
+                "totalCount": 2826,
                 "results": [
                     {
-                        "id": 182614,
-                        "name": "Inn on Prince Hotel & Conference Centre Truro",
-                        "starRating": 3.0,
+                        "id": 1840460928,
+                        "name": "Suha Mina Rashid Hotel Apartments",
+                        "starRating": 0.0,
                         "urls": {},
                         "address": {
-                            "streetAddress": "437 Prince St",
+                            "streetAddress": "Al Mankhool Rd, Bur Dubai",
                             "extendedAddress": "",
-                            "locality": "Truro",
-                            "postalCode": "B2N1E6",
-                            "region": "NS",
-                            "countryName": "Canada",
-                            "countryCode": "ca",
+                            "locality": "Dubai",
+                            "postalCode": "",
+                            "region": "",
+                            "countryName": "United Arab Emirates",
+                            "countryCode": "ae",
                             "obfuscate": false
                         },
                         "welcomeRewards": {
                             "collect": true
                         },
                         "guestReviews": {
-                            "unformattedRating": 8.4,
-                            "rating": "8.4",
-                            "total": 1259,
+                            "unformattedRating": 8.6,
+                            "rating": "8.6",
+                            "total": 23,
                             "scale": 10,
-                            "badge": "very-good",
-                            "badgeText": "Very Good"
+                            "badge": "fabulous",
+                            "badgeText": "Fabulous"
                         },
                         "landmarks": [
                             {
                                 "label": "City center",
-                                "distance": "35 miles"
+                                "distance": "1.7 miles"
                             },
                             {
-                                "label": "Saint Francis Xavier University",
-                                "distance": "65 miles"
+                                "label": "Burj Khalifa",
+                                "distance": "3.9 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "$82",
-                                "exactCurrent": 81.79,
-                                "old": "$102",
-                                "fullyBundledPricePerStay": "total $94"
-                            },
-                            "features": {
-                                "freeCancellation": true,
-                                "paymentPreference": true,
-                                "noCCRequired": false
-                            },
-                            "type": "Dual"
-                        },
-                        "neighbourhood": "Truro",
-                        "deals": {
-                            "secretPrice": {
-                                "dealText": "Save more with Secret Prices"
-                            },
-                            "priceReasoning": "DRR-445"
-                        },
-                        "messaging": {},
-                        "badging": {},
-                        "pimmsAttributes": "DoubleStamps|TESCO",
-                        "coordinate": {
-                            "lat": 45.366226,
-                            "lon": -63.290663
-                        },
-                        "providerType": "LOCAL",
-                        "supplierHotelId": 428538,
-                        "isAlternative": false,
-                        "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/1000000/430000/428600/428538/68daff0b_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
-                        }
-                    },
-                    {
-                        "id": 336038,
-                        "name": "The Lionstone Inn Motel and Cottages",
-                        "starRating": 2.0,
-                        "urls": {},
-                        "address": {
-                            "streetAddress": "241 West River Road",
-                            "extendedAddress": "",
-                            "locality": "Pictou",
-                            "postalCode": "B0K1H0",
-                            "region": "NS",
-                            "countryName": "Canada",
-                            "countryCode": "ca",
-                            "obfuscate": false
-                        },
-                        "welcomeRewards": {
-                            "collect": true
-                        },
-                        "guestReviews": {
-                            "unformattedRating": 7.6,
-                            "rating": "7.6",
-                            "total": 322,
-                            "scale": 10,
-                            "badge": "good",
-                            "badgeText": "Good"
-                        },
-                        "landmarks": [
-                            {
-                                "label": "City center",
-                                "distance": "7.5 miles"
-                            },
-                            {
-                                "label": "Saint Francis Xavier University",
-                                "distance": "36 miles"
-                            }
-                        ],
-                        "geoBullets": [],
-                        "ratePlan": {
-                            "price": {
-                                "current": "$76",
-                                "exactCurrent": 76.49,
-                                "fullyBundledPricePerStay": "total $88"
+                                "current": "$52",
+                                "exactCurrent": 51.84,
+                                "old": "$65",
+                                "fullyBundledPricePerStay": "total $65"
                             },
                             "features": {
                                 "freeCancellation": false,
                                 "paymentPreference": false,
                                 "noCCRequired": false
                             },
-                            "type": "HC"
+                            "type": "EC"
                         },
-                        "neighbourhood": "Pictou",
-                        "deals": {},
+                        "neighbourhood": "Al Mankhool",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-443"
+                        },
                         "messaging": {
-                            "scarcity": "3 left on our app"
+                            "scarcity": "2 left on our app"
                         },
                         "badging": {},
+                        "pimmsAttributes": "D13",
                         "coordinate": {
-                            "lat": 45.679621,
-                            "lon": -62.724804
+                            "lat": 25.251634,
+                            "lon": 55.291354
                         },
-                        "roomsLeft": 3,
+                        "roomsLeft": 2,
                         "providerType": "LOCAL",
-                        "supplierHotelId": 3124455,
+                        "supplierHotelId": 57483154,
+                        "vrBadge": "Condo Hotel",
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/4000000/3130000/3124500/3124455/5245e09f_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/58000000/57490000/57483200/57483154/1edf2cb4_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     },
                     {
-                        "id": 550610,
-                        "name": "Homeward Inns of Canada",
-                        "starRating": 2.0,
+                        "id": 494848,
+                        "name": "Grand Sina Hotel",
+                        "starRating": 1.0,
                         "urls": {},
                         "address": {
-                            "streetAddress": "41 James Street",
-                            "extendedAddress": "",
-                            "locality": "Antigonish",
-                            "postalCode": "B2G 1R6",
-                            "region": "NS",
-                            "countryName": "Canada",
-                            "countryCode": "ca",
+                            "streetAddress": "Al Sabakha Street",
+                            "extendedAddress": "Deira",
+                            "locality": "Dubai",
+                            "postalCode": "",
+                            "region": "Dubai",
+                            "countryName": "United Arab Emirates",
+                            "countryCode": "ae",
                             "obfuscate": false
                         },
                         "welcomeRewards": {
                             "collect": true
                         },
                         "guestReviews": {
-                            "unformattedRating": 7.8,
-                            "rating": "7.8",
-                            "total": 305,
+                            "unformattedRating": 5.4,
+                            "rating": "5.4",
+                            "total": 40,
+                            "scale": 10
+                        },
+                        "landmarks": [
+                            {
+                                "label": "City center",
+                                "distance": "0.8 miles"
+                            },
+                            {
+                                "label": "Burj Khalifa",
+                                "distance": "5.3 miles"
+                            }
+                        ],
+                        "geoBullets": [],
+                        "ratePlan": {
+                            "price": {
+                                "current": "$53",
+                                "exactCurrent": 52.57,
+                                "fullyBundledPricePerStay": "total $54"
+                            },
+                            "features": {
+                                "freeCancellation": false,
+                                "paymentPreference": false,
+                                "noCCRequired": false
+                            },
+                            "type": "EC"
+                        },
+                        "neighbourhood": "Al Sabkha",
+                        "deals": {},
+                        "messaging": {},
+                        "badging": {},
+                        "pimmsAttributes": "DoubleStamps|D13|TESCO|showGoldContentDescriptionHCOMUSenUS",
+                        "coordinate": {
+                            "lat": 25.269718,
+                            "lon": 55.302166
+                        },
+                        "providerType": "MULTISOURCE",
+                        "supplierHotelId": 10073918,
+                        "isAlternative": false,
+                        "optimizedThumbUrls": {
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/11000000/10080000/10074000/10073918/feeecc85_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                        }
+                    },
+                    {
+                        "id": 257753,
+                        "name": "Nihal Hotel",
+                        "starRating": 3.0,
+                        "urls": {},
+                        "address": {
+                            "streetAddress": "Between Al Rigga and Al Maktoum Road",
+                            "extendedAddress": "",
+                            "locality": "Dubai",
+                            "postalCode": "14914",
+                            "region": "",
+                            "countryName": "United Arab Emirates",
+                            "countryCode": "ae",
+                            "obfuscate": false
+                        },
+                        "welcomeRewards": {
+                            "collect": true
+                        },
+                        "guestReviews": {
+                            "unformattedRating": 6.4,
+                            "rating": "6.4",
+                            "total": 67,
                             "scale": 10,
                             "badge": "good",
                             "badgeText": "Good"
@@ -182,43 +182,47 @@
                         "landmarks": [
                             {
                                 "label": "City center",
-                                "distance": "31 miles"
+                                "distance": "0.7 miles"
                             },
                             {
-                                "label": "Saint Francis Xavier University",
-                                "distance": "0.4 miles"
+                                "label": "Burj Khalifa",
+                                "distance": "5.4 miles"
                             }
                         ],
                         "geoBullets": [],
                         "ratePlan": {
                             "price": {
-                                "current": "$75",
-                                "exactCurrent": 75.02,
-                                "fullyBundledPricePerStay": "total $86"
+                                "current": "$53",
+                                "exactCurrent": 52.87,
+                                "old": "$56",
+                                "fullyBundledPricePerStay": "total $68"
                             },
                             "features": {
-                                "freeCancellation": true,
+                                "freeCancellation": false,
                                 "paymentPreference": false,
-                                "noCCRequired": true
+                                "noCCRequired": false
                             },
-                            "type": "HC"
+                            "type": "EC"
                         },
-                        "neighbourhood": "Antigonish",
-                        "deals": {},
-                        "messaging": {
-                            "scarcity": "3 left on our app"
+                        "neighbourhood": "Al Muraqqabat",
+                        "deals": {
+                            "secretPrice": {
+                                "dealText": "Save more with Secret Prices"
+                            },
+                            "priceReasoning": "DRR-443"
                         },
+                        "messaging": {},
                         "badging": {},
+                        "pimmsAttributes": "DoubleStamps|priceRangeCA|D13|TESCO",
                         "coordinate": {
-                            "lat": 45.615335,
-                            "lon": -62.003004
+                            "lat": 25.260147,
+                            "lon": 55.324649
                         },
-                        "roomsLeft": 3,
                         "providerType": "LOCAL",
-                        "supplierHotelId": 12467596,
+                        "supplierHotelId": 1723385,
                         "isAlternative": false,
                         "optimizedThumbUrls": {
-                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/13000000/12470000/12467600/12467596/19941d16_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
+                            "srpDesktop": "https://exp.cdn-hotels.com/hotels/2000000/1730000/1723400/1723385/c543d383_z.jpg?impolicy=fcrop&w=250&h=140&q=high"
                         }
                     }
                 ],
@@ -226,8 +230,8 @@
                     "currentPage": 1,
                     "pageGroup": "EXPEDIA_IN_POLYGON",
                     "nextPageStartIndex": 3,
-                    "nextPageNumber": 1,
-                    "nextPageGroup": "TPI_IN_POLYGON"
+                    "nextPageNumber": 2,
+                    "nextPageGroup": "EXPEDIA_IN_POLYGON"
                 }
             },
             "sortResults": {
@@ -278,83 +282,187 @@
                                 "choices": [
                                     {
                                         "label": "City center",
-                                        "id": 1643772.0
+                                        "id": 11594.0
                                     },
                                     {
-                                        "label": "Antigonish Golf and Country Club",
-                                        "id": 1735062.0
+                                        "label": "Burj Al Arab",
+                                        "id": 10603258.0
                                     },
                                     {
-                                        "label": "Antigonish Mall",
-                                        "id": 1735061.0
+                                        "label": "Burj Khalifa",
+                                        "id": 1660638.0
                                     },
                                     {
-                                        "label": "Berlin Wall Sections",
-                                        "id": 10532979.0
+                                        "label": "BurJuman Mall",
+                                        "id": 1675443.0
                                     },
                                     {
-                                        "label": "Caribou and Munroes Island Provincial Park",
-                                        "id": 10532985.0
+                                        "label": "City Centre Deira",
+                                        "id": 1637569.0
                                     },
                                     {
-                                        "label": "Caspers Gifts and Crafts",
-                                        "id": 10532982.0
+                                        "label": "Dubai Creek",
+                                        "id": 1660641.0
                                     },
                                     {
-                                        "label": "DeCoste Entertainment Centre",
-                                        "id": 10541108.0
+                                        "label": "Dubai Cruise Terminal",
+                                        "id": 1692146.0
                                     },
                                     {
-                                        "label": "Glasgow Square Theatre",
-                                        "id": 10541105.0
+                                        "label": "Dubai Exhibition Centre",
+                                        "id": 10766332.0
                                     },
                                     {
-                                        "label": "Glen Lovat Golf Club",
-                                        "id": 10541111.0
+                                        "label": "Dubai Fountain",
+                                        "id": 1687611.0
                                     },
                                     {
-                                        "label": "Green Hill Provincial Park",
-                                        "id": 10541248.0
+                                        "label": "Dubai International Convention and Exhibition Centre",
+                                        "id": 1675467.0
                                     },
                                     {
-                                        "label": "Hector Heritage Quay",
-                                        "id": 1774892.0
+                                        "label": "Dubai Mall",
+                                        "id": 1686797.0
                                     },
                                     {
-                                        "label": "Melmerby Beach Provincial Park",
-                                        "id": 10541113.0
+                                        "label": "Dubai Marina Mall",
+                                        "id": 1687762.0
                                     },
                                     {
-                                        "label": "New Glasgow City Hall",
-                                        "id": 10541106.0
+                                        "label": "Dubai World Trade Centre",
+                                        "id": 10450061.0
                                     },
                                     {
-                                        "label": "Northumberland Fisheries Museum",
-                                        "id": 10534612.0
+                                        "label": "Global Village",
+                                        "id": 10782130.0
                                     },
                                     {
-                                        "label": "Pictou Marina",
-                                        "id": 1774896.0
+                                        "label": "Gold Souk",
+                                        "id": 1660651.0
                                     },
                                     {
-                                        "label": "Powells Point Provincial Park",
-                                        "id": 10541112.0
+                                        "label": "Jumeirah Beach",
+                                        "id": 1665341.0
                                     },
                                     {
-                                        "label": "RiverRun Golf Club",
-                                        "id": 10541242.0
+                                        "label": "La Mer",
+                                        "id": 11130159.0
                                     },
                                     {
-                                        "label": "Saint Francis Xavier University",
-                                        "id": 1735063.0
+                                        "label": "Mall of the Emirates",
+                                        "id": 1660656.0
                                     },
                                     {
-                                        "label": "Salt Springs Provincial Park",
-                                        "id": 10541244.0
+                                        "label": "Souk Madinat Jumeirah",
+                                        "id": 1736294.0
                                     },
                                     {
-                                        "label": "Sports Hall of Fame",
-                                        "id": 1790478.0
+                                        "label": "The Walk",
+                                        "id": 1807444.0
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Train stations",
+                                "itemMeta": "stations",
+                                "choices": [
+                                    {
+                                        "label": "Abu Hail Station",
+                                        "id": 1700661.0
+                                    },
+                                    {
+                                        "label": "Airport Terminal 1 Station",
+                                        "id": 1700568.0
+                                    },
+                                    {
+                                        "label": "Airport Terminal 3 Station",
+                                        "id": 1700569.0
+                                    },
+                                    {
+                                        "label": "Al Ghubaiba Station",
+                                        "id": 1700671.0
+                                    },
+                                    {
+                                        "label": "Al Jadaf Station",
+                                        "id": 1700675.0
+                                    },
+                                    {
+                                        "label": "Al Rigga Station",
+                                        "id": 1700572.0
+                                    },
+                                    {
+                                        "label": "Baniyas Square Station",
+                                        "id": 1700665.0
+                                    },
+                                    {
+                                        "label": "Burj Khalifa - Dubai Mall Station",
+                                        "id": 1700573.0
+                                    },
+                                    {
+                                        "label": "Deira City Centre Station",
+                                        "id": 1700575.0
+                                    },
+                                    {
+                                        "label": "Dubai Airport Free Zone Station",
+                                        "id": 1700666.0
+                                    },
+                                    {
+                                        "label": "Dubai Internet City Station",
+                                        "id": 1700576.0
+                                    },
+                                    {
+                                        "label": "Emirates Towers Station",
+                                        "id": 1700578.0
+                                    },
+                                    {
+                                        "label": "Ibn Battuta Station",
+                                        "id": 1700590.0
+                                    },
+                                    {
+                                        "label": "Jumeirah Lake Towers Station",
+                                        "id": 1700593.0
+                                    },
+                                    {
+                                        "label": "Khalid Bin Al Waleed Station",
+                                        "id": 1700582.0
+                                    },
+                                    {
+                                        "label": "Mall of the Emirates Station",
+                                        "id": 1700583.0
+                                    },
+                                    {
+                                        "label": "Mashreq Metro Station",
+                                        "id": 1700586.0
+                                    },
+                                    {
+                                        "label": "Salah Al Din Station",
+                                        "id": 1700669.0
+                                    },
+                                    {
+                                        "label": "Union Station",
+                                        "id": 1700587.0
+                                    },
+                                    {
+                                        "label": "World Trade Centre Station",
+                                        "id": 1700588.0
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Airports",
+                                "itemMeta": "airports",
+                                "choices": [
+                                    {
+                                        "label": "Dubai (DWC-Al Maktoum Intl.)",
+                                        "id": 1712721.0
+                                    },
+                                    {
+                                        "label": "Dubai (DXB-Dubai Intl.)",
+                                        "id": 1637568.0
+                                    },
+                                    {
+                                        "label": "Sharjah (SHJ-Sharjah Intl.)",
+                                        "id": 1712594.0
                                     }
                                 ]
                             }
@@ -375,23 +483,23 @@
                     {
                         "label": "Price",
                         "itemMeta": "price",
-                        "selectedChoiceLabel": "Price (high to low)",
+                        "selectedChoiceLabel": "Price (low to high)",
                         "choices": [
                             {
                                 "label": "Price (high to low)",
                                 "value": "PRICE_HIGHEST_FIRST",
-                                "selected": true
+                                "selected": false
                             },
                             {
                                 "label": "Price (low to high)",
                                 "value": "PRICE",
-                                "selected": false
+                                "selected": true
                             }
                         ],
                         "enhancedChoices": []
                     }
                 ],
-                "distanceOptionLandmarkId": 1643772.0
+                "distanceOptionLandmarkId": 11594.0
             },
             "filters": {
                 "applied": true,
@@ -401,9 +509,9 @@
                     },
                     "autosuggest": {
                         "additionalUrlParams": {
-                            "resolved-location": "CITY:1643772:UNKNOWN:UNKNOWN",
-                            "q-destination": "New Glasgow, Nova Scotia, Canada",
-                            "destination-id": "1643772"
+                            "resolved-location": "CITY:11594:UNKNOWN:UNKNOWN",
+                            "q-destination": "Dubai, Dubai, United Arab Emirates",
+                            "destination-id": "11594"
                         }
                     }
                 },
@@ -411,8 +519,7 @@
                     "applied": false,
                     "items": [
                         {
-                            "value": 5,
-                            "disabled": true
+                            "value": 5
                         },
                         {
                             "value": 4
@@ -424,8 +531,7 @@
                             "value": 2
                         },
                         {
-                            "value": 1,
-                            "disabled": true
+                            "value": 1
                         }
                     ]
                 },
@@ -444,90 +550,423 @@
                     "items": [
                         {
                             "label": "City center",
-                            "value": "1643772"
+                            "value": "11594"
                         },
                         {
-                            "label": "Saint Francis Xavier University",
-                            "value": "1735063"
+                            "label": "Burj Khalifa",
+                            "value": "1660638"
                         },
                         {
-                            "label": "Caribou and Munroes Island Provincial Park",
-                            "value": "10532985"
+                            "label": "Dubai (DXB-Dubai Intl.)",
+                            "value": "1637568"
                         },
                         {
-                            "label": "Glasgow Square Theatre",
-                            "value": "10541105"
+                            "label": "Dubai Mall",
+                            "value": "1686797"
                         },
                         {
-                            "label": "Berlin Wall Sections",
-                            "value": "10532979"
+                            "label": "Jumeirah Beach",
+                            "value": "1665341"
                         },
                         {
-                            "label": "DeCoste Entertainment Centre",
-                            "value": "10541108"
+                            "label": "Mall of the Emirates",
+                            "value": "1660656"
                         },
                         {
-                            "label": "New Glasgow City Hall",
-                            "value": "10541106"
+                            "label": "City Centre Deira",
+                            "value": "1637569"
                         },
                         {
-                            "label": "Melmerby Beach Provincial Park",
-                            "value": "10541113"
+                            "label": "The Walk",
+                            "value": "1807444"
                         },
                         {
-                            "label": "Salt Springs Provincial Park",
-                            "value": "10541244"
+                            "label": "Dubai World Trade Centre",
+                            "value": "10450061"
                         },
                         {
-                            "label": "Northumberland Fisheries Museum",
-                            "value": "10534612"
+                            "label": "Dubai Marina Mall",
+                            "value": "1687762"
                         },
                         {
-                            "label": "Pictou Marina",
-                            "value": "1774896"
+                            "label": "Burj Khalifa - Dubai Mall Station",
+                            "value": "1700573"
                         },
                         {
-                            "label": "RiverRun Golf Club",
-                            "value": "10541242"
+                            "label": "Burj Al Arab",
+                            "value": "10603258"
                         },
                         {
-                            "label": "Hector Heritage Quay",
-                            "value": "1774892"
+                            "label": "Dubai International Convention and Exhibition Centre",
+                            "value": "1675467"
                         },
                         {
-                            "label": "Caspers Gifts and Crafts",
-                            "value": "10532982"
+                            "label": "Global Village",
+                            "value": "10782130"
                         },
                         {
-                            "label": "Glen Lovat Golf Club",
-                            "value": "10541111"
+                            "label": "Airport Terminal 3 Station",
+                            "value": "1700569"
                         },
                         {
-                            "label": "Green Hill Provincial Park",
-                            "value": "10541248"
+                            "label": "Dubai Fountain",
+                            "value": "1687611"
                         },
                         {
-                            "label": "Antigonish Golf and Country Club",
-                            "value": "1735062"
+                            "label": "Dubai Cruise Terminal",
+                            "value": "1692146"
                         },
                         {
-                            "label": "Antigonish Mall",
-                            "value": "1735061"
+                            "label": "Dubai Creek",
+                            "value": "1660641"
                         },
                         {
-                            "label": "Powells Point Provincial Park",
-                            "value": "10541112"
+                            "label": "Dubai Exhibition Centre",
+                            "value": "10766332"
                         },
                         {
-                            "label": "Sports Hall of Fame",
-                            "value": "1790478"
+                            "label": "BurJuman Mall",
+                            "value": "1675443"
                         }
                     ],
                     "distance": []
                 },
+                "neighbourhood": {
+                    "applied": false,
+                    "items": [
+                        {
+                            "label": "Downtown Dubai",
+                            "value": "1693852"
+                        },
+                        {
+                            "label": "Jebel Ali",
+                            "value": "1640198"
+                        },
+                        {
+                            "label": "Deira",
+                            "value": "1665340"
+                        },
+                        {
+                            "label": "Palm Jumeirah",
+                            "value": "1693814"
+                        },
+                        {
+                            "label": "Bur Dubai",
+                            "value": "1705383"
+                        },
+                        {
+                            "label": "Business Bay",
+                            "value": "1693849"
+                        },
+                        {
+                            "label": "Jumeirah Beach Residence",
+                            "value": "1766308"
+                        },
+                        {
+                            "label": "Dubai Healthcare City",
+                            "value": "1692148"
+                        },
+                        {
+                            "label": "Al Barsha",
+                            "value": "1701273"
+                        },
+                        {
+                            "label": "Trade Centre 2",
+                            "value": "1693865"
+                        },
+                        {
+                            "label": "Dubai Festival City",
+                            "value": "1903190"
+                        },
+                        {
+                            "label": "Oud Metha",
+                            "value": "1693862"
+                        },
+                        {
+                            "label": "Culture Village",
+                            "value": "10873366"
+                        },
+                        {
+                            "label": "Jumeirah",
+                            "value": "1693861"
+                        },
+                        {
+                            "label": "Trade Center",
+                            "value": "10794118"
+                        },
+                        {
+                            "label": "Barsha Heights",
+                            "value": "1753757"
+                        },
+                        {
+                            "label": "Trade Centre Area",
+                            "value": "1712541"
+                        },
+                        {
+                            "label": "Dubai Media City",
+                            "value": "1692147"
+                        },
+                        {
+                            "label": "Zabeel",
+                            "value": "1693874"
+                        },
+                        {
+                            "label": "Dubai World Central",
+                            "value": "1810827"
+                        },
+                        {
+                            "label": "Al Rigga",
+                            "value": "11117251"
+                        },
+                        {
+                            "label": "Al Qusais",
+                            "value": "1693831"
+                        },
+                        {
+                            "label": "Dubai Internet City",
+                            "value": "10836744"
+                        },
+                        {
+                            "label": "Al Nahda",
+                            "value": "1904183"
+                        },
+                        {
+                            "label": "International City",
+                            "value": "11117844"
+                        },
+                        {
+                            "label": "Al Satwa",
+                            "value": "1693845"
+                        },
+                        {
+                            "label": "Jebel Ali Free Zone",
+                            "value": "1910340"
+                        },
+                        {
+                            "label": "Discovery Gardens",
+                            "value": "1693850"
+                        },
+                        {
+                            "label": "DIFC",
+                            "value": "11117245"
+                        },
+                        {
+                            "label": "Green Community",
+                            "value": "1693890"
+                        },
+                        {
+                            "label": "Dubai Investment Park",
+                            "value": "10565568"
+                        },
+                        {
+                            "label": "Old Dubai",
+                            "value": "10873452"
+                        },
+                        {
+                            "label": "Al Baraha",
+                            "value": "1693873"
+                        },
+                        {
+                            "label": "Garhoud",
+                            "value": "1693855"
+                        },
+                        {
+                            "label": "Dubai Marina",
+                            "value": "1686798"
+                        },
+                        {
+                            "label": "The Greens",
+                            "value": "1693863"
+                        },
+                        {
+                            "label": "Jumeirah Lake Towers",
+                            "value": "1692326"
+                        },
+                        {
+                            "label": "Academic City",
+                            "value": "11109252"
+                        },
+                        {
+                            "label": "Jadaf",
+                            "value": "1693860"
+                        },
+                        {
+                            "label": "Dubai Parks and Resorts",
+                            "value": "10673640"
+                        },
+                        {
+                            "label": "Dubai Silicon Oasis",
+                            "value": "1692210"
+                        },
+                        {
+                            "label": "Mirdif",
+                            "value": "11117837"
+                        },
+                        {
+                            "label": "Al Karama",
+                            "value": "1693830"
+                        },
+                        {
+                            "label": "Al Quoz",
+                            "value": "1693876"
+                        },
+                        {
+                            "label": "Al Muraqqabat",
+                            "value": "11117835"
+                        },
+                        {
+                            "label": "Dubai Studio City",
+                            "value": "10836745"
+                        },
+                        {
+                            "label": "Naif",
+                            "value": "11117839"
+                        },
+                        {
+                            "label": "Arabian Ranches",
+                            "value": "10565570"
+                        },
+                        {
+                            "label": "Al Mamzar",
+                            "value": "11117838"
+                        },
+                        {
+                            "label": "Al Wasl",
+                            "value": "1693847"
+                        },
+                        {
+                            "label": "Emirates Hills",
+                            "value": "10873451"
+                        },
+                        {
+                            "label": "Al Ras",
+                            "value": "11117249"
+                        },
+                        {
+                            "label": "Umm Suqeim",
+                            "value": "1693866"
+                        },
+                        {
+                            "label": "Al Sufouh",
+                            "value": "1693846"
+                        },
+                        {
+                            "label": "Ras Al Khor Industrial Area",
+                            "value": "1693867"
+                        },
+                        {
+                            "label": "Al Quoz 4",
+                            "value": "11117244"
+                        },
+                        {
+                            "label": "Al Shindagha",
+                            "value": "1693871"
+                        },
+                        {
+                            "label": "Trade Centre 1",
+                            "value": "1693864"
+                        },
+                        {
+                            "label": "Al Khabaisi",
+                            "value": "11117843"
+                        },
+                        {
+                            "label": "Umm Suqeim 3",
+                            "value": "12548296"
+                        },
+                        {
+                            "label": "Al Barsha 2",
+                            "value": "12527344"
+                        },
+                        {
+                            "label": "Motor City",
+                            "value": "12504080"
+                        },
+                        {
+                            "label": "Jumeira 3",
+                            "value": "12541682"
+                        },
+                        {
+                            "label": "Jumeirah Village Circle",
+                            "value": "12522847"
+                        },
+                        {
+                            "label": "Al Sabkha",
+                            "value": "12541278"
+                        },
+                        {
+                            "label": "Springs 7",
+                            "value": "12539580"
+                        },
+                        {
+                            "label": "Al Mankhool",
+                            "value": "12543140"
+                        },
+                        {
+                            "label": "Jumeirah Village Triangle",
+                            "value": "12547817"
+                        },
+                        {
+                            "label": "Za'abeel 2",
+                            "value": "12539609"
+                        },
+                        {
+                            "label": "Dubai Production City",
+                            "value": "12534946"
+                        },
+                        {
+                            "label": "Al Mina",
+                            "value": "12508714"
+                        },
+                        {
+                            "label": "Jumeirah Village",
+                            "value": "12539354"
+                        },
+                        {
+                            "label": "Jumeira 1",
+                            "value": "12549864"
+                        },
+                        {
+                            "label": "Al Nahda 2",
+                            "value": "12509563"
+                        },
+                        {
+                            "label": "Hor Al Anz",
+                            "value": "12523249"
+                        },
+                        {
+                            "label": "Al Sufouh 1",
+                            "value": "12541724"
+                        },
+                        {
+                            "label": "Dubai Sports City",
+                            "value": "12523416"
+                        },
+                        {
+                            "label": "Green Community Motor City",
+                            "value": "12548177"
+                        },
+                        {
+                            "label": "Umm Suqeim 1",
+                            "value": "12549867"
+                        },
+                        {
+                            "label": "Al Barsha 1",
+                            "value": "12538140"
+                        },
+                        {
+                            "label": "Al Sufouh 2",
+                            "value": "12538540"
+                        }
+                    ]
+                },
                 "accommodationType": {
                     "applied": false,
                     "items": [
+                        {
+                            "label": "Agritourism",
+                            "value": "40"
+                        },
                         {
                             "label": "Apart-hotels",
                             "value": "20"
@@ -541,12 +980,12 @@
                             "value": "5"
                         },
                         {
-                            "label": "Cabins and lodges",
-                            "value": "9"
+                            "label": "Capsule hotels",
+                            "value": "43"
                         },
                         {
-                            "label": "Cottages",
-                            "value": "11"
+                            "label": "Caravan parks",
+                            "value": "21"
                         },
                         {
                             "label": "Guest houses",
@@ -561,16 +1000,20 @@
                             "value": "1"
                         },
                         {
-                            "label": "Inns",
-                            "value": "8"
+                            "label": "Houseboats",
+                            "value": "16"
                         },
                         {
-                            "label": "Motels",
-                            "value": "7"
+                            "label": "Resorts",
+                            "value": "3"
                         },
                         {
                             "label": "Vacation homes",
                             "value": "4"
+                        },
+                        {
+                            "label": "Villas",
+                            "value": "14"
                         }
                     ]
                 },
@@ -580,6 +1023,10 @@
                         {
                             "label": "24-hour front desk",
                             "value": "2063"
+                        },
+                        {
+                            "label": "Airport transfers",
+                            "value": "513"
                         },
                         {
                             "label": "Bar",
@@ -596,6 +1043,10 @@
                         {
                             "label": "Business facilities",
                             "value": "519"
+                        },
+                        {
+                            "label": "Childcare",
+                            "value": "521"
                         },
                         {
                             "label": "Connecting rooms available",
@@ -650,8 +1101,20 @@
                             "value": "535"
                         },
                         {
+                            "label": "Ski shuttle",
+                            "value": "531"
+                        },
+                        {
+                            "label": "Ski storage",
+                            "value": "533"
+                        },
+                        {
                             "label": "Smoking areas",
                             "value": "537"
+                        },
+                        {
+                            "label": "Spa",
+                            "value": "539"
                         },
                         {
                             "label": "WiFi included",
@@ -708,6 +1171,10 @@
                             "value": "6"
                         },
                         {
+                            "label": "Boutique",
+                            "value": "4"
+                        },
+                        {
                             "label": "Business",
                             "value": "14"
                         },
@@ -724,6 +1191,10 @@
                             "value": "2"
                         },
                         {
+                            "label": "Hot Springs",
+                            "value": "22"
+                        },
+                        {
                             "label": "LGBTQ Welcoming",
                             "value": "21"
                         },
@@ -736,8 +1207,16 @@
                             "value": "1"
                         },
                         {
+                            "label": "Shopping",
+                            "value": "17"
+                        },
+                        {
                             "label": "Ski",
                             "value": "28"
+                        },
+                        {
+                            "label": "Spa Hotel",
+                            "value": "27"
                         }
                     ]
                 },
@@ -750,7 +1229,7 @@
                         },
                         "max": {
                             "defaultValue": 500,
-                            "value": 100
+                            "value": 150
                         },
                         "increments": 5
                     },
@@ -796,7 +1275,7 @@
                 }
             },
             "miscellaneous": {
-                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE_HIGHEST_FIRST&rooms=1&destRegionID=1643772&hotelIds=182614,336038,550610&adults=1&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=9cc8c200-46d4-427e-982f-6a89adb8814e&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-10-30&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=76.183.107.108&action=pageview&publisher=expedia&checkOut=2022-10-31&programId=1",
+                "pageViewBeaconUrl": "/taps/v1/PageView?deviceType=App-Phone&sort-order=PRICE&rooms=1&destRegionID=11594&hotelIds=1840460928,494848,257753&adults=1&userAgent=Hotels.com/Android%2080.0.1.9.release-80_0%20(80000660)&userGuid=64bb9f35-2e8c-4e17-aae8-fd2e6731aaa5&pageName=Hotel-Search&slots=HSR_A,HSR_B,HSR_C,HSR_D,HSR_E,HSR_F,HSR_G,HSR_H,HSR_I,HSR_J&checkIn=2022-10-30&children=0&culture=en_US&testVersionOverride=4961.0,904.0,7561.0,7215.0,8218.0,8711.0,8928.1,9008.0,8347.2,9004.0,8952.0,7992.2,8915.0,9729.0,9864.0,10155.0,10185.0,10473.0,10320.0,10361.0&domain=www.hotels.com&userIP=64.203.206.13&action=pageview&publisher=expedia&checkOut=2022-10-31&programId=1",
                 "showLegalInfoForStrikethroughPrices": true,
                 "legalInfoForStrikethroughPrices": "The struck-out price is based on the property\u2019s standard rate on our app, as determined and supplied by the property."
             },
@@ -813,52 +1292,52 @@
                 "omniture": {
                     "s.prop33": "D=v33",
                     "s.prop32": "D=v43",
-                    "s.prop74": "search result with dates | ms shown | N",
-                    "s.products": "MULTISOURCE;428538,LOCAL;3124455,LOCAL;12467596",
+                    "s.prop74": "search result with dates | ms shown | Y",
+                    "s.products": "LOCAL;57483154,MULTISOURCE;10073918,MULTISOURCE;1723385",
                     "s.eVar16": "Mob :: aApp",
                     "s.eVar40": "D=v0",
                     "s.eVar41": "USD",
-                    "s.eVar63": "32e894e1-63d0-4c59-92af-2f8d2a9d434c",
-                    "s.eVar42": "1|1|20221030|20221031",
+                    "s.eVar63": "ad1c546f-342f-4d25-9dda-9d7954b2b31a",
+                    "s.eVar42": "0|1|20221030|20221031",
                     "s.eVar4": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
                     "s.eVar43": "en_US|HCOM_US|www.hotels.com",
                     "s.eVar3": "1|0",
-                    "s.eVar22": "1|USD|24:182614:102.2400:81.7900:0|24:336038:76.4900:76.4900:0|24:550610:75.0200:75.0200:0",
-                    "s.eVar2": "New Glasgow, Nova Scotia, Canada",
+                    "s.eVar22": "1|USD|24:1840460928:64.8000:51.8400:0|24:494848:52.5700:52.5700:0|24:257753:55.6900:52.8700:0",
+                    "s.eVar2": "Dubai, Dubai, United Arab Emirates",
                     "s.eVar24": "MCTC=20;TU=NA;PDID=NULL;MVT=",
-                    "s.eVar7": "1",
+                    "s.eVar7": "0",
                     "s.server": "www.hotels.com",
-                    "s.eVar6": "1643772",
+                    "s.eVar6": "11594",
                     "s.prop29": "D=v42",
                     "s.eVar5": "1",
-                    "s.prop27": "9cc8c200-46d4-427e-982f-6a89adb8814e",
-                    "s.eVar9": "Price - high to low",
-                    "s.prop22": "Price - USD50-100",
+                    "s.prop27": "64bb9f35-2e8c-4e17-aae8-fd2e6731aaa5",
+                    "s.eVar9": "Price - low to high",
+                    "s.prop22": "Price - USD50-150",
                     "s.prop21": "0",
                     "s.prop20": "1",
                     "s.eVar69": "Mob :: aApp",
                     "s.currencyCode": "USD",
-                    "s.eVar26": "US:TX:DALLAS:623",
+                    "s.eVar26": "US:SC:HILTONHEADISLAND:507",
                     "s.eVar29": "Mob :: aApp",
-                    "s.prop9": "43",
+                    "s.prop9": "2826",
                     "s.eVar95": "Unknown",
-                    "s.prop7": "32",
+                    "s.prop7": "2180",
                     "s.eVar31": "D=v0",
-                    "s.eVar10": "Price - USD50-100",
+                    "s.eVar10": "Price - USD50-150",
                     "s.eVar32": "D=v0",
                     "s.eVar33": "search result with dates",
-                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.001,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8130:000.001,M8336:000.000,M8347:019.002,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9155:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9434:000.000,M9469:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.001",
+                    "s.eVar34": "H1871:007.002,M376:000.000,M904:000.000,M3736:000.000,M4200:000.000,M4440.2,M4869:001.000,M4952:050.000,M4961:001.000,M5184:001.000,M5342:000.000,M5663:000.000,M6388:000.000,M6775:000.000,M6779:000.000,M7015.1,M7192:000.000,M7215:000.000,M7296:000.000,M7305:000.000,M7353:000.000,M7362.1,M7552:023.001,M7763:000.000,M7765.2,M7870:000.000,M7895:000.000,M8130:000.001,M8336:000.000,M8347:019.002,M8483:000.000,M8692:000.000,M8693:000.000,M8698:000.000,M8708:000.000,M8718:000.000,M8915:000.000,M8928:019.001,M8952:000.000,M8976:000.000,M8992:000.000,M9035:000.000,M9155:000.000,M9220:000.000,M9281:000.000,M9282:000.000,M9297:000.000,M9301:000.000,M9351:000.000,M9420:000.000,M9431:000.000,M9434:000.000,M9469:000.000,M9549:000.000,M9567.1,M9691:000.000,M9693:000.000,M9699:004.001,M9729:000.000,M9752:000.000,M9771.0,M9864:000.000,M9924:000.000,M9961:000.000,M9971:000.000,M10001:000.000,M10007:000.000,M10013:002.001,M10086:000.000,M10121:000.000,M10137:000.000,M10155:000.000,M10185:000.000,M10248:000.000,M10259:000.000,M10282:000.000,M10300:000.000,M10320:000.000,M10361:000.000,M10473:000.000,M10482:000.000,M9215:001.001",
                     "s.eVar13": "389367",
                     "s.prop19": "1",
-                    "s.events": "event324,event320",
+                    "s.events": "event324,event319,event320",
                     "s.prop18": "D=v6",
                     "s.prop5": "389367",
                     "s.prop15": "1",
-                    "s.prop3": "New Glasgow, Nova Scotia, Canada",
+                    "s.prop3": "Dubai, Dubai, United Arab Emirates",
                     "s.prop14": "D=v7",
                     "s.prop36": "|SI:anonymous|VS:returnVisitor|HCR:notApplicable|FC:notApplicable|NS:unknown|TI:notApplicable|SM:notApplicable|IR:anonymous|",
                     "s.eVar93": "aws.us-east-1.unknown",
-                    "s.prop2": "Price - high to low"
+                    "s.prop2": "Price - low to high"
                 }
             }
         }

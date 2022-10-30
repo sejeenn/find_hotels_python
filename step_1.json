@@ -1,50 +1,209 @@
 {
-    "term": "glazgo",
-    "moresuggestions": 0,
+    "term": "dubai",
+    "moresuggestions": 10,
     "autoSuggestInstance": null,
-    "trackingID": "a9c3514e94f14720a9fecb6119fca9ef",
+    "trackingID": "be9e54ae5d234c7d83ec8d88c13f93b7",
     "misspellingfallback": false,
     "suggestions": [
         {
             "group": "CITY_GROUP",
             "entities": [
                 {
-                    "geoId": "1334",
-                    "destinationId": "546242",
+                    "geoId": "6053839",
+                    "destinationId": "11594",
                     "landmarkCityDestinationId": null,
                     "type": "CITY",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 55.86118,
-                    "longitude": -4.2502,
+                    "latitude": 25.27063,
+                    "longitude": 55.30037,
                     "searchDetail": null,
-                    "caption": "Glasgow, Scotland, United Kingdom",
-                    "name": "Glasgow"
+                    "caption": "<span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
+                    "name": "Dubai"
                 },
                 {
-                    "geoId": "6058267",
-                    "destinationId": "1643772",
+                    "geoId": "6147415",
+                    "destinationId": "1686798",
                     "landmarkCityDestinationId": null,
-                    "type": "CITY",
+                    "type": "NEIGHBORHOOD",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 45.58717,
-                    "longitude": -62.645119,
+                    "latitude": 25.080542,
+                    "longitude": 55.140343,
                     "searchDetail": null,
-                    "caption": "New Glasgow, Nova Scotia, Canada",
-                    "name": "New Glasgow"
+                    "caption": "<span class='highlighted'>Dubai</span> Marina, Dubai, Dubai, United Arab Emirates",
+                    "name": "Dubai Marina"
+                },
+                {
+                    "geoId": "6142656",
+                    "destinationId": "1693852",
+                    "landmarkCityDestinationId": null,
+                    "type": "NEIGHBORHOOD",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.194984,
+                    "longitude": 55.278416,
+                    "searchDetail": null,
+                    "caption": "Downtown <span class='highlighted'>Dubai</span>, Dubai, Dubai, United Arab Emirates",
+                    "name": "Downtown Dubai"
+                },
+                {
+                    "geoId": "6085142",
+                    "destinationId": "1693814",
+                    "landmarkCityDestinationId": null,
+                    "type": "NEIGHBORHOOD",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.12225,
+                    "longitude": 55.132065,
+                    "searchDetail": null,
+                    "caption": "Palm Jumeirah, <span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
+                    "name": "Palm Jumeirah"
+                },
+                {
+                    "geoId": "6258785",
+                    "destinationId": "1766308",
+                    "landmarkCityDestinationId": null,
+                    "type": "NEIGHBORHOOD",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.076944,
+                    "longitude": 55.134136,
+                    "searchDetail": null,
+                    "caption": "Jumeirah Beach Residence, <span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
+                    "name": "Jumeirah Beach Residence"
+                },
+                {
+                    "geoId": "177902",
+                    "destinationId": "1665340",
+                    "landmarkCityDestinationId": null,
+                    "type": "NEIGHBORHOOD",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.278847,
+                    "longitude": 55.33094,
+                    "searchDetail": null,
+                    "caption": "Deira, <span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
+                    "name": "Deira"
                 }
             ]
         },
         {
             "group": "HOTEL_GROUP",
-            "entities": []
+            "entities": [
+                {
+                    "geoId": "918930",
+                    "destinationId": "213179",
+                    "landmarkCityDestinationId": null,
+                    "type": "HOTEL",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.208031,
+                    "longitude": 55.27215,
+                    "searchDetail": null,
+                    "caption": "Shangri-La <span class='highlighted'>Dubai</span>, Dubai, Dubai, United Arab Emirates",
+                    "name": "Shangri-La Dubai"
+                },
+                {
+                    "geoId": "18352604",
+                    "destinationId": "692887",
+                    "landmarkCityDestinationId": null,
+                    "type": "HOTEL",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.080029,
+                    "longitude": 55.135992,
+                    "searchDetail": null,
+                    "caption": "Rixos Premium <span class='highlighted'>Dubai</span> JBR, Dubai, Dubai, United Arab Emirates",
+                    "name": "Rixos Premium Dubai JBR"
+                },
+                {
+                    "geoId": "8680611",
+                    "destinationId": "485846",
+                    "landmarkCityDestinationId": null,
+                    "type": "HOTEL",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.078706,
+                    "longitude": 55.137358,
+                    "searchDetail": null,
+                    "caption": "InterContinental <span class='highlighted'>Dubai</span> Marina, an IHG Hotel, Dubai, Dubai, United Arab Emirates",
+                    "name": "InterContinental Dubai Marina, an IHG Hotel"
+                },
+                {
+                    "geoId": "16039653",
+                    "destinationId": "627847",
+                    "landmarkCityDestinationId": null,
+                    "type": "HOTEL",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.246887,
+                    "longitude": 55.255871,
+                    "searchDetail": null,
+                    "caption": "Nikki Beach Resort & Spa <span class='highlighted'>Dubai</span>, Dubai, Dubai, United Arab Emirates",
+                    "name": "Nikki Beach Resort & Spa Dubai"
+                },
+                {
+                    "geoId": "127464",
+                    "destinationId": "142037",
+                    "landmarkCityDestinationId": null,
+                    "type": "HOTEL",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.082476,
+                    "longitude": 55.137897,
+                    "searchDetail": null,
+                    "caption": "The Ritz-Carlton, <span class='highlighted'>Dubai</span>, Dubai, Dubai, United Arab Emirates",
+                    "name": "The Ritz-Carlton, Dubai"
+                }
+            ]
         },
         {
             "group": "LANDMARK_GROUP",
-            "entities": []
+            "entities": [
+                {
+                    "geoId": "6083275",
+                    "destinationId": "1660638",
+                    "landmarkCityDestinationId": "11594",
+                    "type": "LANDMARK",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.197175,
+                    "longitude": 55.27416,
+                    "searchDetail": null,
+                    "caption": "Burj Khalifa, <span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
+                    "name": "Burj Khalifa"
+                },
+                {
+                    "geoId": "6139591",
+                    "destinationId": "1692146",
+                    "landmarkCityDestinationId": "11594",
+                    "type": "LANDMARK",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.261648,
+                    "longitude": 55.281776,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Dubai</span> Cruise Terminal, Dubai, Dubai, United Arab Emirates",
+                    "name": "Dubai Cruise Terminal"
+                },
+                {
+                    "geoId": "6123356",
+                    "destinationId": "1686797",
+                    "landmarkCityDestinationId": "11594",
+                    "type": "LANDMARK",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.19727827771156,
+                    "longitude": 55.27886616433253,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Dubai</span> Mall, Dubai, Dubai, United Arab Emirates",
+                    "name": "Dubai Mall"
+                }
+            ]
         },
         {
             "group": "TRANSPORT_GROUP",
-            "entities": []
+            "entities": [
+                {
+                    "geoId": "4347972",
+                    "destinationId": "1637568",
+                    "landmarkCityDestinationId": null,
+                    "type": "AIRPORT",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 25.249077,
+                    "longitude": 55.352795,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Dubai</span>, United Arab Emirates (DXB-Dubai Intl.)",
+                    "name": "Dubai (DXB-Dubai Intl.)"
+                }
+            ]
         }
     ],
     "geocodeFallback": false

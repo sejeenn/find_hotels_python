@@ -2,6 +2,7 @@ from loader import bot
 from telebot.types import Message, InputMediaPhoto
 from loguru import logger
 from utils.find_hotels import get_dict_hotels
+from utils.find_hotels_photo import get_photo
 
 
 def finish_him(message: Message, data) -> None:
@@ -25,15 +26,28 @@ def finish_him(message: Message, data) -> None:
                    "checkIn": data['check_in'], "checkOut": data['check_out'], "adults1": "1",
                    "priceMin": data['price_min'], "priceMax": data['price_max'],
                    "sortOrder": data['sort_order'], "locale": "en_US", "currency": "USD"}
-
     found_hotels = get_dict_hotels(querystring)
+    if int(data['photo_count']) > 0:
+        logger.info('Нужно вывести дополнительные фотографии, переходим к их поиску')
+
     if found_hotels:
         bot.send_message(message.from_user.id, 'Найдены следующие отели:')
         for key, value in found_hotels.items():
-            bot.send_photo(message.from_user.id, value[4])
-            bot.send_message(message.from_user.id, f"Название отеля: {value[0]}"
-                                                   f"\nАдрес: {value[1]}"
-                                                   f"\nСтоимость проживания: {value[2]}"
-                                                   f"\nРасстояние до {value[3][0]['label']} - {value[3][0]['distance']}"
-                                                   f"\nРасстояние до {value[3][1]['label']} - {value[3][1]['distance']}")
+            if int(data['photo_count']) > 0:
+                photos = get_photo(value[5], int(data['photo_count']))
+                medias = []
+                for link in photos:
+                    medias.append(InputMediaPhoto(link))
+                bot.send_media_group(message.from_user.id, medias)
+                header(message, value)
+            else:
+                header(message, value)
 
+
+def header(message: Message, value):
+    bot.send_message(message.from_user.id, f"Название отеля: {value[0]}"
+                                           f"\nID: {value[5]}"
+                                           f"\nАдрес: {value[1]}"
+                                           f"\nСтоимость проживания: {value[2]}"
+                                           f"\nРасстояние до {value[3][0]['label']} - {value[3][0]['distance']}"
+                                           f"\nРасстояние до {value[3][1]['label']} - {value[3][1]['distance']}")

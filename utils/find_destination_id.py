@@ -5,6 +5,7 @@ from config_data import config
 from telebot.types import Message
 from typing import Tuple, Dict, Union
 from loader import bot
+from config_data import config
 from telebot import types
 
 city_url = 'https://hotels4.p.rapidapi.com/locations/search'
@@ -25,8 +26,11 @@ def find_city(message: Message) -> Dict:
         json.dump(data, file, indent=4)
 
     possible_cities = {}
-    for i in data['suggestions'][0]['entities']:
-        possible_cities[i['destinationId']] = re.sub(pattern, '', i['caption'])
+    if 'message' in data:
+        bot.send_message(message.from_user.id, f'Ошибка соединения с hotels.com\n{data["message"]}')
+    else:
+        for i in data['suggestions'][0]['entities']:
+            possible_cities[i['destinationId']] = re.sub(pattern, '', i['caption'])
     return possible_cities
 
 

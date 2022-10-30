@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Professional\PycharmProjects\Python_Basic\python_basic_diploma\bot
+set VIRTUAL_ENV=C:\Users\Professional\PycharmProjects\python_basic_diploma\bot
 
 if not defined PROMPT set PROMPT=$P$G
 

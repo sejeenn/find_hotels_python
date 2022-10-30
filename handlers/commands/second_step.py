@@ -29,11 +29,14 @@ def continue_input(message: Message):
 
 @bot.message_handler(state=UserInputState.pageSize)
 def input_page_size(message: Message) -> None:
-    logger.info('Ввод количества отелей на странице')
-    with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
-        data['page_size'] = message.text
-    bot.set_state(message.from_user.id, UserInputState.priceMin, message.chat.id)
-    bot.send_message(message.from_user.id, 'Введите минимальную стоимость номера')
+    if message.text.isdigit():
+        logger.info('Ввод количества отелей на странице')
+        with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
+            data['page_size'] = message.text
+        bot.set_state(message.from_user.id, UserInputState.priceMin, message.chat.id)
+        bot.send_message(message.from_user.id, 'Введите минимальную стоимость номера')
+    else:
+        bot.send_message(message.from_user.id, 'Ввод должен состоять из цифр')
 
 
 @bot.message_handler(state=UserInputState.priceMin)
