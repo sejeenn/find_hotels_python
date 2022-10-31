@@ -1,84 +1,96 @@
 {
-    "term": "dubai",
+    "term": "rome",
     "moresuggestions": 10,
     "autoSuggestInstance": null,
-    "trackingID": "be9e54ae5d234c7d83ec8d88c13f93b7",
+    "trackingID": "69519f0a548e49c2abe2d790e6945ebf",
     "misspellingfallback": false,
     "suggestions": [
         {
             "group": "CITY_GROUP",
             "entities": [
                 {
-                    "geoId": "6053839",
-                    "destinationId": "11594",
+                    "geoId": "553248633938945217",
+                    "destinationId": "10818945",
+                    "landmarkCityDestinationId": null,
+                    "type": "NEIGHBORHOOD",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 41.89893613158194,
+                    "longitude": 12.48160047675495,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Rome</span> City Centre, Rome, Lazio, Italy",
+                    "name": "Rome City Centre"
+                },
+                {
+                    "geoId": "3023",
+                    "destinationId": "712491",
                     "landmarkCityDestinationId": null,
                     "type": "CITY",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.27063,
-                    "longitude": 55.30037,
+                    "latitude": 41.903755,
+                    "longitude": 12.479556,
                     "searchDetail": null,
-                    "caption": "<span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
-                    "name": "Dubai"
+                    "caption": "<span class='highlighted'>Rome</span>, Lazio, Italy",
+                    "name": "Rome"
                 },
                 {
-                    "geoId": "6147415",
-                    "destinationId": "1686798",
+                    "geoId": "9699",
+                    "destinationId": "1404740",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 34.254181,
+                    "longitude": -85.172249,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Rome</span>, Georgia, United States of America",
+                    "name": "Rome"
+                },
+                {
+                    "geoId": "6200441",
+                    "destinationId": "1735377",
                     "landmarkCityDestinationId": null,
                     "type": "NEIGHBORHOOD",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.080542,
-                    "longitude": 55.140343,
+                    "latitude": 41.907650850383746,
+                    "longitude": 12.48336861990132,
                     "searchDetail": null,
-                    "caption": "<span class='highlighted'>Dubai</span> Marina, Dubai, Dubai, United Arab Emirates",
-                    "name": "Dubai Marina"
+                    "caption": "<span class='highlighted'>Rome</span> Historic Centre, Rome, Lazio, Italy",
+                    "name": "Rome Historic Centre"
                 },
                 {
-                    "geoId": "6142656",
-                    "destinationId": "1693852",
+                    "geoId": "9605",
+                    "destinationId": "1461654",
+                    "landmarkCityDestinationId": null,
+                    "type": "CITY",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 41.64753,
+                    "longitude": -88.089508,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Rome</span>oville, Illinois, United States of America",
+                    "name": "Romeoville"
+                },
+                {
+                    "geoId": "6046253",
+                    "destinationId": "1808834",
                     "landmarkCityDestinationId": null,
                     "type": "NEIGHBORHOOD",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.194984,
-                    "longitude": 55.278416,
+                    "latitude": 41.90851,
+                    "longitude": 12.454125,
                     "searchDetail": null,
-                    "caption": "Downtown <span class='highlighted'>Dubai</span>, Dubai, Dubai, United Arab Emirates",
-                    "name": "Downtown Dubai"
+                    "caption": "Vatican, <span class='highlighted'>Rome</span>, Lazio, Italy",
+                    "name": "Vatican"
                 },
                 {
-                    "geoId": "6085142",
-                    "destinationId": "1693814",
+                    "geoId": "553248635077613285",
+                    "destinationId": "11047110",
                     "landmarkCityDestinationId": null,
-                    "type": "NEIGHBORHOOD",
+                    "type": "CITY",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.12225,
-                    "longitude": 55.132065,
+                    "latitude": 44.198856,
+                    "longitude": -89.820274,
                     "searchDetail": null,
-                    "caption": "Palm Jumeirah, <span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
-                    "name": "Palm Jumeirah"
-                },
-                {
-                    "geoId": "6258785",
-                    "destinationId": "1766308",
-                    "landmarkCityDestinationId": null,
-                    "type": "NEIGHBORHOOD",
-                    "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.076944,
-                    "longitude": 55.134136,
-                    "searchDetail": null,
-                    "caption": "Jumeirah Beach Residence, <span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
-                    "name": "Jumeirah Beach Residence"
-                },
-                {
-                    "geoId": "177902",
-                    "destinationId": "1665340",
-                    "landmarkCityDestinationId": null,
-                    "type": "NEIGHBORHOOD",
-                    "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.278847,
-                    "longitude": 55.33094,
-                    "searchDetail": null,
-                    "caption": "Deira, <span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
-                    "name": "Deira"
+                    "caption": "<span class='highlighted'>Rome</span>, Nekoosa, Adams County, Wisconsin, United States of America",
+                    "name": "Rome"
                 }
             ]
         },
@@ -86,64 +98,40 @@
             "group": "HOTEL_GROUP",
             "entities": [
                 {
-                    "geoId": "918930",
-                    "destinationId": "213179",
+                    "geoId": "564180",
+                    "destinationId": "187988",
                     "landmarkCityDestinationId": null,
                     "type": "HOTEL",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.208031,
-                    "longitude": 55.27215,
+                    "latitude": 41.79183,
+                    "longitude": 12.25679,
                     "searchDetail": null,
-                    "caption": "Shangri-La <span class='highlighted'>Dubai</span>, Dubai, Dubai, United Arab Emirates",
-                    "name": "Shangri-La Dubai"
+                    "caption": "Hilton <span class='highlighted'>Rome</span> Airport, Fiumicino, Lazio, Italy",
+                    "name": "Hilton Rome Airport"
                 },
                 {
-                    "geoId": "18352604",
-                    "destinationId": "692887",
+                    "geoId": "6024030",
+                    "destinationId": "438248",
                     "landmarkCityDestinationId": null,
                     "type": "HOTEL",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.080029,
-                    "longitude": 55.135992,
+                    "latitude": 41.898608,
+                    "longitude": 12.49058,
                     "searchDetail": null,
-                    "caption": "Rixos Premium <span class='highlighted'>Dubai</span> JBR, Dubai, Dubai, United Arab Emirates",
-                    "name": "Rixos Premium Dubai JBR"
+                    "caption": "<span class='highlighted'>Rome</span> Times Hotel, Rome, Lazio, Italy",
+                    "name": "Rome Times Hotel"
                 },
                 {
-                    "geoId": "8680611",
-                    "destinationId": "485846",
+                    "geoId": "1058",
+                    "destinationId": "115892",
                     "landmarkCityDestinationId": null,
                     "type": "HOTEL",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.078706,
-                    "longitude": 55.137358,
+                    "latitude": 41.901662,
+                    "longitude": 12.494804,
                     "searchDetail": null,
-                    "caption": "InterContinental <span class='highlighted'>Dubai</span> Marina, an IHG Hotel, Dubai, Dubai, United Arab Emirates",
-                    "name": "InterContinental Dubai Marina, an IHG Hotel"
-                },
-                {
-                    "geoId": "16039653",
-                    "destinationId": "627847",
-                    "landmarkCityDestinationId": null,
-                    "type": "HOTEL",
-                    "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.246887,
-                    "longitude": 55.255871,
-                    "searchDetail": null,
-                    "caption": "Nikki Beach Resort & Spa <span class='highlighted'>Dubai</span>, Dubai, Dubai, United Arab Emirates",
-                    "name": "Nikki Beach Resort & Spa Dubai"
-                },
-                {
-                    "geoId": "127464",
-                    "destinationId": "142037",
-                    "landmarkCityDestinationId": null,
-                    "type": "HOTEL",
-                    "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.082476,
-                    "longitude": 55.137897,
-                    "searchDetail": null,
-                    "caption": "The Ritz-Carlton, <span class='highlighted'>Dubai</span>, Dubai, Dubai, United Arab Emirates",
-                    "name": "The Ritz-Carlton, Dubai"
+                    "caption": "Hotel Quirinale, <span class='highlighted'>Rome</span>, Lazio, Italy",
+                    "name": "Hotel Quirinale"
                 }
             ]
         },
@@ -151,40 +139,40 @@
             "group": "LANDMARK_GROUP",
             "entities": [
                 {
-                    "geoId": "6083275",
-                    "destinationId": "1660638",
-                    "landmarkCityDestinationId": "11594",
+                    "geoId": "6341167",
+                    "destinationId": "701966",
+                    "landmarkCityDestinationId": "712491",
                     "type": "LANDMARK",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.197175,
-                    "longitude": 55.27416,
+                    "latitude": 41.90095040257328,
+                    "longitude": 12.483310461122054,
                     "searchDetail": null,
-                    "caption": "Burj Khalifa, <span class='highlighted'>Dubai</span>, Dubai, United Arab Emirates",
-                    "name": "Burj Khalifa"
+                    "caption": "Trevi Fountain, <span class='highlighted'>Rome</span>, Lazio, Italy",
+                    "name": "Trevi Fountain"
                 },
                 {
-                    "geoId": "6139591",
-                    "destinationId": "1692146",
-                    "landmarkCityDestinationId": "11594",
+                    "geoId": "508631",
+                    "destinationId": "1545",
+                    "landmarkCityDestinationId": "712491",
                     "type": "LANDMARK",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.261648,
-                    "longitude": 55.281776,
+                    "latitude": 41.89893528443074,
+                    "longitude": 12.473099291261038,
                     "searchDetail": null,
-                    "caption": "<span class='highlighted'>Dubai</span> Cruise Terminal, Dubai, Dubai, United Arab Emirates",
-                    "name": "Dubai Cruise Terminal"
+                    "caption": "Piazza Navona, <span class='highlighted'>Rome</span>, Lazio, Italy",
+                    "name": "Piazza Navona"
                 },
                 {
-                    "geoId": "6123356",
-                    "destinationId": "1686797",
-                    "landmarkCityDestinationId": "11594",
+                    "geoId": "6168549",
+                    "destinationId": "1721440",
+                    "landmarkCityDestinationId": "712491",
                     "type": "LANDMARK",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.19727827771156,
-                    "longitude": 55.27886616433253,
+                    "latitude": 41.900134556374326,
+                    "longitude": 12.492478804221392,
                     "searchDetail": null,
-                    "caption": "<span class='highlighted'>Dubai</span> Mall, Dubai, Dubai, United Arab Emirates",
-                    "name": "Dubai Mall"
+                    "caption": "Via Nazionale, <span class='highlighted'>Rome</span>, Lazio, Italy",
+                    "name": "Via Nazionale"
                 }
             ]
         },
@@ -192,16 +180,28 @@
             "group": "TRANSPORT_GROUP",
             "entities": [
                 {
-                    "geoId": "4347972",
-                    "destinationId": "1637568",
+                    "geoId": "5194566",
+                    "destinationId": "1636097",
                     "landmarkCityDestinationId": null,
                     "type": "AIRPORT",
                     "redirectPage": "DEFAULT_PAGE",
-                    "latitude": 25.249077,
-                    "longitude": 55.352795,
+                    "latitude": 41.795617,
+                    "longitude": 12.251165,
                     "searchDetail": null,
-                    "caption": "<span class='highlighted'>Dubai</span>, United Arab Emirates (DXB-Dubai Intl.)",
-                    "name": "Dubai (DXB-Dubai Intl.)"
+                    "caption": "<span class='highlighted'>Rome</span>, Italy (FCO-Fiumicino - Leonardo da Vinci Intl.)",
+                    "name": "Rome (FCO-Fiumicino - Leonardo da Vinci Intl.)"
+                },
+                {
+                    "geoId": "6022584",
+                    "destinationId": "1707502",
+                    "landmarkCityDestinationId": null,
+                    "type": "TRAIN_STATION",
+                    "redirectPage": "DEFAULT_PAGE",
+                    "latitude": 41.90132,
+                    "longitude": 12.501142,
+                    "searchDetail": null,
+                    "caption": "<span class='highlighted'>Rome</span> Termini Station, Rome, Lazio, Italy",
+                    "name": "Rome Termini Station"
                 }
             ]
         }

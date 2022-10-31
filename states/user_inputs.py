@@ -13,3 +13,5 @@ class UserInputState(StatesGroup):
     priceMin = State()
     priceMax = State()
     sortOrder = State()
+    landmarkIn = State()
+    landmarkOut = State()

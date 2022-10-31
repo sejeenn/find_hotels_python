@@ -15,14 +15,6 @@ calendar_1_callback = CallbackData("calendar_1", "action", "year", "month", "day
 
 def continue_input(message: Message):
     logger.info('Перешли ко второму этапу ввода данных')
-    with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
-        if data['command'] == '/lowprice':
-            data['sort_order'] = 'PRICE'
-        elif data['command'] == '/hiprice':
-            data['sort_order'] = 'PRICE_HIGHEST_FIRST'
-        else:
-            data['sort_order'] = 'best_deal'
-
     bot.set_state(message.from_user.id, UserInputState.pageSize, message.chat.id)
     bot.send_message(message.from_user.id, 'Сколько отелей на странице вывести? Максимум 25')
 
