@@ -7,6 +7,7 @@ from states.user_inputs import UserInputState
 
 
 def finish_him(message: Message, data) -> None:
+    """"""
     logger.info('Завершаем все наши вводы, выдаем сообщение о том что ввел пользователь и '
                 'после чего посылаем пользователю найденные отели, либо сообщение что отели не найдены.')
     if data['command'] == '/lowprice':
@@ -35,7 +36,7 @@ def finish_him(message: Message, data) -> None:
                    "sortOrder": data['sort_order'], "locale": "en_US", "currency": "USD"}
     if data['command'] == '/bestdeal':
         bot.set_state(message.from_user.id, UserInputState.landmarkIn, message.chat.id)
-        bot.send_message(message.from_user.id, 'Введите начало диапазона "расстояние до центра":')
+        bot.send_message(message.from_user.id, 'Введите начало диапазона "расстояние до центра от 0.1":')
 
     elif data['command'] == '/lowprice' or '/hiprice':
         found_hotels = get_dict_hotels(querystring)
@@ -55,6 +56,11 @@ def header(message: Message, value):
 
 @bot.message_handler(state=UserInputState.landmarkIn)
 def input_landmark_in(message: Message) -> None:
+    """
+
+            :param message:
+            Записываем начальный диапазон расстояния до центра
+        """
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data["landmark_in"] = message.text
     bot.set_state(message.from_user.id, UserInputState.landmarkOut, message.chat.id)
@@ -63,6 +69,13 @@ def input_landmark_in(message: Message) -> None:
 
 @bot.message_handler(state=UserInputState.landmarkOut)
 def input_landmark_out(message: Message) -> None:
+    """
+
+        :param message:
+        Записываем конечный диапазон расстояния до центра и формируем словарь для поиска отелей, который
+        отправим серверу hotels.com в ответ возвращается словарь с найденными отелями, либо сообщение,
+        что отели с такими данными в данном городе не найдены.
+    """
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         data["landmark_out"] = message.text
     querystring = {"destinationId": data['destination_id'], "pageNumber": "1", "pageSize": data['page_size'],
@@ -71,10 +84,23 @@ def input_landmark_out(message: Message) -> None:
                    "locale": "en_US", "currency": "USD",
                    'landmarkIds': f"{data['landmark_in']}, {data['landmark_out']}"}
     found_hotels = get_dict_hotels(querystring)
-    print_found_hotels(message, found_hotels)
+    if len(found_hotels) > 0:
+        print_found_hotels(message, found_hotels)
+    else:
+        bot.send_message(message.from_user.id, 'Извините, но по заданным параметрам не найдено ни одного отеля.'
+                                               'Попробуйте изменить параметры поиска и сделать запрос ещё раз.')
 
 
 def print_found_hotels(message: Message, found_hotels):
+    """
+        :param message
+        :param found_hotels - словарь с найденными отелями
+
+        Получив словарь с найденными отелями и отсортированными по заданным параметрам выдаем результаты
+        поиска пользователю в чат. Если счетчик data['photo_count']
+        больше нуля, мы понимаем что пользователю нужны фотографии и делаем запрос на поиск фотографий
+        для каждого отеля. Фотографии выводим общим блоком - альбомом.
+    """
     with bot.retrieve_data(message.from_user.id, message.chat.id) as data:
         if int(data['photo_count']) > 0:
             logger.info('Нужно вывести дополнительные фотографии, переходим к их поиску')
@@ -89,7 +115,3 @@ def print_found_hotels(message: Message, found_hotels):
                 header(message, value)
             else:
                 header(message, value)
-
-
-def end_find(message):
-    bot.send_message(message.from_user.id, 'Поиск завершен, история сохраняется в базу данных')
