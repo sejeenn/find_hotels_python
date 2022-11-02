@@ -25,4 +25,5 @@ def get_dict_hotels(querystring: Dict) -> Dict:
             found_hotels[hotel['id']] = found_hotels.get(hotel['id'], values)
     except KeyError:
         print('Не найден ключ', KeyError)
-    return found_hotels
+    finally:
+        return found_hotels

@@ -167,3 +167,6 @@ def photo_count(message: Message) -> None:
             bot.send_message(message.from_user.id, 'Число должно быть в границах от 1 до 10!')
     except ValueError:
         bot.send_message(message.from_user.id, 'Ввод должен состоять из цифр!')
+
+
+
