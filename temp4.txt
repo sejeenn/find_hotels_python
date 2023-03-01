@@ -1,0 +1,149 @@
+{
+    '__typename': 'Property', 'id': '115413', 'featuredMessages': [], 'name': 'Hotel Kent','availability':
+    {
+        '__typename': 'PropertyAvailability', 'available': True, 'minRoomsLeft': 1
+    },
+        'propertyImage':
+        {
+            '__typename': 'PropertyImage', 'alt': '', 'fallbackImage': None, 'image':
+            {
+                '__typename': 'Image', 'description': 'Primary image',
+                'url': 'https://images.trvl-media.com/lodging/1000000/120000/115500/115413/c57f3c80.jpg?impolicy=resizecrop&rw=455&ra=fit'
+            }, '
+            subjectId': 3
+        },
+            'destinationInfo':
+            {
+                '__typename': 'PropertyDestinationInfo', 'distanceFromDestination':
+                {
+                    '__typename': 'Distance', 'unit': 'MILE', 'value': 1.32
+                },
+                'distanceFromMessaging': None, 'regionId': '3023'
+            },
+                'legalDisclaimer': None, 'listingFooter': None, 'mapMarker':
+                {
+                    '__typename': 'MapMarker', 'label': '$52', 'latLong':
+                    {
+                        '__typename': 'Coordinates', 'latitude': 41.91255, 'longitude': 12.50241
+                    }
+                },
+                'neighborhood': {'__typename': 'Region', 'name': 'Rome'},
+                'offerBadge':
+                {
+                    '__typename': 'OfferBadge', 'primary':
+                    {
+                        '__typename': 'Badge', 'text': 'Member Price', 'theme_temp': 'DEAL_MEMBER', 'icon_temp':
+                        {
+                            '__typename': 'Icon', 'id': 'mod', 'description': 'mod'
+                        },
+                        'mark': None
+                        },
+                        'secondary':
+                        {
+                            '__typename': 'Badge', 'text': '20% off', 'theme_temp': 'DEAL_MEMBER', 'icon_temp':
+                        {'
+                            __typename': 'Icon', 'id': 'mod', 'description': 'mod'
+                        },
+                        'mark': None}
+                },
+                'offerSummary':
+                {
+                    '__typename': 'OfferSummary', 'messages': [
+                    {
+                        '__typename': 'OfferSummaryMessage', 'message': 'Collect stamps', 'theme': None,
+                        'type': 'LOYALTY_EARN', 'mark':
+                        {
+                            '__typename': 'Mark', 'id': 'loyalty', 'token': 'mark__loyalty',
+                            'description': 'loyalty logo'
+                        }
+                    }],
+                    'attributes': []
+                },
+                'pinnedDetails': None,
+                'price':
+                {
+                    '__typename': 'PropertyPrice', 'options': [
+                    {
+                        '__typename': 'PropertyPriceOption', 'strikeOut':
+                        {
+                            '__typename': 'Money', 'amount': 65.41625, 'formatted': '$65'
+                        },
+                        'disclaimer':
+                        {
+                            '__typename': 'LodgingPlainMessage', 'value': 'Standard rate on our site, provided
+                            by the property and based on your search, before all discounts and rewards applied.'
+                        },
+                        'formattedDisplayPrice': '$52'
+                    }],
+                    'priceMessaging': None, 'lead':
+                    {
+                        '__typename': 'Money', 'amount': 52.3325, 'currencyInfo':
+                        {
+                            '__typename': 'Currency', 'code': 'USD', 'symbol': '$'
+                        },
+                        'formatted': '$52'
+                    },
+                    'strikeOut':
+                    {
+                        '__typename': 'Money', 'amount': 65.41625, 'currencyInfo':
+                        {
+                            '__typename': 'Currency', 'code': 'USD', 'symbol': '$'
+                        },
+                        'formatted': '$65'
+                    },
+                    'displayMessages': [
+                    {
+                        '__typename': 'PriceDisplayMessage', 'lineItems': [
+                        {
+                            '__typename': 'DisplayPrice', 'disclaimer':
+                            {
+                                '__typename': 'LodgingPlainDialog', 'content': ['Standard rate on our site, provided by
+                                the property and based on your search, before all discounts and rewards applied.'],
+                                'title': None}, 'price':
+                                {
+                                    '__typename': 'FormattedMoney', 'formatted': '$65', 'accessibilityLabel':
+                                    'The price was $65'
+                                }, 'role': 'STRIKEOUT'
+                        },
+                        {
+                            '__typename': 'DisplayPrice', 'disclaimer': None, 'price':
+                            {
+                                '__typename': 'FormattedMoney', 'formatted': '$52', 'accessibilityLabel':
+                                'The price is $52'
+                            },
+                            'role': 'LEAD'
+
+                        }]
+                    },
+                    {
+                        '__typename': 'PriceDisplayMessage', 'lineItems': [
+                        {
+                            '__typename': 'LodgingEnrichedMessage', 'accessibilityLabel': None, 'mark': None,
+                            'state': None, 'value': '$530 total', 'badge': None}]}], 'strikeOutType': 'STANDALONE',
+                            'priceMessages': [
+                            {
+                                '__typename': 'LodgingPlainMessage', 'value': 'per night'
+                            }]
+                },
+                'priceAfterLoyaltyPointsApplied':
+                {
+                    '__typename': 'PropertyPrice', 'options': [], 'lead': None
+                },
+                'propertyFees': [
+                {
+                    '__typename': 'Fees', 'type': 'RESORT'
+                }],
+                'reviews':
+                {
+                    '__typename': 'PropertyReviewsSummary', 'score': 7.6, 'total': 93
+                },
+                'sponsoredListing': None, 'star': None, 'supportingMessages': None, 'regionId': '3023', 'priceMetadata':
+                {
+                    '__typename': 'PropertyPriceMetadata', 'discountType': 'MEMBER_DEAL', 'rateDiscount':
+                    {
+                        '__typename': 'RateDiscount', 'description': 'Member’s price: 20%'
+                    },
+                    'totalDiscountPercentage': 20
+                },
+                'saveTripItem': None
+}
