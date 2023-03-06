@@ -6,6 +6,10 @@ from states.user_states import UserInputState
 
 @bot.callback_query_handler(func=lambda call: call.data.isdigit())
 def destination_id_callback(call: CallbackQuery) -> None:
+    """
+    Пользователь нажал кнопку города, который ему нужен. Записываем id
+    этого города и переходим к следующему шагу. Запрашиваем количество отелей для вывода в чат.
+    """
     logger.info('Пользователь выбрал город.')
     if call.data:
         bot.set_state(call.message.chat.id, UserInputState.destinationId)

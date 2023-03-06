@@ -35,13 +35,15 @@ payload = {
 }
 headers = {
     "content-type": "application/json",
-    "X-RapidAPI-Key": "25f90d3cdfmsh2cc6038b4e63c63p1d9fd5jsn2aad67a79b56",
+    "X-RapidAPI-Key": "23208be4d8mshe2a3410fa44a25bp18d8afjsn04a562c7f27f",
     "X-RapidAPI-Host": "hotels4.p.rapidapi.com"
 }
 
+
 response = requests.request("POST", url, json=payload, headers=headers)
+print(response.status_code)
 data = response.json()
-with open('distance.json', 'w', encoding='utf-8') as f:
+with open('distance_200result_size.json', 'w', encoding='utf-8') as f:
     json.dump(data, f, indent=4)
 
 

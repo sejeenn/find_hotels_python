@@ -8,7 +8,6 @@ import api
 from keyboards.calendar.telebot_calendar import Calendar
 import processing_json
 import random
-from utils.sort_bestdeal import sort_by_distance
 
 
 @bot.message_handler(commands=['lowprice', 'highprice', 'bestdeal'])
@@ -37,9 +36,14 @@ def input_city(message: Message) -> None:
         # Создаем запрос для поиска вариантов городов и генерируем клавиатуру
         url = "https://hotels4.p.rapidapi.com/locations/v3/search"
         querystring = {"q": message.text, "locale": "en_US"}
-        query_cities = api.general_request.request('GET', url, querystring)
-        possible_cities = processing_json.get_cities.get_city(query_cities.text)
-        keyboards.inline.city_buttons.show_cities_buttons(message, possible_cities)
+        response_cities = api.general_request.request('GET', url, querystring)
+        if response_cities.status_code == 200:
+            possible_cities = processing_json.get_cities.get_city(response_cities.text)
+            keyboards.inline.city_buttons.show_cities_buttons(message, possible_cities)
+        else:
+            bot.send_message(message.chat.id, f"Что-то пошло не так, код ошибки: {response_cities.status_code}")
+            bot.send_message(message.chat.id, 'Нажмите команду еще раз. И введите другой город.')
+            data.clear()
 
 
 @bot.message_handler(state=UserInputState.quantity_hotels)
@@ -127,12 +131,14 @@ def print_data(message: Message, data: Dict):
                          f'Конец диапазона от центра: {data["landmark_out"]}')
     else:
         bot.send_message(message.chat.id, text_message)
-    print(data)
-    find_and_show_hotel(message, data)
+    find_and_show_hotels(message, data)
 
 
-def find_and_show_hotel(message: Message, data: Dict):
-    """Формирование запроса на поиск отелей"""
+def find_and_show_hotels(message: Message, data: Dict):
+    """
+    Формирование запросов на поиск отелей, и детальной информации о них (адрес, фотографии).
+    Вывод полученных данных пользователю в чат.
+    """
     payload = {
         "currency": "USD",
         "eapid": 1,
@@ -163,65 +169,64 @@ def find_and_show_hotel(message: Message, data: Dict):
             "min": int(data['price_min'])
         }}
     }
-    # print(payload)
     url = "https://hotels4.p.rapidapi.com/properties/v2/list"
-    query_hotels = api.general_request.request('POST', url, payload)
-    hotels = processing_json.get_hotels.get_hotels(query_hotels.text)
-    if data['command'] == '/highprice':
-        hotels = {
-            key: value for key, value in
-            sorted(hotels.items(), key=lambda hotel_id: hotel_id[1]['price'], reverse=True)
-        }
-    elif data['command'] == '/bestdeal':
-        hotels = sort_by_distance(hotels, data["landmark_in"], data["landmark_out"])
-    count = 0
-    # print(hotels)
-    for hotel in hotels.values():
-        # Нужен дополнительный запрос, чтобы получить детальную информацию об отеле.
-        # Цикл будет выполняться, пока не достигнет числа отелей, которое запросил пользователь.
-        if count < int(data['quantity_hotels']):
-            count += 1
-            summary_payload = {
-                "currency": "USD",
-                "eapid": 1,
-                "locale": "en_US",
-                "siteId": 300000001,
-                "propertyId": hotel['id']
-            }
-            summary_url = "https://hotels4.p.rapidapi.com/properties/v2/get-summary"
-            get_summary = api.general_request.request('POST', summary_url, summary_payload)
-            summary, images = processing_json.get_summary.hotel_info(get_summary.text)
-            distance_to_center = float(hotel["distance"]) * 1.61  # преобразование милей в километры
+    # Отправка запроса серверу на поиск отелей
+    response_hotels = api.general_request.request('POST', url, payload)
+    # Если сервер возвращает статус-код не 200, то все остальные действия будут бессмысленными.
+    if response_hotels.status_code == 200:
+        # Обработка полученного ответа от сервера и формирование отсортированного словаря с отелями
+        hotels = processing_json.get_hotels.get_hotels(response_hotels.text, data['command'],
+                                                       data["landmark_in"], data["landmark_out"])
+        count = 0
+        for hotel in hotels.values():
+            # Нужен дополнительный запрос, чтобы получить детальную информацию об отеле.
+            # Цикл будет выполняться, пока не достигнет числа отелей, которое запросил пользователь.
+            if count < int(data['quantity_hotels']):
+                count += 1
+                summary_payload = {
+                    "currency": "USD",
+                    "eapid": 1,
+                    "locale": "en_US",
+                    "siteId": 300000001,
+                    "propertyId": hotel['id']
+                }
+                summary_url = "https://hotels4.p.rapidapi.com/properties/v2/get-summary"
+                get_summary = api.general_request.request('POST', summary_url, summary_payload)
+                if get_summary.status_code == 200:
+                    summary, images = processing_json.get_summary.hotel_info(get_summary.text)
+                    distance_to_center = float(hotel["distance"]) * 1.61  # преобразование милей в километры
 
-            caption = f'Название: {hotel["name"]}\n ' \
-                      f'Адрес: {summary["address"]}\n' \
-                      f'Стоимость проживания в сутки: {hotel["price"]}\n ' \
-                      f'Расстояние до центра: {round(distance_to_center, 2)} км.)\n'
-            # Если количество фотографий > 0: создаем медиа группу с фотками и выводим ее в чат
-            if int(data['photo_count']) > 0:
-                medias = []
-                links_to_images = []
-                # сформируем рандомный список из ссылок на фотографии
-                try:
-                    for random_url in range(int(data['photo_count'])):
-                        links_to_images.append(images[random.randint(0, len(images))])
-                except IndexError:
-                    continue
-                # формируем MediaGroup с фотографиями и описанием отеля и посылаем в чат
-                for number, url in enumerate(links_to_images):
-                    if number == 0:
-                        medias.append(InputMediaPhoto(media=url, caption=caption))
+                    caption = f'Название: {hotel["name"]}\n ' \
+                              f'Адрес: {summary["address"]}\n' \
+                              f'Стоимость проживания в сутки: {hotel["price"]}\n ' \
+                              f'Расстояние до центра: {round(distance_to_center, 2)} км.)\n'
+                    # Если количество фотографий > 0: создаем медиа группу с фотками и выводим ее в чат
+                    if int(data['photo_count']) > 0:
+                        medias = []
+                        links_to_images = []
+                        # сформируем рандомный список из ссылок на фотографии
+                        try:
+                            for random_url in range(int(data['photo_count'])):
+                                links_to_images.append(images[random.randint(0, len(images))])
+                        except IndexError:
+                            continue
+                        # формируем MediaGroup с фотографиями и описанием отеля и посылаем в чат
+                        for number, url in enumerate(links_to_images):
+                            if number == 0:
+                                medias.append(InputMediaPhoto(media=url, caption=caption))
+                            else:
+                                medias.append(InputMediaPhoto(media=url))
+                        bot.send_media_group(message.chat.id, medias)
+
                     else:
-                        medias.append(InputMediaPhoto(media=url))
-                # print(hotels_info)
-                bot.send_media_group(message.chat.id, medias)
-
+                        # если фотки не нужны, то просто выводим данные об отеле
+                        bot.send_message(message.chat.id, caption)
+                else:
+                    bot.send_message(message.chat.id, f'Что-то пошло не так, код ошибки: {get_summary.status_code}')
             else:
-                # если фотки не нужны, то просто выводим данные об отеле
-                bot.send_message(message.chat.id, caption)
-        else:
-            break
-
+                break
+    else:
+        bot.send_message(message.chat.id, f'Что-то пошло не так, код ошибки: {response_hotels.status_code}')
     bot.send_message(message.chat.id, 'Поиск окончен!')
 
 

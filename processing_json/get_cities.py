@@ -1,10 +1,13 @@
 import json
 
 
-def get_city(query_text):
-    # попробуем расшифровать json
+def get_city(response_text):
+    """
+    Принимает ответ от сервера с возможными вариантами городов. Возвращает словарь
+    с названиями городов и их идентификатором.
+    """
     possible_cities = {}
-    data = json.loads(query_text)
+    data = json.loads(response_text)
     if not data:
         raise LookupError('Запрос пуст...')
     for id_place in data['sr']:

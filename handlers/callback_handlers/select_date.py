@@ -30,10 +30,12 @@ def input_date(call):
         with bot.retrieve_data(call.message.chat.id) as data:
             if 'checkInDate' in data:
                 checkin = int(data['checkInDate']['year'] + data['checkInDate']['month'] + data['checkInDate']['day'])
-                print('Выбранная дата', select_date, 'CheckIn', checkin)
                 if int(select_date) > checkin:
                     logger.info('Ввод и сохранение даты выезда.')
                     data['checkOutDate'] = {'day': day, 'month': month, 'year': year}
+                    # далее две переменные-заглушки, чтобы не было ошибки при получении словаря с отелями
+                    data['landmark_in'] = 0
+                    data['landmark_out'] = 0
                     if data['sort'] == 'DISTANCE':
                         bot.set_state(call.message.chat.id, UserInputState.landmarkIn)
                         bot.send_message(call.message.chat.id, 'Введите начало диапазона расстояния от центра '
@@ -46,7 +48,6 @@ def input_date(call):
                     handlers.input_data.my_calendar(call.message, 'выезда')
             else:
                 if int(select_date) >= int(now):
-                    print('Выбранная дата заезда:', select_date, 'Сегодняшняя дата:', now)
                     logger.info('Ввод и сохранение даты заезда.')
                     data['checkInDate'] = {'day': day, 'month': month, 'year': year}
                     handlers.input_data.my_calendar(call.message, 'выезда')

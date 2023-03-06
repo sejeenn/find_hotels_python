@@ -1,9 +1,17 @@
 import json
 
-with open("distance.json", "r") as read_file:
-    data = json.load(read_file)
+with open('distance_200result_size.json') as file:
+    data = json.load(file)
+hotels_data = {}
+count = 0
+for hotel in data['data']['propertySearch']["properties"]:
 
-for hotel in data['data']['propertySearch']['properties']:
-    print(hotel['price']['lead']['amount'])
-
-
+    if 1 < hotel['destinationInfo']['distanceFromDestination']['value'] < 7.5:
+        hotels_data[hotel['id']] = {
+            'name': hotel['name'], 'id': hotel['id'],
+            'distance': hotel['destinationInfo']['distanceFromDestination']['value'],
+            'unit': hotel['destinationInfo']['distanceFromDestination']['unit'],
+            'price': hotel['price']['lead']['amount']
+        }
+print(hotels_data)
+print(count)
