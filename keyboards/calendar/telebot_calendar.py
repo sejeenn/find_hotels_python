@@ -45,7 +45,7 @@ class Calendar:
         month: int = None,
     ) -> InlineKeyboardMarkup:
         """
-        Create a built in inline keyboard with calendar
+        Создание и постройка inline-клавиатуры с календарём.
 
         :param name:
         :param year: Year to use in the calendar if you are not using the current year.
@@ -127,7 +127,7 @@ class Calendar:
         self, name: str = "calendar", year: int = None
     ) -> InlineKeyboardMarkup:
         """
-        Creates a calendar with month selection
+        Создает календарь с выбором месяца
 
         :param name:
         :param year:
@@ -170,8 +170,8 @@ class Calendar:
         day: int,
     ) -> None or datetime.datetime:
         """
-        The method creates a new calendar if the forward or backward button is pressed
-        This method should be called inside CallbackQueryHandler.
+        Метод создает новый календарь, если нажата кнопка "вперед" или "назад"
+        Этот метод должен быть вызван внутри CallbackQueryHandler.
 
 
         :param bot: The object of the bot CallbackQueryHandler
@@ -251,14 +251,14 @@ class CallbackData:
     def __init__(self, prefix, *parts, sep=":"):
         if not isinstance(prefix, str):
             raise TypeError(
-                f"Prefix must be instance of str not {type(prefix).__name__}"
+                f"Префикс должен быть экземпляром str, а не {type(prefix).__name__}"
             )
         if not prefix:
-            raise ValueError("Prefix can't be empty")
+            raise ValueError("Префикс не должен быть пустым")
         if sep in prefix:
-            raise ValueError(f"Separator {sep!r} can't be used in prefix")
+            raise ValueError(f"Разделитель {sep!r} не может использоваться в качестве префикса")
         if not parts:
-            raise TypeError("Parts were not passed!")
+            raise TypeError("Части не были переданы!")
 
         self.prefix = prefix
         self.sep = sep
@@ -284,32 +284,32 @@ class CallbackData:
                 if args:
                     value = args.pop(0)
                 else:
-                    raise ValueError(f"Value for {part!r} was not passed!")
+                    raise ValueError(f"Значение для {part!r} не передано!")
 
             if value is not None and not isinstance(value, str):
                 value = str(value)
 
             if not value:
-                raise ValueError(f"Value for part {part!r} can't be empty!'")
+                raise ValueError(f"Значение для части {part!r} не может быть пустым!'")
             if self.sep in value:
                 raise ValueError(
-                    f"Symbol {self.sep!r} is defined as the separator and can't be used in parts' values"
+                    f"Символ {self.sep!r} определяется как разделитель и не может использоваться в значениях частей"
                 )
 
             data.append(value)
 
         if args or kwargs:
-            raise TypeError("Too many arguments were passed!")
+            raise TypeError("Было передано слишком много аргументов!")
 
         callback_data = self.sep.join(data)
         if len(callback_data) > 64:
-            raise ValueError("Resulted callback data is too long!")
+            raise ValueError("Результат выполнения  callback_data слишком длинный!")
 
         return callback_data
 
     def parse(self, callback_data: str) -> typing.Dict[str, str]:
         """
-        Parse data from the callback data
+        Анализ данных из callback data
 
         :param callback_data:
         :return:
@@ -329,7 +329,7 @@ class CallbackData:
 
     def filter(self, **config):
         """
-        Generate filter
+        Создать фильтр
 
         :param config:
         :return:

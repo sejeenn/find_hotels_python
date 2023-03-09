@@ -8,8 +8,15 @@ headers = {
 }
 
 
-def request(method, url, query_string):
-    """Посылаем запрос к серверу"""
+def request(method: str, url: str, query_string: dict) -> requests.Response:
+    """
+    Посылаем запрос к серверу
+    : param method : str
+    : param url : str
+    : param query_string : dict
+    : return : request.Response
+    """
+
     if method == "GET":
         response_get = requests.request("GET", url, params=query_string, headers=headers)
         return response_get

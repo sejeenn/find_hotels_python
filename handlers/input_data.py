@@ -12,8 +12,12 @@ import random
 
 @bot.message_handler(commands=['lowprice', 'highprice', 'bestdeal'])
 def low_high_best_handler(message: Message) -> None:
-    """Обработчик команд, срабатывает на три команды /lowprice, /highprice, /bestdeal
-    и запоминает необходимые данные. Спрашивает пользователя - какой искать город."""
+    """
+    Обработчик команд, срабатывает на три команды /lowprice, /highprice, /bestdeal
+    и запоминает необходимые данные. Спрашивает пользователя - какой искать город.
+    : param message : Message
+    : return : None
+    """
     bot.set_state(message.chat.id, UserInputState.command)
     with bot.retrieve_data(message.chat.id) as data:
         data.clear()
@@ -28,8 +32,12 @@ def low_high_best_handler(message: Message) -> None:
 
 @bot.message_handler(state=UserInputState.input_city)
 def input_city(message: Message) -> None:
-    """Ввод пользователем города и отправка запроса серверу на поиск вариантов городов.
-        Возможные варианты городов передаются генератору клавиатуры."""
+    """
+    Ввод пользователем города и отправка запроса серверу на поиск вариантов городов.
+    Возможные варианты городов передаются генератору клавиатуры.
+    : param message : Message
+    : return : None
+    """
     with bot.retrieve_data(message.chat.id) as data:
         data['input_city'] = message.text
         logger.info('Пользователь ввел город: ' + message.text)
@@ -48,8 +56,12 @@ def input_city(message: Message) -> None:
 
 @bot.message_handler(state=UserInputState.quantity_hotels)
 def input_quantity(message: Message) -> None:
-    """Ввод количества выдаваемых на странице отелей, а так же проверка, является ли
-    введённое числом и входит ли оно в заданный диапазон от 1 до 25"""
+    """
+    Ввод количества выдаваемых на странице отелей, а так же проверка, является ли
+    введённое числом и входит ли оно в заданный диапазон от 1 до 25
+    : param message : Message
+    : return : None
+    """
     if message.text.isdigit():
         if 0 < int(message.text) <= 25:
             logger.info('Ввод и запись количества отелей: ' + message.text)
@@ -65,7 +77,11 @@ def input_quantity(message: Message) -> None:
 
 @bot.message_handler(state=UserInputState.priceMin)
 def input_price_min(message: Message) -> None:
-    """Ввод минимальной стоимости отеля и проверка чтобы это было число."""
+    """
+    Ввод минимальной стоимости отеля и проверка чтобы это было число.
+    : param message : Message
+    : return : None
+    """
     if message.text.isdigit():
         logger.info('Ввод и запись минимальной стоимости отеля: ' + message.text)
         with bot.retrieve_data(message.chat.id) as data:
@@ -78,8 +94,12 @@ def input_price_min(message: Message) -> None:
 
 @bot.message_handler(state=UserInputState.priceMax)
 def input_price_max(message: Message) -> None:
-    """Ввод минимальной стоимости отеля и проверка чтобы это было число. Максимальное число не может
-        быть меньше минимального."""
+    """
+    Ввод минимальной стоимости отеля и проверка чтобы это было число. Максимальное число не может
+    быть меньше минимального.
+    : param message : Message
+    : return : None
+    """
     if message.text.isdigit():
         logger.info('Ввод и запись максимальной стоимости отеля, сравнение с price_min: ' + message.text)
         with bot.retrieve_data(message.chat.id) as data:
@@ -94,7 +114,11 @@ def input_price_max(message: Message) -> None:
 
 @bot.message_handler(state=UserInputState.photo_count)
 def input_photo_quantity(message: Message) -> None:
-    """Ввод количества фотографий и проверка на число и на соответствие заданному диапазону от 1 до 10"""
+    """
+    Ввод количества фотографий и проверка на число и на соответствие заданному диапазону от 1 до 10
+    : param message : Message
+    : return : None
+    """
     if message.text.isdigit():
         if 0 < int(message.text) <= 10:
             logger.info('Ввод и запись количества фотографий: ' + message.text)
@@ -107,9 +131,14 @@ def input_photo_quantity(message: Message) -> None:
         bot.send_message(message.chat.id, 'Ошибка! Вы ввели не число! Повторите ввод!')
 
 
-def print_data(message: Message, data: Dict):
-    """Выводим в чат всё, что собрали от пользователя и передаем это в функцию поиска
-        отелей"""
+def print_data(message: Message, data: Dict) -> None:
+    """
+    Выводим в чат всё, что собрали от пользователя и передаем это в функцию поиска
+    отелей.
+    : param message : Message
+    : param data: Dict данные собранные от пользователя
+    : return : None
+    """
     logger.info('Вывод суммарной информации о параметрах запроса пользователем.')
     text_message = ('Исходные данные:\n'
                     f'Дата и время запроса: {data["date_time"]}\n'
@@ -134,10 +163,13 @@ def print_data(message: Message, data: Dict):
     find_and_show_hotels(message, data)
 
 
-def find_and_show_hotels(message: Message, data: Dict):
+def find_and_show_hotels(message: Message, data: Dict) -> None:
     """
     Формирование запросов на поиск отелей, и детальной информации о них (адрес, фотографии).
     Вывод полученных данных пользователю в чат.
+    : param message : Message
+    : param data : Dict данные, собранные от пользователя
+    : return : None
     """
     payload = {
         "currency": "USD",
@@ -172,6 +204,7 @@ def find_and_show_hotels(message: Message, data: Dict):
     url = "https://hotels4.p.rapidapi.com/properties/v2/list"
     # Отправка запроса серверу на поиск отелей
     response_hotels = api.general_request.request('POST', url, payload)
+
     # Если сервер возвращает статус-код не 200, то все остальные действия будут бессмысленными.
     if response_hotels.status_code == 200:
         # Обработка полученного ответа от сервера и формирование отсортированного словаря с отелями
@@ -193,21 +226,21 @@ def find_and_show_hotels(message: Message, data: Dict):
                 summary_url = "https://hotels4.p.rapidapi.com/properties/v2/get-summary"
                 get_summary = api.general_request.request('POST', summary_url, summary_payload)
                 if get_summary.status_code == 200:
-                    summary, images = processing_json.get_summary.hotel_info(get_summary.text)
-                    distance_to_center = float(hotel["distance"]) * 1.61  # преобразование милей в километры
+                    summary_info = processing_json.get_summary.hotel_info(get_summary.text)
 
                     caption = f'Название: {hotel["name"]}\n ' \
-                              f'Адрес: {summary["address"]}\n' \
+                              f'Адрес: {summary_info["address"]}\n' \
                               f'Стоимость проживания в сутки: {hotel["price"]}\n ' \
-                              f'Расстояние до центра: {round(distance_to_center, 2)} км.)\n'
+                              f'Расстояние до центра: {round(hotel["distance"], 2)} mile.\n'
                     # Если количество фотографий > 0: создаем медиа группу с фотками и выводим ее в чат
                     if int(data['photo_count']) > 0:
                         medias = []
                         links_to_images = []
-                        # сформируем рандомный список из ссылок на фотографии
+                        # сформируем рандомный список из ссылок на фотографии, ибо фоток много, а надо только 10
                         try:
                             for random_url in range(int(data['photo_count'])):
-                                links_to_images.append(images[random.randint(0, len(images))])
+                                links_to_images.append(summary_info['images']
+                                                       [random.randint(0, len(summary_info['images']) - 1)])
                         except IndexError:
                             continue
                         # формируем MediaGroup с фотографиями и описанием отеля и посылаем в чат
@@ -234,25 +267,39 @@ bot_calendar = Calendar()
 
 
 def my_calendar(message: Message, word: str) -> None:
-    """Запуск инлайн-клавиатуры для выбора дат заезда и выезда"""
+    """
+    Запуск инлайн-клавиатуры (календаря) для выбора дат заезда и выезда
+    : param message : Message
+    : param word : str слово (заезда или выезда)
+    : return : None
+    """
     bot.send_message(message.chat.id, f'Выберите дату: {word}',
                      reply_markup=bot_calendar.create_calendar(), )
 
 
 @bot.message_handler(state=UserInputState.landmarkIn)
 def input_landmark_in(message: Message) -> None:
-    """Ввод начала диапазона расстояния от центра"""
+    """
+    Ввод начала диапазона расстояния до центра
+    : param message : Message
+    : return : None
+    """
     if message.text.isdigit():
         with bot.retrieve_data(message.chat.id) as data:
             data['landmark_in'] = message.text
         bot.set_state(message.chat.id, UserInputState.landmarkOut)
-        bot.send_message(message.chat.id, 'Введите конец диапазона расстояния от центра (км).')
+        bot.send_message(message.chat.id, 'Введите конец диапазона расстояния от центра (в милях).')
     else:
         bot.send_message(message.chat.id, 'Ошибка! Вы ввели не число! Повторите ввод!')
 
 
 @bot.message_handler(state=UserInputState.landmarkOut)
 def input_landmark_out(message: Message) -> None:
+    """
+    Ввод конца диапазона расстояния до центра
+    : param message : Message
+    : return : None
+    """
     if message.text.isdigit():
         with bot.retrieve_data(message.chat.id) as data:
             data['landmark_out'] = message.text
@@ -262,7 +309,11 @@ def input_landmark_out(message: Message) -> None:
 
 
 def check_command(command: str) -> str:
-    """Проверка команды и назначение параметра сортировки"""
+    """
+    Проверка команды и назначение параметра сортировки
+    : param command : str команда, выбранная (введенная) пользователем
+    : return : str команда сортировки
+    """
     if command == '/bestdeal':
         return 'DISTANCE'
     elif command == '/lowprice' or command == '/highprice':

@@ -1,10 +1,13 @@
 import json
+from telebot.types import Dict
 
 
-def get_city(response_text):
+def get_city(response_text: str) -> Dict:
     """
     Принимает ответ от сервера с возможными вариантами городов. Возвращает словарь
     с названиями городов и их идентификатором.
+    : param response_text : str текстовая строка, ответ от сервера
+    : return possible_cities : Dict Возвращает словарь с вариантами городов
     """
     possible_cities = {}
     data = json.loads(response_text)

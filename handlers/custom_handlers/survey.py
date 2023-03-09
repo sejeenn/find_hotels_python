@@ -64,5 +64,6 @@ def get_contact(message: Message) -> None:
                    f'Имя - {data["name"]}\nВозраст - {data["age"]}\nСтрана - {data["country"]}\n' \
                    f'Город - {data["city"]}\nНомер телефона - {data["phone_number"]}'
             bot.send_message(message.from_user.id, text)
+
     else:
         bot.send_message(message.from_user.id, 'Чтобы отправить контактную информацию нажми кнопку')

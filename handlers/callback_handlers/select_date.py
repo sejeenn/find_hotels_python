@@ -5,6 +5,7 @@ from states.user_states import UserInputState
 from keyboards.calendar.telebot_calendar import CallbackData, Calendar
 from handlers.input_data import print_data
 import handlers.input_data
+from telebot.types import CallbackQuery
 
 
 calendar = Calendar()
@@ -12,7 +13,14 @@ calendar_callback = CallbackData("calendar", "action", "year", "month", "day")
 
 
 @bot.callback_query_handler(func=lambda call: call.data.startswith(calendar_callback.prefix))
-def input_date(call):
+def input_date(call: CallbackQuery) -> None:
+    """
+    Пользователь нажал какую то кнопку на календаре. Если это кнопка какого-то определенного
+    дня, то сравниваем эту дату с сегодняшним днём. Дата заезда должна быть либо сегодня, либо
+    любой последующий день. А дата выезда не может быть меньше, либо равна, дате заезда.
+    : param call : CallbackQuery нажатие на кнопку получения даты в календаре.
+    : return : None
+    """
     name, action, year, month, day = call.data.split(calendar_callback.sep)
     calendar.calendar_query_handler(
         bot=bot, call=call, name=name, action=action, year=year, month=month, day=day)
@@ -39,7 +47,7 @@ def input_date(call):
                     if data['sort'] == 'DISTANCE':
                         bot.set_state(call.message.chat.id, UserInputState.landmarkIn)
                         bot.send_message(call.message.chat.id, 'Введите начало диапазона расстояния от центра '
-                                                               '(от 0 км).')
+                                                               '(от 0 миль).')
                     else:
                         print_data(call.message, data)
                 else:
@@ -57,7 +65,12 @@ def input_date(call):
                     handlers.input_data.my_calendar(call.message, 'заезда')
 
 
-def check_month_day(number):
+def check_month_day(number: str) -> str:
+    """
+    Преобразование формата числа месяца или дня из формата 1..9 в формат 01..09
+    : param number : str, число месяца или дня
+    : return number : str
+    """
     numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     if int(number) in numbers:
         number = '0' + number

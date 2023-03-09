@@ -1,11 +1,17 @@
 from loader import bot
 from loguru import logger
+from telebot.types import CallbackQuery
 from states.user_states import UserInputState
 from handlers.input_data import my_calendar
 
 
 @bot.callback_query_handler(func=lambda call: call.data.isalpha())
-def need_photo_callback(call) -> None:
+def need_photo_callback(call: CallbackQuery) -> None:
+    """
+        Пользователь нажал кнопку "ДА" или "НЕТ"
+        : param call: "yes" or "no"
+        : return : None
+        """
     if call.data == 'yes':
         logger.info('Нажата кнопка "ДА"')
         with bot.retrieve_data(call.message.chat.id) as data:
