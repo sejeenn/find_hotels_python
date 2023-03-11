@@ -95,7 +95,7 @@ def input_price_min(message: Message) -> None:
 @bot.message_handler(state=UserInputState.priceMax)
 def input_price_max(message: Message) -> None:
     """
-    Ввод минимальной стоимости отеля и проверка чтобы это было число. Максимальное число не может
+    Ввод максимальной стоимости отеля и проверка чтобы это было число. Максимальное число не может
     быть меньше минимального.
     : param message : Message
     : return : None
@@ -129,20 +129,6 @@ def input_photo_quantity(message: Message) -> None:
             bot.send_message(message.chat.id, 'Число фотографий должно быть в диапазоне от 1 до 10! Повторите ввод!')
     else:
         bot.send_message(message.chat.id, 'Ошибка! Вы ввели не число! Повторите ввод!')
-
-
-bot_calendar = Calendar()
-
-
-def my_calendar(message: Message, word: str) -> None:
-    """
-    Запуск инлайн-клавиатуры (календаря) для выбора дат заезда и выезда
-    : param message : Message
-    : param word : str слово (заезда или выезда)
-    : return : None
-    """
-    bot.send_message(message.chat.id, f'Выберите дату: {word}',
-                     reply_markup=bot_calendar.create_calendar(), )
 
 
 @bot.message_handler(state=UserInputState.landmarkIn)
@@ -186,3 +172,17 @@ def check_command(command: str) -> str:
         return 'DISTANCE'
     elif command == '/lowprice' or command == '/highprice':
         return 'PRICE_LOW_TO_HIGH'
+
+
+bot_calendar = Calendar()
+
+
+def my_calendar(message: Message, word: str) -> None:
+    """
+    Запуск инлайн-клавиатуры (календаря) для выбора дат заезда и выезда
+    : param message : Message
+    : param word : str слово (заезда или выезда)
+    : return : None
+    """
+    bot.send_message(message.chat.id, f'Выберите дату: {word}',
+                     reply_markup=bot_calendar.create_calendar(), )
