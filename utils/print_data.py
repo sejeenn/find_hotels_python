@@ -12,6 +12,9 @@ def print_data(message: Message, data: Dict) -> None:
     : param data: Dict данные собранные от пользователя
     : return : None
     """
+    print(data)
+    with open('print_data.txt', 'w') as file:
+        file.write(str(data))
     logger.info('Вывод суммарной информации о параметрах запроса пользователем.')
     text_message = ('Исходные данные:\n'
                     f'Дата и время запроса: {data["date_time"]}\n'
