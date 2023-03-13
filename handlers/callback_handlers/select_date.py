@@ -3,11 +3,9 @@ from loguru import logger
 import datetime
 from states.user_states import UserInputState
 from keyboards.calendar.telebot_calendar import CallbackData, Calendar
-# from handlers.input_data import print_data
 import handlers.input_data
 from telebot.types import CallbackQuery
 from utils.print_data import print_data
-
 
 
 calendar = Calendar()

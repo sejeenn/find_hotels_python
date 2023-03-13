@@ -14,6 +14,11 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
     : param data : Dict данные, собранные от пользователя
     : return : None
     """
+    save_data = {
+        data['chat_id']: {'destination_id': int(data['destination_id']), 'date_time': data['date_time'],
+
+                          }
+    }
     payload = {
         "currency": "USD",
         "eapid": 1,
@@ -54,6 +59,7 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
         hotels = processing_json.get_hotels.get_hotels(response_hotels.text, data['command'],
                                                        data["landmark_in"], data["landmark_out"])
         count = 0
+
         for hotel in hotels.values():
             # Нужен дополнительный запрос, чтобы получить детальную информацию об отеле.
             # Цикл будет выполняться, пока не достигнет числа отелей, которое запросил пользователь.
@@ -76,6 +82,14 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                               f'Адрес: {summary_info["address"]}\n' \
                               f'Стоимость проживания в сутки: {hotel["price"]}\n ' \
                               f'Расстояние до центра: {round(hotel["distance"], 2)} mile.\n'
+
+                    # сохраняем данные поиска в словарь
+                    save_data[data['chat_id']][hotel['id']] = {
+                        'name': hotel['name'],
+                        'address': summary_info['address'], 'price': hotel['price'],
+                        'distance': round(hotel["distance"], 2)
+                    }
+
                     # Если количество фотографий > 0: создаем медиа группу с фотками и выводим ее в чат
                     if int(data['photo_count']) > 0:
                         medias = []
@@ -87,6 +101,10 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                                                        [random.randint(0, len(summary_info['images']) - 1)])
                         except IndexError:
                             continue
+
+                        # сохраняем ссылки в словарь
+                        save_data[data['chat_id']][hotel['id']]['images'] = links_to_images
+
                         # формируем MediaGroup с фотографиями и описанием отеля и посылаем в чат
                         for number, url in enumerate(links_to_images):
                             if number == 0:
@@ -107,5 +125,5 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                 break
     else:
         bot.send_message(message.chat.id, f'Что-то пошло не так, код ошибки: {response_hotels.status_code}')
+    print(save_data)
     bot.send_message(message.chat.id, 'Поиск окончен!')
-
