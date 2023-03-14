@@ -1,6 +1,23 @@
 import sqlite3
 
 
+def save_user(chat_id, username, full_name):
+    connection = sqlite3.connect("database/history.sqlite3")
+    cursor = connection.cursor()
+    cursor.execute("""CREATE TABLE IF NOT EXISTS user(
+        chat_id INTEGER PRIMARY KEY,
+        username TEXT,
+        full_name TEXT
+    );
+    """)
+    try:
+        cursor.execute(
+            "INSERT INTO user (chat_id, username, full_name) VALUES (?, ?, ?)", (chat_id, username, full_name)
+        )
+        connection.commit()
+    except sqlite3.IntegrityError:
+        print('Данный пользователь уже существует')
+
 def save_inputs(input_data):
     connection = sqlite3.connect("database/search_history.db")
     cursor = connection.cursor()
