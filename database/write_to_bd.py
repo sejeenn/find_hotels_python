@@ -1,12 +1,13 @@
 import sqlite3
 
 
-def save_user(chat_id, username, full_name):
+def add_user(chat_id, username, full_name):
     connection = sqlite3.connect("database/history.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS user(
-        chat_id INTEGER PRIMARY KEY,
-        username TEXT,
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+        chat_id INTEGER UNIQUE,
+        username STRING,
         full_name TEXT
     );
     """)
