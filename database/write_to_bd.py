@@ -19,6 +19,7 @@ def add_user(chat_id, username, full_name):
     except sqlite3.IntegrityError:
         print('Данный пользователь уже существует')
 
+
 def save_inputs(input_data):
     connection = sqlite3.connect("database/search_history.db")
     cursor = connection.cursor()
