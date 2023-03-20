@@ -1,5 +1,10 @@
 import sqlite3
 
+
+connection = sqlite3.connect("test.sqlite3")
+cursor = connection.cursor()
+
+
 # пользователь запустил бота
 user = {
     'chat_id': 732418186, 'username': 'sejeenn', 'full_name': 'Евгений Воронцов'
@@ -41,9 +46,6 @@ user_response = {
 
 
 def add_user(user_data):
-    connection = sqlite3.connect("test.sqlite3")
-    cursor = connection.cursor()
-
     cursor.execute("""CREATE TABLE IF NOT EXISTS user(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
         chat_id INTEGER UNIQUE,
@@ -59,13 +61,9 @@ def add_user(user_data):
         connection.commit()
     except sqlite3.IntegrityError:
         print('Данный пользователь уже существует')
-    connection.close()
 
 
 def add_query(query_data):
-    connection = sqlite3.connect("test.sqlite3")
-    cursor = connection.cursor()
-
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
            query_author INTEGER,
@@ -84,13 +82,9 @@ def add_query(query_data):
         connection.commit()
     except sqlite3.IntegrityError:
         print('Запрос уже существует')
-    connection.close()
 
 
 def add_response(chat_id, hotel_id, name, address, price, distance):
-    connection = sqlite3.connect("test.sqlite3")
-    cursor = connection.cursor()
-
     cursor.execute("""CREATE TABLE IF NOT EXISTS response(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
         chat_id INTEGER,
@@ -108,12 +102,9 @@ def add_response(chat_id, hotel_id, name, address, price, distance):
     )
 
     connection.commit()
-    connection.close()
 
 
 def add_images(link_img):
-    connection = sqlite3.connect("test.sqlite3")
-    cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS images(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             link TEXT,
@@ -122,7 +113,6 @@ def add_images(link_img):
     cursor.execute("INSERT INTO images (link) VALUES (?)", (link_img, ))
 
     connection.commit()
-    connection.close()
 
 
 add_user(user)
@@ -136,8 +126,6 @@ for hotel in user_response.items():
         add_images(link)
 
 
-connection = sqlite3.connect("test.sqlite3")
-cursor = connection.cursor()
 cursor.execute("SELECT * FROM response")
 records = cursor.fetchall()
 print()
@@ -147,3 +135,4 @@ print()
 #     print("Стоимость проживания за ночь:", hotel[5])
 #     print("Расстояние до центра:", hotel[6])
 #     print()
+connection.close()
