@@ -61,9 +61,9 @@ def save_inputs(input_data):
 
 def save_search_history(search_history):
     print(search_history)
-    connection = sqlite3.connect("database/search_history.db")
+    connection = sqlite3.connect("database/history.sqlite3")
     cursor = connection.cursor()
-    cursor.execute("""CREATE TABLE IF NOT EXISTS search_history(
+    cursor.execute("""CREATE TABLE IF NOT EXISTS caption(
             id INT PRIMARY KEY,
             name TEXT,
             address TEXT,

@@ -68,16 +68,17 @@ def add_query(query_data):
 
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-           chat_id INTEGER,
-           date_time STRING,
+           query_author INTEGER,
+           date_time STRING UNIQUE,
            input_city STRING,
-           destination_id STRING
+           destination_id STRING, 
+           FOREIGN KEY (query_author) REFERENCES user (chat_id)
        );
        """)
 
     try:
         cursor.execute(
-            "INSERT INTO query(chat_id, date_time, input_city, destination_id) VALUES (?, ?, ?, ?)",
+            "INSERT INTO query(query_author, date_time, input_city, destination_id) VALUES (?, ?, ?, ?)",
             (query_data['chat_id'], query_data['date_time'], query_data['input_city'], query_data['destination_id'])
         )
         connection.commit()
@@ -97,25 +98,52 @@ def add_response(chat_id, hotel_id, name, address, price, distance):
         name STRING,
         address STRING, 
         price REAL,
-        distance REAL
+        distance REAL,
+        FOREIGN KEY (hotel_id) REFERENCES query (query_author)
     );
     """)
     cursor.execute(
         "INSERT INTO response(chat_id, hotel_id, name, address, price, distance) VALUES (?, ?, ?, ?, ?, ?)",
         (chat_id, hotel_id, name, address, price, distance)
     )
+
     connection.commit()
     connection.close()
 
 
-# for hotel in user_response.items():
-#     add_response(hotel[1]['chat_id'], hotel[0], hotel[1]['name'],
-#                  hotel[1]['address'], hotel[1]['price'], hotel[1]['distance'])
-# add_user(user)
-# add_query(user_query)
+def add_images(link_img):
+    connection = sqlite3.connect("test.sqlite3")
+    cursor = connection.cursor()
+    cursor.execute("""CREATE TABLE IF NOT EXISTS images(
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            link TEXT,
+            FOREIGN KEY (link) REFERENCES response (hotel_id)        
+        );""")
+    cursor.execute("INSERT INTO images (link) VALUES (?)", (link_img, ))
+
+    connection.commit()
+    connection.close()
+
+
+add_user(user)
+add_query(user_query)
+for hotel in user_response.items():
+    add_response(hotel[1]['chat_id'], hotel[0], hotel[1]['name'],
+                 hotel[1]['address'], hotel[1]['price'], hotel[1]['distance'])
+    for link in hotel[1]['images']:
+        print(link)
+
+        add_images(link)
+
 
 connection = sqlite3.connect("test.sqlite3")
 cursor = connection.cursor()
 cursor.execute("SELECT * FROM response")
 records = cursor.fetchall()
-print(records)
+print()
+# for hotel in records:
+#     print("Название отеля:", hotel[3])
+#     print("Адрес отеля:", hotel[4])
+#     print("Стоимость проживания за ночь:", hotel[5])
+#     print("Расстояние до центра:", hotel[6])
+#     print()
