@@ -66,18 +66,17 @@ def add_user(user_data):
 def add_query(query_data):
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-           query_author INTEGER,
-           date_time STRING UNIQUE,
            input_city STRING,
            destination_id STRING, 
-           FOREIGN KEY (query_author) REFERENCES user (chat_id)
+           date_time STRING UNIQUE,
+           FOREIGN KEY (id) REFERENCES user (id)
        );
        """)
 
     try:
         cursor.execute(
-            "INSERT INTO query(query_author, date_time, input_city, destination_id) VALUES (?, ?, ?, ?)",
-            (query_data['chat_id'], query_data['date_time'], query_data['input_city'], query_data['destination_id'])
+            "INSERT INTO query(input_city, destination_id, date_time) VALUES (?, ?, ?)",
+            (query_data['input_city'], query_data['destination_id'], query_data['date_time'])
         )
         connection.commit()
     except sqlite3.IntegrityError:
@@ -117,22 +116,20 @@ def add_images(link_img):
 
 add_user(user)
 add_query(user_query)
-for hotel in user_response.items():
-    add_response(hotel[1]['chat_id'], hotel[0], hotel[1]['name'],
-                 hotel[1]['address'], hotel[1]['price'], hotel[1]['distance'])
-    for link in hotel[1]['images']:
-        print(link)
-
-        add_images(link)
-
-
-cursor.execute("SELECT * FROM response")
-records = cursor.fetchall()
-print()
-# for hotel in records:
-#     print("Название отеля:", hotel[3])
-#     print("Адрес отеля:", hotel[4])
-#     print("Стоимость проживания за ночь:", hotel[5])
-#     print("Расстояние до центра:", hotel[6])
-#     print()
+# for hotel in user_response.items():
+#     add_response(hotel[1]['chat_id'], hotel[0], hotel[1]['name'],
+#                  hotel[1]['address'], hotel[1]['price'], hotel[1]['distance'])
+#     for link in hotel[1]['images']:
+#         add_images(link)
+#
+#
+# cursor.execute("SELECT * FROM response")
+# records = cursor.fetchall()
+# print()
+# # for hotel in records:
+# #     print("Название отеля:", hotel[3])
+# #     print("Адрес отеля:", hotel[4])
+# #     print("Стоимость проживания за ночь:", hotel[5])
+# #     print("Расстояние до центра:", hotel[6])
+# #     print()
 connection.close()
