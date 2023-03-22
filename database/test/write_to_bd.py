@@ -82,24 +82,25 @@ def add_query(query_data):
         )
         connection.commit()
     except sqlite3.IntegrityError:
-        print('Запрос уже существует')
+        print('Запрос с такой датой и временем уже существует')
 
 
-def add_response(chat_id, hotel_id, name, address, price, distance):
+def add_response(hotel_id, name, address, price, distance):
     cursor.execute("""CREATE TABLE IF NOT EXISTS response(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-        chat_id INTEGER,
+        query_id INTEGER REFERENCES query (id),
         hotel_id STRING,
         name STRING,
         address STRING, 
         price REAL,
-        distance REAL,
-        FOREIGN KEY (hotel_id) REFERENCES query (query_author)
+        distance REAL
     );
     """)
+    cursor.execute(f"SELECT `id` FROM user WHERE `chat_id` = {user['chat_id']}")
+    query_id = cursor.fetchone()[0]
     cursor.execute(
-        "INSERT INTO response(chat_id, hotel_id, name, address, price, distance) VALUES (?, ?, ?, ?, ?, ?)",
-        (chat_id, hotel_id, name, address, price, distance)
+        "INSERT INTO response(query_id, hotel_id, name, address, price, distance) VALUES (?, ?, ?, ?, ?, ?)",
+        (query_id, hotel_id, name, address, price, distance)
     )
 
     connection.commit()
