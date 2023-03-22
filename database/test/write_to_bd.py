@@ -66,17 +66,19 @@ def add_user(user_data):
 def add_query(query_data):
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+           user_id INTEGER REFERENCES user (id),
            input_city STRING,
            destination_id STRING, 
-           date_time STRING UNIQUE,
-           FOREIGN KEY (id) REFERENCES user (id)
+           date_time STRING UNIQUE
        );
        """)
+    cursor.execute(f"SELECT `id` FROM user WHERE `chat_id` = {user['chat_id']}")
+    user_id = cursor.fetchone()[0]
 
     try:
         cursor.execute(
-            "INSERT INTO query(input_city, destination_id, date_time) VALUES (?, ?, ?)",
-            (query_data['input_city'], query_data['destination_id'], query_data['date_time'])
+            "INSERT INTO query(user_id, input_city, destination_id, date_time) VALUES (?, ?, ?, ?)",
+            (user_id, query_data['input_city'], query_data['destination_id'], query_data['date_time'])
         )
         connection.commit()
     except sqlite3.IntegrityError:
@@ -123,9 +125,9 @@ add_query(user_query)
 #         add_images(link)
 #
 #
-# cursor.execute("SELECT * FROM response")
-# records = cursor.fetchall()
-# print()
+# cursor.execute(f"SELECT `id` FROM user WHERE `chat_id` = {user['chat_id']}")
+# records = cursor.fetchone()
+# print(records[0])
 # # for hotel in records:
 # #     print("Название отеля:", hotel[3])
 # #     print("Адрес отеля:", hotel[4])
