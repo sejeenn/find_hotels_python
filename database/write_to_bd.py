@@ -47,22 +47,39 @@ def add_query(query_data):
 
 def add_response(search_result):
     print(search_result)
-    # {'2538925': {'name': 'Al Manzel Hotel Apartments', 'address': 'Zayed The 1st Street, PO Box 129666, Abu Dhabi',
-    # 'price': 105.919254, 'distanse': 0.78, 'images': [
-    # 'https://images.trvl-media.com/lodging/3000000/2540000/2539000/2538925/1187c729.jpg?impolicy=resizecrop&rw=500
-    # &ra=fit', 'https://images.trvl-media.com/lodging/3000000/2540000/2539000/2538925/c4b30670.jpg?impolicy
-    # =resizecrop&rw=500&ra=fit', 'https://images.trvl-media.com/lodging/3000000/2540000/2539000/2538925/ec95a28f.jpg
-    # ?impolicy=resizecrop&rw=500&ra=fit']}}
     connection = sqlite3.connect("database/history.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS response(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
             query_id INTEGER,
-            hotel_id INTEGER,
+            hotel_id STRING,
             name STRING,
             address STRING, 
             price REAL,
             distance REAL
         );
         """)
+    for item in search_result.items():
+        cursor.execute(f"SELECT `id` FROM query WHERE `date_time` = ?", (item[1]['date_time'],))
+        query_id = cursor.fetchone()[0]
+        cursor.execute(
+            "INSERT INTO response(query_id, hotel_id, name, address, price, distance) VALUES (?, ?, ?, ?, ?, ?)",
+            (query_id, item[0], item[1]['name'], item[1]['address'], item[1]['price'], item[1]['distance'])
+        )
+        for link in item[1]['images']:
+            add_images(item[0], link)
+        connection.commit()
     connection.close()
+
+
+def add_images(hotel_id, link_img):
+    connection = sqlite3.connect("database/history.sqlite3")
+    cursor = connection.cursor()
+    cursor.execute("""CREATE TABLE IF NOT EXISTS images(
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            hotel_id INTEGER REFERENCES response (id),
+            link TEXT     
+        );""")
+
+    cursor.execute("INSERT INTO images (hotel_id, link) VALUES (?, ?)", (hotel_id, link_img))
+    connection.commit()

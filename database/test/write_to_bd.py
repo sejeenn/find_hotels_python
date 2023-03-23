@@ -1,9 +1,7 @@
 import sqlite3
 
-
 connection = sqlite3.connect("test.sqlite3")
 cursor = connection.cursor()
-
 
 # пользователь запустил бота
 user = {
@@ -118,7 +116,17 @@ def add_images(hotel_id, link_img):
 
     connection.commit()
 
-#
+
+ddddd = {'82828743': {'name': 'Regal Inn Badamdar',
+                      'address': 'Sebail Rayonu, Badamdar Sossesi, 1 Ci Yasayis Massivi 282 A, Baku, Baku, AZ1000',
+                      'price': 40.68, 'distanse': 1.98, 'date_time': '23.03.2023 20:54:15', 'images': [
+        'https://images.trvl-media.com/lodging/83000000/82830000/82828800/82828743/d8600723.jpg?impolicy=resizecrop'
+        '&rw=500&ra=fit',
+        'https://images.trvl-media.com/lodging/83000000/82830000/82828800/82828743/w1278h900x2y0-3a7ffc3b.jpg?impolicy=resizecrop&rw=500&ra=fit',
+        'https://images.trvl-media.com/lodging/83000000/82830000/82828800/82828743/8f14cc0a.jpg?impolicy=resizecrop&rw=500&ra=fit']}}
+
+for i in ddddd.items():
+    print(i[0], i[1]['name'])
 # add_user(user)
 # add_query(user_query)
 # for hotel in user_response.items():
@@ -127,36 +135,36 @@ def add_images(hotel_id, link_img):
 #     for link in hotel[1]['images']:
 #         add_images(hotel[0], link)
 
-
-cursor.execute(f"SELECT `date_time`, `input_city` FROM query WHERE `user_id` = ?", (user['chat_id'],))
-records = cursor.fetchall()
-
-for item in records:
-    print(item)
+#
+# cursor.execute(f"SELECT `date_time`, `input_city` FROM query WHERE `user_id` = ?", (user['chat_id'],))
+# records = cursor.fetchall()
+#
+# for item in records:
+#     print(item)
 # ('12.03.2023 19:40:11', 'baku') тут может быть не одна запись
 # предлагается пользователю выбрать нужную ему дату чтобы программа получила нужный ключ по которому
 # будут выбраны данные
-key = int(input('Введи ключ: '))
-cursor.execute("SELECT * FROM response WHERE `query_id` = ?", (key,))
-hotels = cursor.fetchall()
-
-cursor.execute("SELECT `photo_need` FROM query WHERE `id` = ?", (key,))
-photo_need = cursor.fetchone()
-answer = photo_need[0]
-
-
-for hotel in hotels:
-    print('Hotel ID:', hotel[2])
-    print('Название отеля:', hotel[3])
-    print('Адрес отеля:', hotel[4])
-    print('Стоимость проживания:', hotel[5])
-    print('Удаленность от центра:', hotel[6])
-    if answer == 'yes':
-        print('Если были нужны фотографии - выведем их!')
-        cursor.execute("SELECT `link` FROM images WHERE `hotel_id` = ?", (hotel[2],))
-        print(cursor.fetchall())
-    else:
-        print('Фотки были не нужны.')
-    print()
+# key = int(input('Введи ключ: '))
+# cursor.execute("SELECT * FROM response WHERE `query_id` = ?", (key,))
+# hotels = cursor.fetchall()
+#
+# cursor.execute("SELECT `photo_need` FROM query WHERE `id` = ?", (key,))
+# photo_need = cursor.fetchone()
+# answer = photo_need[0]
+#
+#
+# for hotel in hotels:
+#     print('Hotel ID:', hotel[2])
+#     print('Название отеля:', hotel[3])
+#     print('Адрес отеля:', hotel[4])
+#     print('Стоимость проживания:', hotel[5])
+#     print('Удаленность от центра:', hotel[6])
+#     if answer == 'yes':
+#         print('Если были нужны фотографии - выведем их!')
+#         cursor.execute("SELECT `link` FROM images WHERE `hotel_id` = ?", (hotel[2],))
+#         print(cursor.fetchall())
+#     else:
+#         print('Фотки были не нужны.')
+#     print()
 
 connection.close()
