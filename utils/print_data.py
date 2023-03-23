@@ -2,6 +2,7 @@ from loader import bot
 from telebot.types import Message, Dict
 from loguru import logger
 from utils import find_hotels
+import database
 
 
 def print_data(message: Message, data: Dict) -> None:
@@ -12,6 +13,9 @@ def print_data(message: Message, data: Dict) -> None:
     : param data: Dict данные собранные от пользователя
     : return : None
     """
+    # Отправляем в базу данных собранные данные
+    database.write_to_bd.add_query(data)
+
     logger.info('Вывод суммарной информации о параметрах запроса пользователем.')
     text_message = ('Исходные данные:\n'
                     f'Дата и время запроса: {data["date_time"]}\n'

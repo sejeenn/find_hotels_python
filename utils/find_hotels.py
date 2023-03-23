@@ -1,9 +1,11 @@
+import database.write_to_bd
 from loader import bot
 from telebot.types import Message, Dict, InputMediaPhoto
 from loguru import logger
 import api
 import processing_json
 import random
+import database
 
 
 def find_and_show_hotels(message: Message, data: Dict) -> None:
@@ -14,11 +16,6 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
     : param data : Dict данные, собранные от пользователя
     : return : None
     """
-    save_data = {
-        data['chat_id']: {'destination_id': int(data['destination_id']), 'date_time': data['date_time'],
-
-                          }
-    }
     payload = {
         "currency": "USD",
         "eapid": 1,
@@ -83,13 +80,6 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                               f'Стоимость проживания в сутки: {hotel["price"]}\n ' \
                               f'Расстояние до центра: {round(hotel["distance"], 2)} mile.\n'
 
-                    # сохраняем данные поиска в словарь
-                    save_data[data['chat_id']][hotel['id']] = {
-                        'name': hotel['name'],
-                        'address': summary_info['address'], 'price': hotel['price'],
-                        'distance': round(hotel["distance"], 2)
-                    }
-
                     # Если количество фотографий > 0: создаем медиа группу с фотками и выводим ее в чат
                     if int(data['photo_count']) > 0:
                         medias = []
@@ -101,9 +91,12 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                                                        [random.randint(0, len(summary_info['images']) - 1)])
                         except IndexError:
                             continue
-
-                        # сохраняем ссылки в словарь
-                        save_data[data['chat_id']][hotel['id']]['images'] = links_to_images
+                        # Не важно, нужны пользователю фотографии или нет ссылки на них мы передаем в функцию
+                        # для сохранения в базе данных
+                        add_to_db = {hotel['id']: {'name': hotel['name'], 'address': summary_info['address'],
+                                                   'price': hotel['price'], 'distanse': round(hotel["distance"], 2),
+                                                   'images': links_to_images}}
+                        database.write_to_bd.add_response(add_to_db)
 
                         # формируем MediaGroup с фотографиями и описанием отеля и посылаем в чат
                         for number, url in enumerate(links_to_images):
@@ -125,5 +118,4 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                 break
     else:
         bot.send_message(message.chat.id, f'Что-то пошло не так, код ошибки: {response_hotels.status_code}')
-    print(save_data)
     bot.send_message(message.chat.id, 'Поиск окончен!')

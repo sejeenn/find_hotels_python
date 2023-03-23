@@ -11,6 +11,7 @@ def add_user(chat_id, username, full_name):
         full_name TEXT
     );
     """)
+    connection.commit()
     try:
         cursor.execute(
             "INSERT INTO user (chat_id, username, full_name) VALUES (?, ?, ?)", (chat_id, username, full_name)
@@ -18,71 +19,50 @@ def add_user(chat_id, username, full_name):
         connection.commit()
     except sqlite3.IntegrityError:
         print('Данный пользователь уже существует')
+    connection.close()
 
 
-def save_inputs(input_data):
-    connection = sqlite3.connect("database/search_history.db")
-    cursor = connection.cursor()
-    cursor.execute("""CREATE TABLE IF NOT EXISTS user_input(
-        chat_id INT PRIMARY KEY,
-        command TEXT,
-        sort TEXT,
-        date_time TEXT, 
-        input_city TEXT,
-        destination_id TEXT,
-        quantity_hotels TEXT,
-        price_min TEXT,
-        price_max TEXT,
-        photo_need TEXT,
-        photo_count TEXT,
-        day_in TEXT,
-        month_in TEXT,
-        year_in TEXT,
-        day_out TEXT,
-        month_out TEXT,
-        year_out TEXT,
-        landmark_in TEXT, 
-        landmark_out TEXT);        
-    """)
-    cursor.execute("""INSERT INTO user_input VALUES 
-        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
-        (input_data['chat_id'], input_data['command'], input_data['sort'], input_data['date_time'],
-         input_data['input_city'], input_data['destination_id'], input_data['quantity_hotels'],
-         input_data['price_min'], input_data['price_max'], input_data['photo_need'],
-         input_data['photo_count'], input_data['checkInDate']['day'],input_data['checkInDate']['month'],
-         input_data['checkInDate']['year'], input_data['checkOutDate']['day'],
-         input_data['checkOutDate']['month'], input_data['checkOutDate']['year'],
-         input_data['landmark_in'], input_data['landmark_in']
-         ))
-    connection.commit()
-
-    print(input_data)
-
-
-def save_search_history(search_history):
-    print(search_history)
+def add_query(query_data):
     connection = sqlite3.connect("database/history.sqlite3")
     cursor = connection.cursor()
-    cursor.execute("""CREATE TABLE IF NOT EXISTS caption(
-            id INT PRIMARY KEY,
-            name TEXT,
-            address TEXT,
+    cursor.execute("""CREATE TABLE IF NOT EXISTS query(
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        user_id INTEGER,
+        date_time STRING, 
+        input_city STRING,
+        destination_id STRING,
+        photo_need STRING
+    );    
+    """)
+    try:
+        cursor.execute(
+            "INSERT INTO query(user_id, input_city, photo_need, destination_id, date_time) VALUES (?, ?, ?, ?, ?)",
+            (query_data['chat_id'], query_data['input_city'], query_data['photo_need'], query_data['destination_id'],
+             query_data['date_time'])
+        )
+        connection.commit()
+    except sqlite3.IntegrityError:
+        print('Запрос с такой датой и временем уже существует')
+
+
+def add_response(search_result):
+    print(search_result)
+    # {'2538925': {'name': 'Al Manzel Hotel Apartments', 'address': 'Zayed The 1st Street, PO Box 129666, Abu Dhabi',
+    # 'price': 105.919254, 'distanse': 0.78, 'images': [
+    # 'https://images.trvl-media.com/lodging/3000000/2540000/2539000/2538925/1187c729.jpg?impolicy=resizecrop&rw=500
+    # &ra=fit', 'https://images.trvl-media.com/lodging/3000000/2540000/2539000/2538925/c4b30670.jpg?impolicy
+    # =resizecrop&rw=500&ra=fit', 'https://images.trvl-media.com/lodging/3000000/2540000/2539000/2538925/ec95a28f.jpg
+    # ?impolicy=resizecrop&rw=500&ra=fit']}}
+    connection = sqlite3.connect("database/history.sqlite3")
+    cursor = connection.cursor()
+    cursor.execute("""CREATE TABLE IF NOT EXISTS response(
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
+            query_id INTEGER,
+            hotel_id INTEGER,
+            name STRING,
+            address STRING, 
             price REAL,
-            distance REAL);        
+            distance REAL
+        );
         """)
-    cursor.execute("""CREATE TABLE IF NOT EXISTS images(
-                id INT PRIMARY KEY,
-                links TEXT);        
-            """)
-
-    cursor.execute("""INSERT INTO search_history VALUES 
-            (?, ?, ?, ?, ?)""",
-                   (1, search_history['name'], search_history['address'],
-                    search_history['price'], search_history['distance']
-                    ))
-    id = 1
-    for link in search_history['images']:
-        cursor.execute("INSERT INTO images VALUES (?, ?)", (id, link) )
-        id += 1
-    connection.commit()
-
+    connection.close()

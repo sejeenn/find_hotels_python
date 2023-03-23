@@ -66,19 +66,19 @@ def add_user(user_data):
 def add_query(query_data):
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-           user_id INTEGER REFERENCES user (id),
+           user_id INTEGER,
            input_city STRING,
+           photo_need STRING,
            destination_id STRING, 
            date_time STRING UNIQUE
        );
        """)
-    cursor.execute(f"SELECT `id` FROM user WHERE `chat_id` = {user['chat_id']}")
-    user_id = cursor.fetchone()[0]
 
     try:
         cursor.execute(
-            "INSERT INTO query(user_id, input_city, destination_id, date_time) VALUES (?, ?, ?, ?)",
-            (user_id, query_data['input_city'], query_data['destination_id'], query_data['date_time'])
+            "INSERT INTO query(user_id, input_city, photo_need, destination_id, date_time) VALUES (?, ?, ?, ?, ?)",
+            (user['chat_id'], query_data['input_city'], user_query['photo_need'], query_data['destination_id'],
+             query_data['date_time'])
         )
         connection.commit()
     except sqlite3.IntegrityError:
@@ -88,7 +88,7 @@ def add_query(query_data):
 def add_response(hotel_id, name, address, price, distance):
     cursor.execute("""CREATE TABLE IF NOT EXISTS response(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
-        query_id INTEGER REFERENCES query (id),
+        query_id INTEGER,
         hotel_id STRING,
         name STRING,
         address STRING, 
@@ -96,8 +96,9 @@ def add_response(hotel_id, name, address, price, distance):
         distance REAL
     );
     """)
-    cursor.execute(f"SELECT `id` FROM user WHERE `chat_id` = {user['chat_id']}")
+    cursor.execute(f"SELECT `id` FROM query WHERE `date_time` = ?", (user_query['date_time'],))
     query_id = cursor.fetchone()[0]
+
     cursor.execute(
         "INSERT INTO response(query_id, hotel_id, name, address, price, distance) VALUES (?, ?, ?, ?, ?, ?)",
         (query_id, hotel_id, name, address, price, distance)
@@ -106,33 +107,56 @@ def add_response(hotel_id, name, address, price, distance):
     connection.commit()
 
 
-def add_images(link_img):
+def add_images(hotel_id, link_img):
     cursor.execute("""CREATE TABLE IF NOT EXISTS images(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            link TEXT,
-            FOREIGN KEY (link) REFERENCES response (hotel_id)        
+            hotel_id INTEGER REFERENCES response (id),
+            link TEXT     
         );""")
-    cursor.execute("INSERT INTO images (link) VALUES (?)", (link_img, ))
+
+    cursor.execute("INSERT INTO images (hotel_id, link) VALUES (?, ?)", (hotel_id, link_img))
 
     connection.commit()
 
-
-add_user(user)
-add_query(user_query)
+#
+# add_user(user)
+# add_query(user_query)
 # for hotel in user_response.items():
-#     add_response(hotel[1]['chat_id'], hotel[0], hotel[1]['name'],
-#                  hotel[1]['address'], hotel[1]['price'], hotel[1]['distance'])
+#     # add_response(hotel[0], hotel[1]['name'],
+#     #              hotel[1]['address'], hotel[1]['price'], hotel[1]['distance'])
 #     for link in hotel[1]['images']:
-#         add_images(link)
-#
-#
-# cursor.execute(f"SELECT `id` FROM user WHERE `chat_id` = {user['chat_id']}")
-# records = cursor.fetchone()
-# print(records[0])
-# # for hotel in records:
-# #     print("Название отеля:", hotel[3])
-# #     print("Адрес отеля:", hotel[4])
-# #     print("Стоимость проживания за ночь:", hotel[5])
-# #     print("Расстояние до центра:", hotel[6])
-# #     print()
+#         add_images(hotel[0], link)
+
+
+cursor.execute(f"SELECT `date_time`, `input_city` FROM query WHERE `user_id` = ?", (user['chat_id'],))
+records = cursor.fetchall()
+
+for item in records:
+    print(item)
+# ('12.03.2023 19:40:11', 'baku') тут может быть не одна запись
+# предлагается пользователю выбрать нужную ему дату чтобы программа получила нужный ключ по которому
+# будут выбраны данные
+key = int(input('Введи ключ: '))
+cursor.execute("SELECT * FROM response WHERE `query_id` = ?", (key,))
+hotels = cursor.fetchall()
+
+cursor.execute("SELECT `photo_need` FROM query WHERE `id` = ?", (key,))
+photo_need = cursor.fetchone()
+answer = photo_need[0]
+
+
+for hotel in hotels:
+    print('Hotel ID:', hotel[2])
+    print('Название отеля:', hotel[3])
+    print('Адрес отеля:', hotel[4])
+    print('Стоимость проживания:', hotel[5])
+    print('Удаленность от центра:', hotel[6])
+    if answer == 'yes':
+        print('Если были нужны фотографии - выведем их!')
+        cursor.execute("SELECT `link` FROM images WHERE `hotel_id` = ?", (hotel[2],))
+        print(cursor.fetchall())
+    else:
+        print('Фотки были не нужны.')
+    print()
+
 connection.close()
