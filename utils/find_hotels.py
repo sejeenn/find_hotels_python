@@ -91,11 +91,12 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                                                        [random.randint(0, len(summary_info['images']) - 1)])
                         except IndexError:
                             continue
+
                         # Не важно, нужны пользователю фотографии или нет ссылки на них мы передаем в функцию
                         # для сохранения в базе данных
                         data_to_db = {hotel['id']: {'name': hotel['name'], 'address': summary_info['address'],
-                                                   'price': hotel['price'], 'distance': round(hotel["distance"], 2),
-                                                   'date_time': data['date_time'], 'images': links_to_images}}
+                                                    'price': hotel['price'], 'distance': round(hotel["distance"], 2),
+                                                    'date_time': data['date_time'], 'images': links_to_images}}
                         database.add_to_bd.add_response(data_to_db)
 
                         # формируем MediaGroup с фотографиями и описанием отеля и посылаем в чат

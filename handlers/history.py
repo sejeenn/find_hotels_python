@@ -1,8 +1,9 @@
 from loader import bot
-from telebot.types import Message
+from telebot.types import Message, InputMediaPhoto
 from loguru import logger
 import database
-from keyboards.inline.history_queries import get_history_queries
+from keyboards.inline.history_buttons import get_history_queries
+
 
 @bot.message_handler(commands=['history'])
 def history(message: Message) -> None:
@@ -20,8 +21,13 @@ def history(message: Message) -> None:
 def show_history(message):
     history_dict = database.read_from_db.get_history_response(message.text)
     for hotel in history_dict.items():
-        print(hotel)
-        bot.send_message(message.chat.id, f"Название отеля: {hotel[1]['name']}]\n"
-                                          f"Адрес отеля: {hotel[1]['address']}\n"
-                                          f"Стоимость проживания в сутки: {hotel[1]['price']}\n"
-                                          f"Расстояние до центра: {hotel[1]['distance']}")
+        medias = []
+        caption = f"Название отеля: {hotel[1]['name']}]\n Адрес отеля: {hotel[1]['address']}\nСтоимость проживания в " \
+                  f"сутки: {hotel[1]['price']}\nРасстояние до центра: {hotel[1]['distance']}"
+        urls = hotel[1]['images']
+        for number, url in enumerate(urls):
+            if number == 0:
+                medias.append(InputMediaPhoto(media=url, caption=caption))
+            else:
+                medias.append(InputMediaPhoto(media=url))
+        bot.send_media_group(message.chat.id, medias)
