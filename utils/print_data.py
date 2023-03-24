@@ -14,7 +14,7 @@ def print_data(message: Message, data: Dict) -> None:
     : return : None
     """
     # Отправляем в базу данных собранные данные, а там уже выберу что нужно
-    database.write_to_bd.add_query(data)
+    database.add_to_bd.add_query(data)
 
     logger.info('Вывод суммарной информации о параметрах запроса пользователем.')
     text_message = ('Исходные данные:\n'

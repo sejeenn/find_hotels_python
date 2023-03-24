@@ -1,7 +1,17 @@
 import sqlite3
+from loguru import logger
 
 
-def add_user(chat_id, username, full_name):
+def add_user(chat_id: int, username: str, full_name: str) -> None:
+    """
+    Создает, если нужно, таблицу с данными пользователей:
+    id, username и, если есть, "имя фамилия" и добавляет туда данные, если
+    бота запускает новый пользователь.
+    : param chat_id : int
+    : param username : str
+    : param full_name : str
+    : return : None
+    """
     connection = sqlite3.connect("database/history.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS user(
@@ -16,13 +26,20 @@ def add_user(chat_id, username, full_name):
         cursor.execute(
             "INSERT INTO user (chat_id, username, full_name) VALUES (?, ?, ?)", (chat_id, username, full_name)
         )
+        logger.info('Добавлен новый пользователь.')
         connection.commit()
     except sqlite3.IntegrityError:
-        print('Данный пользователь уже существует')
+        logger.info('Данный пользователь уже существует')
     connection.close()
 
 
-def add_query(query_data):
+def add_query(query_data: dict) -> None:
+    """
+    Создаёт таблицу, если она ещё не создавалась и добавляет туда данные,
+    которые ввел пользователь для поиска
+    : param query_data : dict
+    : return : None
+    """
     connection = sqlite3.connect("database/history.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
@@ -40,13 +57,19 @@ def add_query(query_data):
             (query_data['chat_id'], query_data['input_city'], query_data['photo_need'], query_data['destination_id'],
              query_data['date_time'])
         )
+        logger.info('Добавлен в БД новый запрос.')
         connection.commit()
     except sqlite3.IntegrityError:
         print('Запрос с такой датой и временем уже существует')
 
 
-def add_response(search_result):
-    print(search_result)
+def add_response(search_result: dict) -> None:
+    """
+    Создаёт таблицу, если она ещё не создавалась и добавляет туда данные,
+    которые бот получил в результате запросов к серверу.
+    : param search_result : dict
+    : return : None
+    """
     connection = sqlite3.connect("database/history.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS response(
@@ -66,20 +89,14 @@ def add_response(search_result):
             "INSERT INTO response(query_id, hotel_id, name, address, price, distance) VALUES (?, ?, ?, ?, ?, ?)",
             (query_id, item[0], item[1]['name'], item[1]['address'], item[1]['price'], item[1]['distance'])
         )
+        logger.info('Добавлены в БД данные отеля.')
         for link in item[1]['images']:
-            add_images(item[0], link)
-        connection.commit()
-    connection.close()
-
-
-def add_images(hotel_id, link_img):
-    connection = sqlite3.connect("database/history.sqlite3")
-    cursor = connection.cursor()
-    cursor.execute("""CREATE TABLE IF NOT EXISTS images(
+            cursor.execute("""CREATE TABLE IF NOT EXISTS images(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             hotel_id INTEGER REFERENCES response (id),
             link TEXT     
-        );""")
-
-    cursor.execute("INSERT INTO images (hotel_id, link) VALUES (?, ?)", (hotel_id, link_img))
-    connection.commit()
+            );""")
+            cursor.execute("INSERT INTO images (hotel_id, link) VALUES (?, ?)", (item[0], link))
+        logger.info('Добавлены в БД ссылки на фотографии отеля.')
+        connection.commit()
+    connection.close()

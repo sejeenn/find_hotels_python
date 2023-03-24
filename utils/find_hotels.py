@@ -1,4 +1,4 @@
-import database.write_to_bd
+import database.add_to_bd
 from loader import bot
 from telebot.types import Message, Dict, InputMediaPhoto
 from loguru import logger
@@ -93,10 +93,10 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                             continue
                         # Не важно, нужны пользователю фотографии или нет ссылки на них мы передаем в функцию
                         # для сохранения в базе данных
-                        add_to_db = {hotel['id']: {'name': hotel['name'], 'address': summary_info['address'],
+                        data_to_db = {hotel['id']: {'name': hotel['name'], 'address': summary_info['address'],
                                                    'price': hotel['price'], 'distance': round(hotel["distance"], 2),
                                                    'date_time': data['date_time'], 'images': links_to_images}}
-                        database.write_to_bd.add_response(add_to_db)
+                        database.add_to_bd.add_response(data_to_db)
 
                         # формируем MediaGroup с фотографиями и описанием отеля и посылаем в чат
                         for number, url in enumerate(links_to_images):
