@@ -55,8 +55,12 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
         # Обработка полученного ответа от сервера и формирование отсортированного словаря с отелями
         hotels = processing_json.get_hotels.get_hotels(response_hotels.text, data['command'],
                                                        data["landmark_in"], data["landmark_out"])
-        count = 0
+        if 'error' in hotels:
+            bot.send_message(message.chat.id, hotels['error'])
+            bot.send_message(message.chat.id, 'Попробуйте осуществить поиск с другими параметрами')
+            bot.send_message(message.chat.id, '')
 
+        count = 0
         for hotel in hotels.values():
             # Нужен дополнительный запрос, чтобы получить детальную информацию об отеле.
             # Цикл будет выполняться, пока не достигнет числа отелей, которое запросил пользователь.

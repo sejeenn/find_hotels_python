@@ -15,6 +15,10 @@ def get_hotels(response_text: str, command: str, landmark_in: str, landmark_out:
     data = json.loads(response_text)
     if not data:
         raise LookupError('Запрос пуст...')
+    # При поиске в некоторых городах выдается ошибка, я не очень понимаю из-за чего она.
+    # Дабы ее исключить - эта проверка:
+    if 'errors' in data.keys():
+        return {'error': data['errors'][0]['message']}
 
     hotels_data = {}
     for hotel in data['data']['propertySearch']['properties']:
