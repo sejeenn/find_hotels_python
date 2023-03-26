@@ -80,25 +80,24 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                               f'Стоимость проживания в сутки: {hotel["price"]}\n ' \
                               f'Расстояние до центра: {round(hotel["distance"], 2)} mile.\n'
 
+                    medias = []
+                    links_to_images = []
+                    # сформируем рандомный список из ссылок на фотографии, ибо фоток много, а надо только 10
+                    try:
+                        for random_url in range(int(data['photo_count'])):
+                            links_to_images.append(summary_info['images']
+                                                   [random.randint(0, len(summary_info['images']) - 1)])
+                    except IndexError:
+                        continue
+
+                    # Не важно, нужны пользователю фотографии или нет ссылки на них мы передаем в функцию
+                    # для сохранения в базе данных
+                    data_to_db = {hotel['id']: {'name': hotel['name'], 'address': summary_info['address'],
+                                                'price': hotel['price'], 'distance': round(hotel["distance"], 2),
+                                                'date_time': data['date_time'], 'images': links_to_images}}
+                    database.add_to_bd.add_response(data_to_db)
                     # Если количество фотографий > 0: создаем медиа группу с фотками и выводим ее в чат
                     if int(data['photo_count']) > 0:
-                        medias = []
-                        links_to_images = []
-                        # сформируем рандомный список из ссылок на фотографии, ибо фоток много, а надо только 10
-                        try:
-                            for random_url in range(int(data['photo_count'])):
-                                links_to_images.append(summary_info['images']
-                                                       [random.randint(0, len(summary_info['images']) - 1)])
-                        except IndexError:
-                            continue
-
-                        # Не важно, нужны пользователю фотографии или нет ссылки на них мы передаем в функцию
-                        # для сохранения в базе данных
-                        data_to_db = {hotel['id']: {'name': hotel['name'], 'address': summary_info['address'],
-                                                    'price': hotel['price'], 'distance': round(hotel["distance"], 2),
-                                                    'date_time': data['date_time'], 'images': links_to_images}}
-                        database.add_to_bd.add_response(data_to_db)
-
                         # формируем MediaGroup с фотографиями и описанием отеля и посылаем в чат
                         for number, url in enumerate(links_to_images):
                             if number == 0:
