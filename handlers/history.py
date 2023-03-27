@@ -42,7 +42,7 @@ def input_city(message: Message) -> None:
                 photo_need = 'yes'
 
         if photo_need != 'yes':
-            bot.send_message(message.chat.id, text='<b>Пользователь выбирал вариант "без фото</b>".')
+            bot.send_message(message.chat.id, 'Пользователь выбирал вариант "без фото"')
 
         if int(message.text) in number_query:
             history_dict = database.read_from_db.get_history_response(message.text)

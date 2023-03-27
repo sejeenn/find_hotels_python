@@ -1,4 +1,5 @@
 import sqlite3
+import database
 from loguru import logger
 
 
@@ -41,6 +42,7 @@ def add_query(query_data: dict) -> None:
     : param query_data : dict
     : return : None
     """
+    user_id = query_data['chat_id']
     connection = sqlite3.connect("database/history.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
@@ -49,16 +51,28 @@ def add_query(query_data: dict) -> None:
         date_time STRING, 
         input_city STRING,
         destination_id STRING,
-        photo_need STRING
+        photo_need STRING,
+        response_id INTEGER,
+        FOREIGN KEY (response_id) REFERENCES response(id) ON DELETE CASCADE ON UPDATE CASCADE
     );    
     """)
     try:
         cursor.execute(
             "INSERT INTO query(user_id, input_city, photo_need, destination_id, date_time) VALUES (?, ?, ?, ?, ?)",
-            (query_data['chat_id'], query_data['input_city'], query_data['photo_need'], query_data['destination_id'],
+            (user_id, query_data['input_city'], query_data['photo_need'], query_data['destination_id'],
              query_data['date_time'])
         )
         logger.info('Добавлен в БД новый запрос.')
+
+        # Нам не нужно очень много записей историй поиска, поэтому для каждого пользователя
+        # будем хранить только 5 последних записей, лишние - удалим.
+        cursor.execute(f"""
+                DELETE FROM query WHERE query.[date_time]=
+                (SELECT MIN([date_time]) FROM query WHERE `user_id` = '{user_id}' )
+                AND
+                ((SELECT COUNT(*) FROM query WHERE `user_id` = '{user_id}' ) > 5 ) 
+            """
+                       )
         connection.commit()
     except sqlite3.IntegrityError:
         print('Запрос с такой датой и временем уже существует')
@@ -80,7 +94,8 @@ def add_response(search_result: dict) -> None:
             name STRING,
             address STRING, 
             price REAL,
-            distance REAL
+            distance REAL,
+            FOREIGN KEY (hotel_id) REFERENCES images(hotel_id) ON DELETE CASCADE ON UPDATE CASCADE
         );
         """)
     for item in search_result.items():
