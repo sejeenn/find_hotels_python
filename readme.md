@@ -29,6 +29,7 @@
 ### Запуск проекта (на примере Manjaro Linux)
 - Клонировать проект командой: git clone https://gitlab.skillbox.ru/evgenii_vorontsov_1/python_basic_diploma.git
 - создать файл `.env` вида:
+
     BOT_TOKEN= "ваш бот токен"<br>
     RAPID_API_KEY= "ваш rapid_api key"<br>
 <br>
