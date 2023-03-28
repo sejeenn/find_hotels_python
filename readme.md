@@ -36,7 +36,7 @@
 - Установить виртуальное окружение командой: <b>python -m venv venv</b><br>
 - Активировать виртуальное окружение командой: <b>source venv/bin/activate</b><br>
 - установить необходимые зависимости командой: <b>pip install -r requirements.txt</b><br>
-- запустите бота командой: <b>python main.py</b><br>
+- Запустите бота командой: <b>python main.py</b><br>
 
 
 ### Запуск проекта (на примере Windows)
@@ -128,13 +128,13 @@
 
 ## В разработке использованы
 
-pyTelegramBotAPI==4.4.0
-python-dotenv==0.19.2
-pip~=21.1.2
-wheel~=0.36.2
-certifi~=2022.6.15
-requests~=2.28.1
-idna~=3.3
-urllib3~=1.26.11
-setuptools~=57.0.0
-loguru~=0.6.0
+pyTelegramBotAPI==4.4.0<br>
+python-dotenv==0.19.2<br>
+pip~=21.1.2<br>
+wheel~=0.36.2<br>
+certifi~=2022.6.15<br>
+requests~=2.28.1<br>
+idna~=3.3<br>
+urllib3~=1.26.11<br>
+setuptools~=57.0.0<br>
+loguru~=0.6.0<br>
