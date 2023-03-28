@@ -18,7 +18,7 @@ def history(message: Message) -> None:
     queries = database.read_from_db.read_query(message.chat.id)
     logger.info(f'Получены записи из таблицы query:\n {queries}')
     for item in queries:
-        bot.send_message(message.chat.id, f"({item[0]}). Дата и время: {item[1]}. Город: {item[2]}")
+        bot.send_message(message.chat.id, f"({item[0]}). Дата и время: {item[1]}. Вы вводили город: {item[2]}")
     bot.set_state(message.chat.id, UserInputState.history_select)
     bot.send_message(message.from_user.id, "Введите номер интересующего вас варианта: ")
 
@@ -51,7 +51,7 @@ def input_city(message: Message) -> None:
                 medias = []
                 caption = f"Название отеля: {hotel[1]['name']}]\n Адрес отеля: {hotel[1]['address']}" \
                           f"\nСтоимость проживания в " \
-                          f"сутки: {hotel[1]['price']}\nРасстояние до центра: {hotel[1]['distance']}"
+                          f"сутки $: {hotel[1]['price']}\nРасстояние до центра: {hotel[1]['distance']}"
                 urls = hotel[1]['images']
                 if photo_need == 'yes':
                     for number, url in enumerate(urls):
