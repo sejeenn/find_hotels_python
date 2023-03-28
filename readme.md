@@ -32,8 +32,9 @@
 - Создайте на своем компютере папку проекта
 - Склонируйте этот репозиторий в папку проекта `git clone https://github.com/...`
 - Создайте файл `.env` и добавьте в него переменные окружения, следующего вида:
-    BOT_TOKEN= "ваш бот токен"
-    RAPID_API_KEY= "ваш rapid_api key"
+<br>
+    BOT_TOKEN= "ваш бот токен"<br>
+    RAPID_API_KEY= "ваш rapid_api key"<br>
 
 - Активируйте виртуальное окружение `pipenv shell`
 - Установите все зависимости `pipenv install --ignore-Pipfile`
