@@ -33,7 +33,8 @@
     BOT_TOKEN= "ваш бот токен"<br>
     RAPID_API_KEY= "ваш rapid_api key"<br>
 <br>
-- активировать виртуальное окружение командой: python -m venv venv
+- Установить виртуальное окружение командой: <b>python -m venv venv</b>
+- Активировать виртуальное окружение командой: source venv/bin/activate
 - установить необходимые зависимости командой: pip install -r requirements.txt
 - запустите бота командой: python main.py
 
