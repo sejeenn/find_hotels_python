@@ -27,7 +27,7 @@
 Если вы используете `Python 3`, у вас уже установлен модуль [venv](https://docs.python.org/3/library/venv.html) в стандартной библиотеке.
 
 ### Запуск проекта (на примере Manjaro Linux)
-- Клонировать проект командой: git clone https://github.com/sejeenn/python_basic_diploma.git
+- Клонировать проект командой: git clone `https://github.com/sejeenn/python_basic_diploma.git`
 - создать файл `.env` вида:
 
     BOT_TOKEN= "ваш бот токен"<br>
