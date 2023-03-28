@@ -35,7 +35,7 @@
 <br>
     BOT_TOKEN= "ваш бот токен"<br>
     RAPID_API_KEY= "ваш rapid_api key"<br>
-
+<br>
 - Активируйте виртуальное окружение `pipenv shell`
 - Установите все зависимости `pipenv install --ignore-Pipfile`
 - Запустите бота командой `pipenv run main.py` из Терминала из папки с проектом 
