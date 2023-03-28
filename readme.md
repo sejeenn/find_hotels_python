@@ -27,7 +27,7 @@
 Если вы используете `Python 3`, у вас уже установлен модуль [venv](https://docs.python.org/3/library/venv.html) в стандартной библиотеке.
 
 ### Запуск проекта (на примере Manjaro Linux)
-- Клонировать проект командой: git clone https://gitlab.skillbox.ru/evgenii_vorontsov_1/python_basic_diploma.git
+- Клонировать проект командой: git clone https://github.com/sejeenn/python_basic_diploma.git
 - создать файл `.env` вида:
 
     BOT_TOKEN= "ваш бот токен"<br>
@@ -42,7 +42,7 @@
 ### Запуск проекта (на примере Windows)
 
 - Создайте на своем компютере папку проекта
-- Склонируйте этот репозиторий в папку проекта `git clone https://github.com/...`
+- Склонируйте этот репозиторий в папку проекта `https://github.com/sejeenn/python_basic_diploma.git`
 - Создайте файл `.env` и добавьте в него переменные окружения, следующего вида:
 <br>
     BOT_TOKEN= "ваш бот токен"<br>
