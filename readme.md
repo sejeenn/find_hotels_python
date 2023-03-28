@@ -26,6 +26,17 @@
 - Если вы не пользуетесь `Python 3`, вам нужно установить инструмент `virtualenv` при помощи `pip install virtualenv`. 
 Если вы используете `Python 3`, у вас уже установлен модуль [venv](https://docs.python.org/3/library/venv.html) в стандартной библиотеке.
 
+### Запуск проекта (на примере Manjaro Linux)
+- Клонировать проект командой: git clone https://gitlab.skillbox.ru/evgenii_vorontsov_1/python_basic_diploma.git
+- создать файл `.env` вида:
+<br>
+    BOT_TOKEN= "ваш бот токен"<br>
+    RAPID_API_KEY= "ваш rapid_api key"<br>
+<br>
+- активировать виртуальное окружение командой: python -m venv venv
+- установить необходимые зависимости командой: pip install -r requirements.txt
+- запустите бота командой: python main.py
+
 
 ### Запуск проекта (на примере Windows)
 
