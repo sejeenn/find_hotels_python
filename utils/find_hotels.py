@@ -49,12 +49,16 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
     url = "https://hotels4.p.rapidapi.com/properties/v2/list"
     # Отправка запроса серверу на поиск отелей
     response_hotels = api.general_request.request('POST', url, payload)
-    logger.info(f'Сервер вернул ответ {response_hotels.status_code}')
+    logger.info(f'Сервер вернул ответ {response_hotels.status_code}. User_id: {message.chat.id}')
     # Если сервер возвращает статус-код не 200, то все остальные действия будут бессмысленными.
     if response_hotels.status_code == 200:
         # Обработка полученного ответа от сервера и формирование отсортированного словаря с отелями
-        hotels = processing_json.get_hotels.get_hotels(response_hotels.text, data['command'],
-                                                       data["landmark_in"], data["landmark_out"])
+        hotels = processing_json.get_hotels.get_hotels(
+            response_text=response_hotels.text,
+            command=data['command'],
+            landmark_in=data["landmark_in"],
+            landmark_out=data["landmark_out"]
+        )
         if 'error' in hotels:
             bot.send_message(message.chat.id, hotels['error'])
             bot.send_message(message.chat.id, 'Попробуйте осуществить поиск с другими параметрами')
@@ -96,9 +100,13 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
 
                     # Не важно, нужны пользователю фотографии или нет ссылки на них мы передаем в функцию
                     # для сохранения в базе данных
-                    data_to_db = {hotel['id']: {'name': hotel['name'], 'address': summary_info['address'],
-                                                'price': hotel['price'], 'distance': round(hotel["distance"], 2),
-                                                'date_time': data['date_time'], 'images': links_to_images}}
+                    data_to_db = {
+                        hotel['id']: {
+                            'name': hotel['name'], 'address': summary_info['address'], 'user_id': message.chat.id,
+                            'price': hotel['price'], 'distance': round(hotel["distance"], 2),
+                            'date_time': data['date_time'], 'images': links_to_images
+                        }
+                    }
                     database.add_to_bd.add_response(data_to_db)
                     # Если количество фотографий > 0: создаем медиа группу с фотками и выводим ее в чат
                     if int(data['photo_count']) > 0:
@@ -114,7 +122,7 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
 
                     else:
                         # если фотки не нужны, то просто выводим данные об отеле
-                        logger.info("Выдаю найденную информацию в чат")
+                        logger.info(f"Выдаю найденную информацию в чат. User_id: {message.chat.id}")
                         bot.send_message(message.chat.id, caption)
                 else:
                     bot.send_message(message.chat.id, f'Что-то пошло не так, код ошибки: {get_summary.status_code}')

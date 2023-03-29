@@ -8,7 +8,6 @@ import api
 from keyboards.calendar.telebot_calendar import Calendar
 import processing_json
 from utils.print_data import print_data
-import database
 
 
 @bot.message_handler(commands=['lowprice', 'highprice', 'bestdeal'])
@@ -22,12 +21,11 @@ def low_high_best_handler(message: Message) -> None:
     bot.set_state(message.chat.id, UserInputState.command)
     with bot.retrieve_data(message.chat.id) as data:
         data.clear()
-        logger.info('Запоминаем выбранную команду: ' + message.text)
+        logger.info('Запоминаем выбранную команду: ' + message.text + f" User_id: {message.chat.id}")
         data['command'] = message.text
         data['sort'] = check_command(message.text)
         data['date_time'] = datetime.datetime.now().strftime('%d.%m.%Y %H:%M:%S')
         data['chat_id'] = message.chat.id
-    database.add_to_bd.add_user(message.chat.id, message.from_user.username, message.from_user.full_name)
     bot.set_state(message.chat.id, UserInputState.input_city)
     bot.send_message(message.from_user.id, "Введите город в котором нужно найти отель (на латинице): ")
 
