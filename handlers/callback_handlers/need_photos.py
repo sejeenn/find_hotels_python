@@ -13,14 +13,14 @@ def need_photo_callback(call: CallbackQuery) -> None:
         : return : None
         """
     if call.data == 'yes':
-        logger.info('Нажата кнопка "ДА"')
+        logger.info(f'Нажата кнопка "ДА". User_id: {call.message.chat.id}')
         with bot.retrieve_data(call.message.chat.id) as data:
             data['photo_need'] = call.data
         bot.delete_message(call.message.chat.id, call.message.message_id)
         bot.set_state(call.message.chat.id, UserInputState.photo_count)
         bot.send_message(call.message.chat.id, 'Сколько вывести фотографий? От 1 до 10!')
     elif call.data == 'no':
-        logger.info('Нажата кнопка "НЕТ"')
+        logger.info(f'Нажата кнопка "НЕТ". User_id: {call.message.chat.id} ')
         with bot.retrieve_data(call.message.chat.id) as data:
             data['photo_need'] = call.data
             data['photo_count'] = '0'

@@ -2,8 +2,7 @@ import database.add_to_bd
 from loader import bot
 from telebot.types import Message, Dict, InputMediaPhoto
 from loguru import logger
-import api
-import processing_json
+import utils
 import random
 import database
 
@@ -48,12 +47,12 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
     }
     url = "https://hotels4.p.rapidapi.com/properties/v2/list"
     # Отправка запроса серверу на поиск отелей
-    response_hotels = api.general_request.request('POST', url, payload)
+    response_hotels = utils.general_request.request('POST', url, payload)
     logger.info(f'Сервер вернул ответ {response_hotels.status_code}. User_id: {message.chat.id}')
     # Если сервер возвращает статус-код не 200, то все остальные действия будут бессмысленными.
     if response_hotels.status_code == 200:
         # Обработка полученного ответа от сервера и формирование отсортированного словаря с отелями
-        hotels = processing_json.get_hotels.get_hotels(
+        hotels = utils.processing_json.get_hotels(
             response_text=response_hotels.text,
             command=data['command'],
             landmark_in=data["landmark_in"],
@@ -78,10 +77,10 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                     "propertyId": hotel['id']
                 }
                 summary_url = "https://hotels4.p.rapidapi.com/properties/v2/get-summary"
-                get_summary = api.general_request.request('POST', summary_url, summary_payload)
+                get_summary = utils.general_request.request('POST', summary_url, summary_payload)
                 logger.info(f'Сервер вернул ответ {get_summary.status_code}')
                 if get_summary.status_code == 200:
-                    summary_info = processing_json.get_summary.hotel_info(get_summary.text)
+                    summary_info = utils.processing_json.hotel_info(get_summary.text)
 
                     caption = f'Название: {hotel["name"]}\n ' \
                               f'Адрес: {summary_info["address"]}\n' \
@@ -130,4 +129,41 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                 break
     else:
         bot.send_message(message.chat.id, f'Что-то пошло не так, код ошибки: {response_hotels.status_code}')
+    logger.info(f"Поиск окончен. User_id: {message.chat.id}")
     bot.send_message(message.chat.id, 'Поиск окончен!')
+    bot.set_state(message.chat.id, None)
+
+
+def print_data(message: Message, data: Dict) -> None:
+    """
+    Выводим в чат всё, что собрали от пользователя и передаем это в функцию поиска
+    отелей.
+    : param message : Message
+    : param data: Dict данные собранные от пользователя
+    : return : None
+    """
+    # Отправляем в базу данных собранные данные, а там уже выберу что нужно
+    database.add_to_bd.add_query(data)
+
+    logger.info('Вывод суммарной информации о параметрах запроса пользователем.')
+    text_message = ('Исходные данные:\n'
+                    f'Дата и время запроса: {data["date_time"]}\n'
+                    f'Введена команда: {data["command"]}\n'
+                    f'Вы ввели город: {data["input_city"]}\n'
+                    f'Выбран город с id: {data["destination_id"]}\n'
+                    f'Количество отелей: {data["quantity_hotels"]}\n'
+                    f'Минимальный ценник: {data["price_min"]}\n'
+                    f'Максимальный ценник: {data["price_max"]}\n'
+                    f'Нужны ли фотографии? {data["photo_need"]}\n'
+                    f'Количество фотографий: {data["photo_count"]}\n'
+                    f'Дата заезда: {data["checkInDate"]["day"]}-'
+                    f'{data["checkInDate"]["month"]}-{data["checkInDate"]["year"]}\n'
+                    f'Дата выезда: {data["checkOutDate"]["day"]}-'
+                    f'{data["checkOutDate"]["month"]}-{data["checkOutDate"]["year"]}\n')
+    if data['sort'] == 'DISTANCE':
+        bot.send_message(message.chat.id, text_message +
+                         f'Начало диапазона от центра: {data["landmark_in"]}\n'
+                         f'Конец диапазона от центра: {data["landmark_out"]}')
+    else:
+        bot.send_message(message.chat.id, text_message)
+    find_and_show_hotels(message, data)

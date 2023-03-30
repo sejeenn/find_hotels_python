@@ -12,7 +12,7 @@ def destination_id_callback(call: CallbackQuery) -> None:
     : param call: получает id города
     : return : None
     """
-    logger.info('Пользователь выбрал город.')
+    logger.info(f'Пользователь выбрал город. User_id: {call.message.chat.id}')
     if call.data:
         bot.set_state(call.message.chat.id, UserInputState.destinationId)
         with bot.retrieve_data(call.message.chat.id) as data:

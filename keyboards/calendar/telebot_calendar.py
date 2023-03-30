@@ -79,12 +79,13 @@ class Calendar:
                 for day in self.__lang.days
             ]
         )
-
+        date_now = str(now_day.year) + str(now_day.month) + str(now_day.day)
         # Вывод дней недели
         for week in calendar.monthcalendar(year, month):
             row = list()
             for day in week:
-                if day == 0 or (day < now_day.day and month == now_day.month and year == now_day.year):
+                date_calendar = str(year)+str(month)+str(day)
+                if day == 0 or int(date_calendar) < int(date_now):
                     row.append(InlineKeyboardButton(" ", callback_data=data_ignore))
 
                 # если сегодняшний день совпадает с днем в календаре
@@ -337,7 +338,6 @@ class CallbackData:
         :return:
         """
 
-        print(config, self._part_names)
         for key in config.keys():
             if key not in self._part_names:
                 return False

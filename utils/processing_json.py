@@ -2,6 +2,28 @@ import json
 from telebot.types import Dict
 
 
+def get_city(response_text: str) -> Dict:
+    """
+    Принимает ответ от сервера с возможными вариантами городов. Возвращает словарь
+    с названиями городов и их идентификатором.
+    : param response_text : str текстовая строка, ответ от сервера
+    : return possible_cities : Dict Возвращает словарь с вариантами городов
+    """
+    possible_cities = {}
+    data = json.loads(response_text)
+    if not data:
+        raise LookupError('Запрос пуст...')
+    for id_place in data['sr']:
+        try:
+            possible_cities[id_place['gaiaId']] = {
+                "gaiaId": id_place['gaiaId'],
+                "regionNames": id_place['regionNames']['fullName']
+            }
+        except KeyError:
+            continue
+    return possible_cities
+
+
 def get_hotels(
         response_text: str,
         command: str,
@@ -55,3 +77,25 @@ def get_hotels(
                 }
 
     return hotels_data
+
+
+def hotel_info(hotels_request: str) -> Dict:
+    """
+    Принимает ответ от сервера с детальной информацией об отеле, и возвращает словарь с данными отеля.
+    : param hotels_request : str Текстовый ответ от сервера о детальной информации об отеле.
+    : return hotel_data: Dict Возвращает словарь с дополнительной информацией об отеле
+    """
+    data = json.loads(hotels_request)
+    if not data:
+        raise LookupError('Запрос пуст...')
+    hotel_data = {
+        'id': data['data']['propertyInfo']['summary']['id'], 'name': data['data']['propertyInfo']['summary']['name'],
+        'address': data['data']['propertyInfo']['summary']['location']['address']['addressLine'],
+        'coordinates': data['data']['propertyInfo']['summary']['location']['coordinates'],
+        'images': [
+            url['image']['url'] for url in data['data']['propertyInfo']['propertyGallery']['images']
+
+        ]
+    }
+
+    return hotel_data

@@ -33,7 +33,7 @@ def add_user(message: Message) -> None:
         logger.info(f'Добавлен новый пользователь. User_id: {message.chat.id}')
         connection.commit()
     except sqlite3.IntegrityError:
-        logger.info('Данный пользователь уже существует')
+        logger.info(f'Данный пользователь уже существует. User_id: {message.chat.id}')
     connection.close()
 
 
