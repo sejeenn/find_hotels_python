@@ -2,7 +2,7 @@ from loader import bot
 from loguru import logger
 from telebot.types import CallbackQuery
 from states.user_states import UserInputState
-from handlers.input_data import my_calendar
+from handlers.custom_handlers.input_data import my_calendar
 
 
 @bot.callback_query_handler(func=lambda call: call.data.isalpha())

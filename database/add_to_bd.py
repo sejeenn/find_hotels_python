@@ -1,19 +1,18 @@
 import sqlite3
+from telebot.types import Message
 from loguru import logger
 
 
-def add_user(chat_id: int, username: str, full_name: str) -> None:
+def add_user(message: Message) -> None:
     """
-    Создает, если нужно, таблицу с данными пользователей:
+    Создает базу данных если её еще нет, таблицу с данными пользователей:
     id, username и, если есть, "имя фамилия" и добавляет туда данные, если
     бота запускает новый пользователь. Данная таблица не участвует в выдаче сохраненной
     информации. Она просто хранит данные пользователя.
-    : param chat_id : int
-    : param username : str
-    : param full_name : str
+    : param message : Message
     : return : None
     """
-    connection = sqlite3.connect("database/history.sqlite3")
+    connection = sqlite3.connect("database/db.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS user(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
@@ -25,9 +24,13 @@ def add_user(chat_id: int, username: str, full_name: str) -> None:
     connection.commit()
     try:
         cursor.execute(
-            "INSERT INTO user (chat_id, username, full_name) VALUES (?, ?, ?)", (chat_id, username, full_name)
+            "INSERT INTO user (chat_id, username, full_name) VALUES (?, ?, ?)", (
+                message.chat.id,
+                message.from_user.username,
+                message.from_user.full_name
+            )
         )
-        logger.info('Добавлен новый пользователь.')
+        logger.info(f'Добавлен новый пользователь. User_id: {message.chat.id}')
         connection.commit()
     except sqlite3.IntegrityError:
         logger.info('Данный пользователь уже существует')
@@ -42,7 +45,7 @@ def add_query(query_data: dict) -> None:
     : return : None
     """
     user_id = query_data['chat_id']
-    connection = sqlite3.connect("database/history.sqlite3")
+    connection = sqlite3.connect("database/db.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -58,10 +61,15 @@ def add_query(query_data: dict) -> None:
     try:
         cursor.execute(
             "INSERT INTO query(user_id, input_city, photo_need, destination_id, date_time) VALUES (?, ?, ?, ?, ?)",
-            (user_id, query_data['input_city'], query_data['photo_need'], query_data['destination_id'],
-             query_data['date_time'])
+            (
+                user_id,
+                query_data['input_city'],
+                query_data['photo_need'],
+                query_data['destination_id'],
+                query_data['date_time']
+            )
         )
-        logger.info('Добавлен в БД новый запрос.')
+        logger.info(f'В БД добавлен новый запрос. User_id: {user_id}')
 
         # Нам не нужно очень много записей историй поиска, поэтому для каждого пользователя
         # будем хранить только 5 последних записей, лишние - удалим.
@@ -74,7 +82,8 @@ def add_query(query_data: dict) -> None:
                        )
         connection.commit()
     except sqlite3.IntegrityError:
-        print('Запрос с такой датой и временем уже существует')
+        logger.info(f'Запрос с такой датой и временем уже существует. User_id: {user_id}')
+    connection.close()
 
 
 def add_response(search_result: dict) -> None:
@@ -84,7 +93,7 @@ def add_response(search_result: dict) -> None:
     : param search_result : dict
     : return : None
     """
-    connection = sqlite3.connect("database/history.sqlite3")
+    connection = sqlite3.connect("database/db.sqlite3")
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS response(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
@@ -102,9 +111,16 @@ def add_response(search_result: dict) -> None:
         query_id = cursor.fetchone()[0]
         cursor.execute(
             "INSERT INTO response(query_id, hotel_id, name, address, price, distance) VALUES (?, ?, ?, ?, ?, ?)",
-            (query_id, item[0], item[1]['name'], item[1]['address'], item[1]['price'], item[1]['distance'])
+            (
+                query_id,
+                item[0],
+                item[1]['name'],
+                item[1]['address'],
+                item[1]['price'],
+                item[1]['distance']
+            )
         )
-        logger.info('Добавлены в БД данные отеля.')
+        logger.info(f'В БД добавлены данные отеля. User_id: {item[1]["user_id"]}')
         for link in item[1]['images']:
             cursor.execute("""CREATE TABLE IF NOT EXISTS images(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -112,6 +128,6 @@ def add_response(search_result: dict) -> None:
             link TEXT     
             );""")
             cursor.execute("INSERT INTO images (hotel_id, link) VALUES (?, ?)", (item[0], link))
-        logger.info('Добавлены в БД ссылки на фотографии отеля.')
+        logger.info(f'В БД добавлены ссылки на фотографии отеля. User_id: {item[1]["user_id"]}')
         connection.commit()
     connection.close()

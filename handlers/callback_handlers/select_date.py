@@ -3,7 +3,7 @@ from loguru import logger
 import datetime
 from states.user_states import UserInputState
 from keyboards.calendar.telebot_calendar import CallbackData, Calendar
-import handlers.input_data
+import handlers.custom_handlers.input_data
 from telebot.types import CallbackQuery
 from utils.print_data import print_data
 
@@ -23,7 +23,14 @@ def input_date(call: CallbackQuery) -> None:
     """
     name, action, year, month, day = call.data.split(calendar_callback.sep)
     calendar.calendar_query_handler(
-        bot=bot, call=call, name=name, action=action, year=year, month=month, day=day)
+        bot=bot,
+        call=call,
+        name=name,
+        action=action,
+        year=year,
+        month=month,
+        day=day
+    )
 
     if action == 'DAY':
         logger.info('Выбрана какая-то дата, нужно ее проверить. ')
@@ -53,16 +60,16 @@ def input_date(call: CallbackQuery) -> None:
                 else:
                     bot.send_message(call.message.chat.id, 'Дата выезда должна быть больше даты заезда! '
                                                            'Повторите выбор даты!')
-                    handlers.input_data.my_calendar(call.message, 'выезда')
+                    handlers.custom_handlers.input_data.my_calendar(call.message, 'выезда')
             else:
                 if int(select_date) >= int(now):
                     logger.info('Ввод и сохранение даты заезда.')
                     data['checkInDate'] = {'day': day, 'month': month, 'year': year}
-                    handlers.input_data.my_calendar(call.message, 'выезда')
+                    handlers.custom_handlers.input_data.my_calendar(call.message, 'выезда')
                 else:
                     bot.send_message(call.message.chat.id, 'Дата заезда должна быть больше или равна сегодняшней дате!'
                                                            'Повторите выбор даты!')
-                    handlers.input_data.my_calendar(call.message, 'заезда')
+                    handlers.custom_handlers.input_data.my_calendar(call.message, 'заезда')
 
 
 def check_month_day(number: str) -> str:

@@ -53,7 +53,6 @@ class Calendar:
         :return: Returns an InlineKeyboardMarkup object with a calendar.
         """
         now_day = datetime.datetime.now()
-        print(now_day)
         if year is None:
             year = now_day.year
         if month is None:
@@ -85,15 +84,18 @@ class Calendar:
         for week in calendar.monthcalendar(year, month):
             row = list()
             for day in week:
-                if day == 0:
+                if day == 0 or (day < now_day.day and month == now_day.month and year == now_day.year):
                     row.append(InlineKeyboardButton(" ", callback_data=data_ignore))
+
+                # если сегодняшний день совпадает с днем в календаре
                 elif (
                     f"{now_day.day}.{now_day.month}.{now_day.year}"
                     == f"{day}.{month}.{year}"
+
                 ):
                     row.append(
                         InlineKeyboardButton(
-                            f"({day})",
+                            f"(({day}))",
                             callback_data=calendar_callback.new(
                                 "DAY", year, month, day
                             ),

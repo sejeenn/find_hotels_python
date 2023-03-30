@@ -10,7 +10,7 @@ def read_query(user: int) -> list:
         : return : list
     """
     logger.info('Читаем таблицу query')
-    connect = sqlite3.connect("database/history.sqlite3")
+    connect = sqlite3.connect("database/db.sqlite3")
     cursor = connect.cursor()
     cursor.execute("SELECT `id`, `date_time`, `input_city`, `photo_need` FROM query WHERE `user_id` = ?", (user,))
     records = cursor.fetchall()
@@ -26,7 +26,7 @@ def get_history_response(query: str) -> dict:
        : return : dict
     """
     logger.info('Читаем таблицу response.')
-    connect = sqlite3.connect("database/history.sqlite3")
+    connect = sqlite3.connect("database/db.sqlite3")
     cursor = connect.cursor()
     cursor.execute("SELECT * FROM response WHERE `query_id` = ?", (query,))
     records = cursor.fetchall()

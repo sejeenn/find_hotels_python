@@ -2,7 +2,12 @@ import json
 from telebot.types import Dict
 
 
-def get_hotels(response_text: str, command: str, landmark_in: str, landmark_out: str) -> Dict:
+def get_hotels(
+        response_text: str,
+        command: str,
+        landmark_in: str,
+        landmark_out: str
+) -> Dict:
     """
     Принимает ответ от сервера, выбранную команду сортировки, а так же пределы диапазона
     расстояния от центра города. Возвращает отсортированный словарь, в зависимости от команды сортировки.
