@@ -20,13 +20,13 @@ def get_list_history(message: Message) -> None:
         logger.info(f'Получены записи из таблицы query:\n {queries}. User_id: {message.chat.id}')
         for item in queries:
             bot.send_message(message.chat.id, f"({item[0]}). Дата и время: {item[1]}. Вы вводили город: {item[2]}")
-        bot.set_state(message.chat.id, UserInputState.history_select)
+        bot.set_state(message.chat.id, UserInputState.select_number)
         bot.send_message(message.from_user.id, "Введите номер интересующего вас варианта: ")
     else:
         bot.send_message(message.chat.id, 'В базе данных пока нет записей')
 
 
-@bot.message_handler(state=UserInputState.history_select)
+@bot.message_handler(state=UserInputState.select_number)
 def input_number(message: Message) -> None:
     """
         Ввод пользователем номера запроса, которые есть в списке. Если пользователь введет

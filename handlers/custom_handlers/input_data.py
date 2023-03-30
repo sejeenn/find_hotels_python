@@ -25,7 +25,6 @@ def low_high_best_handler(message: Message) -> None:
         data['date_time'] = datetime.datetime.now().strftime('%d.%m.%Y %H:%M:%S')
         data['chat_id'] = message.chat.id
     bot.set_state(message.chat.id, UserInputState.input_city)
-    my_calendar(message, 'test')
     bot.send_message(message.from_user.id, "Введите город в котором нужно найти отель (на латинице): ")
 
 
@@ -43,7 +42,7 @@ def input_city(message: Message) -> None:
         # Создаем запрос для поиска вариантов городов и генерируем клавиатуру
         url = "https://hotels4.p.rapidapi.com/locations/v3/search"
         querystring = {"q": message.text, "locale": "en_US"}
-        response_cities = utils.general_request.request('GET', url, querystring)
+        response_cities = utils.api_request.request('GET', url, querystring)
         if response_cities.status_code == 200:
             logger.info('Сервер ответил: ' + str(response_cities.status_code) + f' User_id: {message.chat.id}')
             possible_cities = utils.processing_json.get_city(response_cities.text)

@@ -47,7 +47,7 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
     }
     url = "https://hotels4.p.rapidapi.com/properties/v2/list"
     # Отправка запроса серверу на поиск отелей
-    response_hotels = utils.general_request.request('POST', url, payload)
+    response_hotels = utils.api_request.request('POST', url, payload)
     logger.info(f'Сервер вернул ответ {response_hotels.status_code}. User_id: {message.chat.id}')
     # Если сервер возвращает статус-код не 200, то все остальные действия будут бессмысленными.
     if response_hotels.status_code == 200:
@@ -77,8 +77,8 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                     "propertyId": hotel['id']
                 }
                 summary_url = "https://hotels4.p.rapidapi.com/properties/v2/get-summary"
-                get_summary = utils.general_request.request('POST', summary_url, summary_payload)
-                logger.info(f'Сервер вернул ответ {get_summary.status_code}')
+                get_summary = utils.api_request.request('POST', summary_url, summary_payload)
+                logger.info(f'Сервер вернул ответ {get_summary.status_code}. User_id: {message.chat.id}')
                 if get_summary.status_code == 200:
                     summary_info = utils.processing_json.hotel_info(get_summary.text)
 
@@ -116,7 +116,7 @@ def find_and_show_hotels(message: Message, data: Dict) -> None:
                             else:
                                 medias.append(InputMediaPhoto(media=url))
 
-                        logger.info("Выдаю найденную информацию в чат")
+                        logger.info(f"Выдаю найденную информацию в чат. User_id: {message.chat.id}")
                         bot.send_media_group(message.chat.id, medias)
 
                     else:
@@ -145,7 +145,7 @@ def print_data(message: Message, data: Dict) -> None:
     # Отправляем в базу данных собранные данные, а там уже выберу что нужно
     database.add_to_bd.add_query(data)
 
-    logger.info('Вывод суммарной информации о параметрах запроса пользователем.')
+    logger.info(f'Вывод суммарной информации о параметрах запроса пользователем. User_id: {message.chat.id}')
     text_message = ('Исходные данные:\n'
                     f'Дата и время запроса: {data["date_time"]}\n'
                     f'Введена команда: {data["command"]}\n'

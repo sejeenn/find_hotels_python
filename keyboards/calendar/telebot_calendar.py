@@ -79,16 +79,18 @@ class Calendar:
                 for day in self.__lang.days
             ]
         )
-        date_now = str(now_day.year) + str(now_day.month) + str(now_day.day)
+        # переменная date_now для сравнения "сегодняшнего дня" с датой в календаре, дабы убрать из календаря
+        # все даты которые меньше сегодняшней даты, дата в формате 20230331
+        date_now = str(now_day.year) + check_month_day(str(now_day.month)) + check_month_day(str(now_day.day))
         # Вывод дней недели
         for week in calendar.monthcalendar(year, month):
             row = list()
             for day in week:
-                date_calendar = str(year)+str(month)+str(day)
+                date_calendar = str(year) + check_month_day(str(month)) + check_month_day(str(day))
                 if day == 0 or int(date_calendar) < int(date_now):
                     row.append(InlineKeyboardButton(" ", callback_data=data_ignore))
 
-                # если сегодняшний день совпадает с днем в календаре
+                # если сегодняшний день совпадает с днем в календаре, то этот день помещается в скобки
                 elif (
                     f"{now_day.day}.{now_day.month}.{now_day.year}"
                     == f"{day}.{month}.{year}"
@@ -343,3 +345,15 @@ class CallbackData:
                 return False
 
         return True
+
+
+def check_month_day(number: str) -> str:
+    """
+    Преобразование формата числа месяца или дня из формата 1..9 в формат 01..09
+    : param number : str, число месяца или дня
+    : return number : str
+    """
+    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    if int(number) in numbers:
+        number = '0' + number
+    return number

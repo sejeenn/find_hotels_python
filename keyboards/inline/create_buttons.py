@@ -10,7 +10,7 @@ def show_buttons_photo_need_yes_no(message: Message) -> None:
     : param message : Message
     : return : None
     """
-    logger.info('Вывод кнопок о необходимости фотографий пользователю. ')
+    logger.info(f'Вывод кнопок о необходимости фотографий пользователю. User_id: {message.chat.id}')
     keyboard_yes_no = types.InlineKeyboardMarkup()
     keyboard_yes_no.add(types.InlineKeyboardButton(text='ДА', callback_data='yes'))
     keyboard_yes_no.add(types.InlineKeyboardButton(text='НЕТ', callback_data='no'))
@@ -24,6 +24,7 @@ def show_cities_buttons(message: Message, possible_cities: Dict) -> None:
     : param possible_cities : Dict словарь, с возможными вариантами городов
     : return : None
     """
+    logger.info(f'Вывод кнопок с вариантами городов пользователю. User_id: {message.chat.id}')
     keyboards_cities = types.InlineKeyboardMarkup()
     for key, value in possible_cities.items():
         keyboards_cities.add(types.InlineKeyboardButton(text=value["regionNames"], callback_data=value["gaiaId"]))

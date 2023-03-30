@@ -2,7 +2,7 @@ from loader import bot
 from loguru import logger
 import datetime
 from states.user_states import UserInputState
-from keyboards.calendar.telebot_calendar import CallbackData, Calendar
+from keyboards.calendar.telebot_calendar import CallbackData, Calendar, check_month_day
 import handlers.custom_handlers.input_data
 from telebot.types import CallbackQuery
 import utils
@@ -62,23 +62,6 @@ def input_date(call: CallbackQuery) -> None:
                                                            'Повторите выбор даты!')
                     handlers.custom_handlers.input_data.my_calendar(call.message, 'выезда')
             else:
-                if int(select_date) >= int(now):
-                    logger.info(f'Ввод и сохранение даты заезда. User_id: {call.message.chat.id}')
-                    data['checkInDate'] = {'day': day, 'month': month, 'year': year}
-                    handlers.custom_handlers.input_data.my_calendar(call.message, 'выезда')
-                else:
-                    bot.send_message(call.message.chat.id, 'Дата заезда должна быть больше или равна сегодняшней дате!'
-                                                           'Повторите выбор даты!')
-                    handlers.custom_handlers.input_data.my_calendar(call.message, 'заезда')
-
-
-def check_month_day(number: str) -> str:
-    """
-    Преобразование формата числа месяца или дня из формата 1..9 в формат 01..09
-    : param number : str, число месяца или дня
-    : return number : str
-    """
-    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    if int(number) in numbers:
-        number = '0' + number
-    return number
+                logger.info(f'Ввод и сохранение даты заезда. User_id: {call.message.chat.id}')
+                data['checkInDate'] = {'day': day, 'month': month, 'year': year}
+                handlers.custom_handlers.input_data.my_calendar(call.message, 'выезда')

@@ -12,4 +12,4 @@ class UserInputState(StatesGroup):
     priceMax = State()  # максимальная стоимость отеля
     landmarkIn = State()  # начало диапазона расстояния от центра
     landmarkOut = State()  # конец диапазона расстояния от центра
-    history_select = State()  # выбор истории поиска
+    select_number = State()  # выбор истории поиска
