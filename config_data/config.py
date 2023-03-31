@@ -8,6 +8,7 @@ else:
 
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 RAPID_API_KEY = os.getenv('RAPID_API_KEY')
+DB_NAME = os.getenv('DB_NAME')
 DEFAULT_COMMANDS = (
     ('start', "Запустить бота"),
     ('help', "Помощь по командам бота"),

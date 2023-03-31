@@ -32,6 +32,7 @@
 
     BOT_TOKEN= "ваш бот токен"<br>
     RAPID_API_KEY= "ваш rapid_api key"<br>
+    DB_NAME= "db.sqlite3"<br>
 <br>
 - Установить виртуальное окружение командой: <b>python -m venv venv</b><br>
 - Активировать виртуальное окружение командой: <b>source venv/bin/activate</b><br>
