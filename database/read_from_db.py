@@ -12,7 +12,7 @@ def read_query(user: int) -> list:
         : return : list
     """
     logger.info(f'Читаем таблицу query. User_id: {user}')
-    connect = sqlite3.connect(f"database/{config.DB_NAME}")
+    connect = sqlite3.connect(config.DB_NAME)
     cursor = connect.cursor()
     try:
         cursor.execute("SELECT `id`, `date_time`, `input_city`, `photo_need` FROM query WHERE `user_id` = ?", (user,))
@@ -32,7 +32,7 @@ def get_history_response(message) -> dict:
        : return : dict
     """
     logger.info(f'Читаем таблицу response. User_id: {message.chat.id}')
-    connect = sqlite3.connect(f"database/{config.DB_NAME}")
+    connect = sqlite3.connect(config.DB_NAME)
     cursor = connect.cursor()
     try:
         cursor.execute("SELECT * FROM response WHERE `query_id` = ?", (message.text,))

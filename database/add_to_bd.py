@@ -14,7 +14,7 @@ def add_user(message: Message) -> None:
     : param message : Message
     : return : None
     """
-    connection = sqlite3.connect(f"database/{config.DB_NAME}")
+    connection = sqlite3.connect(config.DB_NAME)
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS user(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
@@ -47,7 +47,7 @@ def add_query(query_data: dict) -> None:
     : return : None
     """
     user_id = query_data['chat_id']
-    connection = sqlite3.connect(f"database/{config.DB_NAME}")
+    connection = sqlite3.connect(config.DB_NAME)
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS query(
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -95,7 +95,7 @@ def add_response(search_result: dict) -> None:
     : param search_result : dict
     : return : None
     """
-    connection = sqlite3.connect(f"database/{config.DB_NAME}")
+    connection = sqlite3.connect(config.DB_NAME)
     cursor = connection.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS response(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, 
